@@ -1,0 +1,29 @@
+.videoBlock
+    .plyr--video
+        height: 100%
+        .plyr__poster
+            background-size: cover
+        video
+            object-fit: cover
+        .plyr__control--overlaid
+            background: none
+            border-radius: 0
+            padding: 0px
+            width: 165px
+            height: auto
+            &:hover
+                background: transparent
+                opacity: 0.7
+            &:before
+                content: ''
+                display: inline-block
+                width: 93px
+                height: 93px
+                background-image: url(../assets/images/icon-play.svg)
+                background-size: contain
+                background-position: center
+                background-repeat: no-repeat
+            svg
+                width: 100%
+                height: auto
+                display: none

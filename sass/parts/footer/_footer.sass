@@ -1,0 +1,81 @@
+.footer
+	&__main
+		padding-top: 100px
+		padding-bottom: 100px
+		+max-screen($breakpoint-md)
+			padding-top: 60px
+			padding-bottom: 60px
+
+		&__col
+
+
+		&__logo
+			display: block
+			width: 150px
+			max-width: 100%
+			img
+				width: 100%
+				height: auto
+		
+		&__text
+			margin-top: 28px
+
+		&__nav
+			padding-top: 53px
+			h4
+				padding-bottom: 17px
+			ul
+				width: 100%
+				margin: -10px 0
+				display: flex
+				flex-direction: column
+				justify-content: center
+			li
+				padding: 10px 0
+				a
+					transition: 0.3s ease-out
+					display: inline-block
+					+min-screen($breakpoint-md)
+						&:hover
+							color: $color-primary
+		
+		&__social
+			padding-top: 50px
+			&__list
+				display: flex
+				flex-direction: column
+				li
+					line-height: 0
+					padding: 5px
+					a
+						line-height: 1
+						img
+							position: absolute
+							top: 0
+							left: 0
+							width: 100%
+							height: 100%
+							object-fit: contain
+						i
+							position: absolute
+							top: 50%
+							left: 50%
+							transform: translate3d(-50%,-50%,0)
+						+min-screen($breakpoint-md)
+							&:hover
+								opacity: 0.8
+	
+	
+	&__bottom
+		padding: 26px 0
+		&__wrapper
+			text-align: center
+		&__inner
+			display: flex
+			flex-direction: column
+.form .nf-form-content input[type=email], .form .nf-form-content input[type=tel], .form .nf-form-content input[type=text], .form .nf-form-content textarea
+	background: none
+	border-bottom: 1px solid #707070
+
+		
+	

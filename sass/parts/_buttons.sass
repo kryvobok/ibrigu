@@ -1,0 +1,51 @@
+.button
+    --webkit-appearence: none
+    position: relative
+    display: inline-block
+    box-sizing: border-box
+    transition: 0.3s
+    font-weight: 500
+
+    padding: 18px 30px
+    background-color: $color-primary
+    color: #fff
+    font-size: 12px
+    line-height: 1em
+    letter-spacing: 0.05em
+    border: 1px solid $color-primary
+    text-align: center
+    text-transform: uppercase
+    transition: 0.3s ease-out
+    +max-screen($breakpoint-md)
+        padding: 12px 22px
+    &:hover
+        background-color: #fff
+        color: $color-primary
+    &--white, .text-color-white &, .text-color-white .content-block &
+        background-color: #ffffff
+        color: $color-primary
+        border: 1px solid #ffffff
+        .button__text
+            color: $color-primary
+        &:hover
+            background-color: transparent
+            color: #fff
+            .button__text
+                color: #fff
+
+   
+
+.buttonsBlock
+    &__inner
+        margin-left: -5px
+        margin-right: -5px
+        display: flex
+        flex-wrap: wrap
+        .buttonsBlock--center &
+            justify-content: center
+        .buttonsBlock--right &
+            justify-content: flex-end
+    .button
+        margin: 5px
+
+        

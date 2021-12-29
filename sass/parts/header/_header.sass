@@ -1,0 +1,80 @@
+.header
+	&__container
+		max-width: 100%
+	&__logo
+		max-width: 180px
+		max-height: 85px
+		object-fit: contain
+		&__wrapper
+			text-align: center
+			display: flex
+			align-items: center
+			justify-content: center
+#main-nav
+	li.page_item
+		a
+			&:hover
+				text-decoration: underline !important
+	li.current_page_item
+		a
+			text-decoration: underline !important
+.nav-toggle
+	width: 40px
+	height: 40px
+	border-radius: 12px
+	position: relative
+	display: none
+	float: right
+	z-index: 5
+	margin-right: 0
+	justify-self: flex-end
+	margin-left: 10px
+	+max-screen(1100px)
+		display: block
+
+	&-icon
+		position: absolute
+		width: 16px
+		height: 16px
+		top: 12px
+		left: 12px
+
+		&__inner,
+		&:before,
+		&:after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 2px
+			border-radius: 1px
+			background-color: white
+			.header__dark &,
+			.scrolled &
+				background-color: $color-primary
+
+		&__inner
+			top: 0
+			left: 0
+			transition: opacity 0.25s linear 0s , top 0.25s linear 0.25s
+		&:before
+			top: 50%
+			left: 0			
+			transition: opacity 0.25s linear 0s , top 0.25s linear 0.25s , transform 0.25s linear 0s
+		&:after
+			top: 100%
+			left: 0
+			transition: opacity 0.25s linear 0s , top 0.25s linear 0.25s , transform 0.25s linear 0s
+
+		.header-active &,&.nav-close
+			&__inner
+				opacity: 0
+				top: 50%
+				transition: opacity 0.25s linear 0.25s , top 0.25s linear 0s
+			&:before
+				transform: rotate(45deg)
+				top: 50%
+				transition: opacity 0.25s linear 0.25s , top 0.25s linear 0s , transform 0.25s linear 0.25s
+			&:after
+				transform: rotate(-45deg)
+				top: 50%
+				transition: opacity 0.25s linear 0.25s , top 0.25s linear 0s , transform 0.25s linear 0.25s

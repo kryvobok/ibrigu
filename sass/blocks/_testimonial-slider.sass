@@ -1,0 +1,55 @@
+.testimonials-slider
+    overflow: hidden
+    &__quotes
+        padding-bottom: 80px
+        width: 130px
+        +max-screen($breakpoint-md)
+            padding-bottom: 40px
+            width: 100px
+        img
+            width: 100%
+            height: auto
+    .slick-list
+        overflow: visible!important
+    &__list
+        margin: 0 -106px
+    &__item
+        padding: 0 106px
+        &__inner
+            &__content
+                text-transform: uppercase
+        &__quotes
+
+        &__footer
+            padding-top: 40px
+            span
+                display: block
+                margin-bottom: 5px
+    &__nav
+        display: flex
+        padding-top: 45px
+        &__btn
+            width: 48px
+            height: 48px
+            display: inline-block
+            position: relative
+            margin-right: 10px
+            background-color: $color-primary
+            cursor: pointer
+            transition: 0.3s
+            border: 2px solid $color-primary
+            svg
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate3d(-50%,-50%,0)
+                width: 8px
+                height: auto
+            &:hover
+                background-color: #fff
+                svg
+                    path
+                        stroke: $color-primary
+        &__prev
+            transform: rotate(-180deg)
+

@@ -1,0 +1,24 @@
+.content-columns
+    padding-top: 50px
+    padding-bottom: 50px
+    &__item
+        padding-left: 18px
+        padding-right: 18px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 40px
+            display: flex
+            align-items: center
+            justify-content: center
+        &__text
+            flex-direction: column
+            .content-columns__item
+                &__image
+                    margin-bottom: 40px
+                &__content
+                    +max-screen($breakpoint-lg)
+                        text-align: center
+    &__image
+        max-width: 100%
+        object-fit: contain
+        &__big
+            margin-bottom: 40px

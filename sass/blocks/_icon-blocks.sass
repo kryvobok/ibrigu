@@ -1,0 +1,46 @@
+.icon-blocks
+    background-color: rgba(126, 70, 200, 0.1)
+    
+    &__heading
+        margin-bottom: 80px
+        +max-screen($breakpoint-md)
+            margin-bottom: 40px
+    &__list
+        &.icon-blocks--3col
+            justify-content: center
+    &__item
+        padding-top: 17px
+        padding-bottom: 17px
+        &__inner
+            display: flex
+            max-width: 393px
+            +max-screen($breakpoint-md)
+                margin: auto
+
+        &__icon
+            position: relative
+            background-color: white
+            border-radius: 14px
+            width: 40px
+            min-width: 40px
+            height: 40px
+            display: flex
+            justify-content: center
+            align-items: center
+            margin-right: 20px
+            img
+                position: absolute
+                width: 54%
+                height: 54%
+                left: 23%
+                top: 23%
+                object-fit: contain
+        &__text
+            padding-top: 10px
+            h6
+                padding: 0
+            p,h1,h2,h3,h4,h5,h6
+                padding: 4px 0
+    &__list
+        margin-top: -17px
+        margin-bottom: -17px

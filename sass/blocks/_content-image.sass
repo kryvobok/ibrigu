@@ -1,0 +1,62 @@
+.contentImageBlock
+    &--full
+        padding-top: 0
+        padding-bottom: 0
+        +max-screen($breakpoint-md)
+            padding-top: 60px
+    &__content
+        position: relative
+        z-index: 2
+        .contentImageBlock--left &
+            order: 2
+            +max-screen($breakpoint-md)
+                order: 0
+        &__inner
+            max-width: 260px
+        .content-block
+            p
+            
+    &__image
+        position: relative
+        +max-screen($breakpoint-md)
+            order: 2
+            padding-top: rem(40px)
+        &__inner
+            position: relative
+            .contentImageBlock__image--full &
+                width: 50vw
+                float: right
+                +max-screen($breakpoint-md)
+                    width: calc(100% + 60px)
+                    margin-left: -30px
+                    margin-right: -30px
+                    float: none
+                .contentImageBlock--right &
+                    float: left
+                    +max-screen($breakpoint-md)
+                        float: none
+    
+    &__buttons
+        display: flex
+        flex-wrap: wrap
+        margin: -8px
+        a
+            margin: 8px
+            width: 212px
+            max-width: 100%
+            text-align: center
+    
+    &__parallax-logo
+        position: absolute
+        bottom: 0
+        z-index: 2
+        width: 100%
+        height: auto
+        img
+            position: absolute
+            top: 0
+            left: 25%
+            width: 715px
+            max-width: 80%
+            height: auto
+            transform: translateY(-49.5%)

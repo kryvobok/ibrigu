@@ -1,0 +1,29 @@
+.blog-post__content
+    .contentBlock
+        padding-top: 20px
+        padding-bottom: 20px
+    .imageBlock
+        padding-top: 40px
+        padding-bottom: 40px
+        +max-screen($breakpoint-md)
+            padding-top: 30px
+            padding-bottom: 30px
+    .section--bg
+        margin-top: 70px
+        margin-bottom: 70px
+        +max-screen($breakpoint-md)
+            margin-top: 35px
+            margin-bottom: 35px
+        &+.section--bg
+            margin-top: -70px
+            +max-screen($breakpoint-md)
+                margin-top: -35px
+        &:nth-last-child(1)
+            margin-bottom: 0
+    .testimonial-block
+        padding-top: 60px
+        padding-bottom: 60px
+        +max-screen($breakpoint-md)
+            padding-top: 40px
+            padding-bottom: 40px
+        

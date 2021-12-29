@@ -1,0 +1,43 @@
+.formImageBlock
+    position: relative
+    .container
+        position: relative
+    .form--request-demo
+        padding-top: 30px
+    &__sideImg
+        position: absolute
+        width: calc((100vw - 1280px) / 2 + (1280px / 6))
+        left: 0
+        top: 0
+        height: 100%
+        object-fit: cover
+        +min-screen($breakpoint-xxl)
+            width: calc((100vw - 1690px) / 2 + (1690px / 6))
+        +max-screen(1280px)
+            width: calc((30% - 15px)
+        img
+            filter: grayscale(100%)
+            object-fit: cover
+        &::after
+            content: ""
+            position: absolute
+            width: calc((100vw - 1280px) / 2 + (1280px / 6))
+            left: 0
+            top: 0
+            height: 100%
+            background-color: rgba(2,94,100,0.75)
+            opacity: .7
+    &__parallax-logo,
+    &__sideImg
+        +max-screen($breakpoint-md)
+            display: none
+    #iconTyped
+        img
+            position: absolute
+            top: 0
+            left: calc((100% / 6) - 131px)
+            max-height: 100%
+            +max-screen(1280px)
+                left: calc((30% - 131px)
+    a
+        font-size: 18px
