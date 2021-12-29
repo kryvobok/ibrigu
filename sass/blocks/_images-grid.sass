@@ -1,6 +1,8 @@
 .imagesGrid
     max-width: 100%
     padding-top: 0
+    padding-left: 65px
+    padding-right: 65px
     &__row
         justify-content: space-evenly
     li
@@ -9,7 +11,14 @@
     &__item
         display: flex
         align-items: center
+        &:first-child
+            padding-bottom: 80px
+        &:last-child
+            margin-top: 70px
         img
             max-width: 100%
             object-fit: contain
             height: 100%
+.contentBlock
+	display: flex
+	align-items: center

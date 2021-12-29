@@ -10,7 +10,7 @@ $blockID = get_sub_field('block_id');
 $id = $blockID?'id="'.$blockID.'"':'';
 
 if( !empty( $image ) ): ?>
-    <div <?php echo $id; ?> class="container section imageBlock">
+    <div <?php echo $id; ?> class="section imageBlock">
         <?php if($style == 'full'): ?>
             <?php image_acf($image); ?>
         <?php else: ?>

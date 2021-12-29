@@ -13,23 +13,23 @@ $paralaxLogo = get_sub_field('show_parallax_logo');
 $backgroundColor = get_sub_field('background_color');
 
 
-$imageClasses = '';
-$contentClasses = '';
-if($imagePosition=='left'):
-    $contentClasses.= 'offset-lg-2';
-    $imageClasses.= '';
-else:
-    $contentClasses.= 'offset-lg-1';
-    $imageClasses.= 'offset-lg-2';
-endif; 
+//$imageClasses = '';
+//$contentClasses = '';
+//if($imagePosition=='left'):
+//    $contentClasses.= 'offset-lg-2';
+//    $imageClasses.= '';
+//else:
+//    $contentClasses.= 'offset-lg-1';
+//    $imageClasses.= 'offset-lg-2';
+//endif; 
 
 $blockID = get_sub_field('block_id');
 $id = $blockID?'id="'.$blockID.'"':'';
 ?>
 <section <?php echo $id; ?> class="section  contentImageBlock contentImageBlock--<?php echo $imagePosition; ?> contentImageBlock--<?php echo $imageLayout; ?>" style="background-color: <?php echo $backgroundColor; ?>">
     <div class="container">
-        <div class="row row--y--middle">
-            <div class="col-12 col-lg-3 col-md-6 <?php echo $contentClasses; ?> contentImageBlock__content">
+        <div class="row">
+            <div class="col-12  col-md-6 <?php echo $contentClasses; ?> contentImageBlock__content">
                     <div class="contentImageBlock__content__inner">
                         <?php if($content): ?>
                             <div class="content-block animate fade-up"><?php echo $content; ?></div>
