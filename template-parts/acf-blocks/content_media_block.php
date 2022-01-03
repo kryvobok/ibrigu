@@ -12,6 +12,9 @@ $paralaxLogo = get_sub_field('show_parallax_logo');
 
 $backgroundColor = get_sub_field('background_color');
 
+$checkbox = get_sub_field('checkbox');
+
+$additionalImage = get_sub_field('additional_image');
 
 //$imageClasses = '';
 //$contentClasses = '';
@@ -34,13 +37,17 @@ $id = $blockID?'id="'.$blockID.'"':'';
                         <?php if($content): ?>
                             <div class="content-block animate fade-up"><?php echo $content; ?></div>
                         <?php endif; ?>
+                        <?php
+                        if( get_sub_field('checkbox') ) {?>
+                            <img src="<?php echo esc_url($additionalImage['url']); ?>" alt="<?php echo esc_attr($additionalImage['alt']); ?>" />
+                        <?php } ?>
                     </div>
             </div>
             <div class="col-12 col-md-6 <?php echo $imageClasses;?> contentImageBlock__image contentImageBlock__image--<?php echo $imageLayout; ?>">
                 <div class="contentImageBlock__image__inner">
                     <?php if($imageType == 'image'): ?>
                         <?php if($image): ?>
-                            <?php image_acf($image,'animate zoom-in'); ?>
+                            <img class="contentImageBlock__image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif;?>
                     <?php elseif($imageType == 'video'): ?>
                         <?php if($video): ?>

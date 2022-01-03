@@ -28,5 +28,13 @@ function testimonialsSlider(){
                 
         });
 }
-
+$('.hero-slider__slides').slick({
+        dots: false,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1,
+        adaptiveHeight: false,
+        nextArrow: $('.hero-slider__slick--next')
+      });
+                      
 export { testimonialsSlider };

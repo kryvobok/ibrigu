@@ -11,12 +11,12 @@
             </div>
         <?php endif; ?>
         <?php if( have_rows('collection_row') ):?>
-            <div class="row collection__card__row">
+            <div class="row collection__list">
                 <?php  while( have_rows('collection_row') ) : the_row();
                  $image = get_sub_field('image');
                  $title = get_sub_field('title');
                 ?>
-                    <div class="col-lg-3 col-md-6 col-sm-6 collection__card">
+                    <div class="col-lg-3 col-md-6 col-sm-6 collection__item">
                         <?php if( !empty( $image ) ): ?>
                             <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif; ?>

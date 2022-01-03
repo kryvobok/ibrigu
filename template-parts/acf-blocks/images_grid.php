@@ -13,10 +13,11 @@ $id = $blockID?'id="'.$blockID.'"':'';
                     $align = get_sub_field_object( 'align' );
                     $value = $align['value'];
                 ?>
-                <li class="col-12 imagesGrid__item col-md-auto align-self-<?php echo esc_attr($value); ?>">
+                <li class="col-12 imagesGrid__item col-md-<?php echo 12/$columns; ?> align-self-<?php echo esc_attr($value); ?>">
                     <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                 </li>
                 <?php endwhile; ?>
             <?php endif; ?>
         </ul>
     </div>
+ 
