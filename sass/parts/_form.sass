@@ -1,99 +1,71 @@
 .form
-	.nf-form-cont *
+	.nf-field-container
+		margin-bottom: 40px
+	#nf-field-14
+		border: 1px solid #000
+		background: none
 		font-family: $font-family-base
-	.nf-form-wrap
-		.nf-before-form-content
-			display: none
-	.nf-form-content
-		padding: 0
-		input[type=text],input[type=email],input[type=tel],textarea
-			-webkit-appearence: none
-			background: none
-			border: none
-			border-bottom: 1px solid #707070
-			border-radius: 0
-			font-size: 16px
-			font-weight: 600
-			padding: 14px 20px
-			height: 48px
-			color: transparentize($default-text-color, 0.6)
-			transition: 0.3s
-			margin-top: 30px
-			+max-screen($breakpoint-sm)
-		
-			&:focus
-				color: transparentize($default-text-color, 0.4)
-				border: 1px solid transparentize($default-text-color, 0.3)
-			&::placeholder
-				color: transparentize($default-text-color, 0.7)
-		textarea
-			resize: none
-			
-		.submit-wrap
+		&-wrap
 			.nf-field-label
-				display: none
-			input,button
-				position: relative
-				display: inline-block
-				box-sizing: border-box
-				transition: 0.3s
-				font-weight: 600
-				margin-top: 30px
-				color: #000
-				border: 0px
-
-				height: 48px
-				padding: 14px
-				font-size: 0
-				line-height: 19px
-				letter-spacing: 0.5px
-				text-align: center
-				transition: 0.3s ease-out
-				cursor: pointer
-				&:hover
-					background-color: $color-black
-					color: #fff
-				&::before
-					content: " f"
-					position: absolute
-					top: 0
-					left: 0
-					background-image: url(../assets/images/send.svg)
-					width: 24px
-					width: 20px
-
-		.nf-field-label
-			margin-bottom: 11px
-			display: none
-			label
-				font-size: 14px
-				line-height: 14px
-				text-transform: uppercase
-				font-weight: 500
-				color: #fff
-				.ninja-forms-req-symbol
-					display: none
-	.nf-error .nf-error-msg, .nf-error-msg
+				display: block
+				label
+					font-weight: 400
+					font-family: $font-family-base
+	.nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button])
+		background: none
+		font-family: $font-family-base
+		padding: 20px
+		border: none
+		border-bottom: 1px solid #707070
+		padding-left: 0
+		color: #000
+		&:placeholder
+			font-weight: 400
+			color: #000
+	.nf-form-fields-required
+		display: none
+	.checkbox-container.label-right label
+		font-family: $font-family-base
+		font-weight: 400
+		font-size: 14px
+	.checkbox-wrap .nf-field-label label:after
+		border-radius: 2px
+		border: 1px solid #000
+		background: #FFF
+	.nf-error .nf-error-msg
 		font-size: 12px
-		
-	
+	.nf-field-label
+		display: none
+	.submit-wrap
+		justify-content: center
+		.nf-field-element
+			width: fit-content
 
 .form--newsletter
-	h4
-		padding-bottom: 30px
-	.nf-form-content 
-		nf-fields-wrap
-			display: flex
-			.nf-field-container
-				margin-bottom: 0
-			nf-field
-				width: 100%
-				&:nth-child(1)
-					width: 100%
-					+max-screen($breakpoint-sm)
-						width: 100%
-				&:nth-child(2)
-					width: auto
-					min-width: 105px
-		.nf-field-label
-			margin-bottom: 5px
+	nf-fields-wrap
+		flex-direction: column
+		nf-field
+			&:last-child
+				position: absolute
+				top: 5px
+				right: 5px
+	.nf-form-content
+		position: relative
+	.nf-form-content input[type=button]
+		border: 0
+		background: none
+		position: relative
+	.submit-container
+		.nf-field-element
+			&::after
+				content: " "
+				position: absolute
+				width: 23px
+				height: 21px
+				background-image: url(../assets/images/send.svg)
+				background-repeat: no-repeat
+				top: 50%
+				left: 0
+				transform: translateY(-50%)
+	p
+		padding-bottom: 50px

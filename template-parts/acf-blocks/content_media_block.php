@@ -39,7 +39,7 @@ $id = $blockID?'id="'.$blockID.'"':'';
                         <?php endif; ?>
                         <?php
                         if( get_sub_field('checkbox') ) {?>
-                            <img src="<?php echo esc_url($additionalImage['url']); ?>" alt="<?php echo esc_attr($additionalImage['alt']); ?>" />
+                            <img class="contentImageBlock__content__inner__image" src="<?php echo esc_url($additionalImage['url']); ?>" alt="<?php echo esc_attr($additionalImage['alt']); ?>" />
                         <?php } ?>
                     </div>
             </div>

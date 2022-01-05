@@ -6,30 +6,13 @@ $form = get_sub_field('form_shortcode');
 $hideLabel = get_sub_field('hide_parallax_label');
 $wideContent = get_sub_field('wide_content');
 
-$contentClasses = '';
-if($wideContent){
-    $contentClasses = 'col-12 col-lg-8 col-md-8 offset-md-4';
-} else{
-    $contentClasses = 'col-12 col-lg-4 col-md-6 offset-md-6';
-}
-
 $blockID = get_sub_field('block_id');
 $id = $blockID?'id="'.$blockID.'"':'id="request_a_quote"';
 ?>
 <section <?php echo $id; ?> class="section formImageBlock formImageBlock--<?php echo $imagePosition; ?>" style="background-color: <?php echo $backgroundColor; ?>">
-    <div class="formImageBlock__sideImg">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/jean-philippe-delberghe-xrjusFfOksI-unsplash.jpg';?>" alt="" class="formImageBlock__sideImg">
-    </div>
     <div class="container">
-        <div class="row">
-
-            <?php if(!$hideLabel): ?>
-                <div id="iconTyped" class="formImageBlock__parallax-logo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-vertical.svg" alt="">
-                </div>
-            <?php endif; ?>
-            
-            <div class="<?php echo $contentClasses; ?> formImageBlock__content text-color-white">
+        <div class="row row--y--midle">
+            <div class="col-lg-6 offset-lg-3<?php echo $contentClasses; ?> formImageBlock__content text-color-white">
                     <div class="formImageBlock__content__inner">
                         <?php if($content): ?>
                             <div class="content-block animate fade-up"><?php echo $content; ?></div>

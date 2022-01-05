@@ -15,7 +15,7 @@ else:
 endif; 
 if($content):
     ?>
-    <div <?php echo $id; ?> class="section section--spacing--lg contentBlock" style="background-color: <?php echo $backgroundColor; ?>;background-image: url(<?php echo $backgroundImage; ?>);height:<?php echo $blockHeight; ?> ">
+    <div <?php echo $id; ?> class="section contentBlock" style="background-color: <?php echo $backgroundColor; ?>;background-image: url(<?php echo $backgroundImage; ?>);height:<?php echo $blockHeight; ?> ">
         <div class="container">
             <div class="row">
                 <div class="<?php echo $contentClasses?> ">

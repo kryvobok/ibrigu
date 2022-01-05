@@ -15,7 +15,7 @@ if( !empty( $image ) ): ?>
             <?php image_acf($image); ?>
         <?php else: ?>
             <div class="row">
-                <div class="col-lg-8 offset-lg-2"><?php image_acf($image); ?></div>
+                <div class="col-12"><?php image_acf($image); ?></div>
             </div>
         <?php endif;  ?>
     </div>
