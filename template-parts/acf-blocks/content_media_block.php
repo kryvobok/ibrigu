@@ -32,7 +32,7 @@ $id = $blockID?'id="'.$blockID.'"':'';
 <section <?php echo $id; ?> class="section  contentImageBlock contentImageBlock--<?php echo $imagePosition; ?> contentImageBlock--<?php echo $imageLayout; ?>" style="background-color: <?php echo $backgroundColor; ?>">
     <div class="container">
         <div class="row">
-            <div class="col-12  col-md-6 <?php echo $contentClasses; ?> contentImageBlock__content">
+            <div class="col-12  col-lg-6 <?php echo $contentClasses; ?> contentImageBlock__content">
                     <div class="contentImageBlock__content__inner">
                         <?php if($content): ?>
                             <div class="content-block animate fade-up"><?php echo $content; ?></div>
@@ -43,7 +43,7 @@ $id = $blockID?'id="'.$blockID.'"':'';
                         <?php } ?>
                     </div>
             </div>
-            <div class="col-12 col-md-6 <?php echo $imageClasses;?> contentImageBlock__image contentImageBlock__image--<?php echo $imageLayout; ?>">
+            <div class="col-12 col-lg-6 <?php echo $imageClasses;?> contentImageBlock__image contentImageBlock__image--<?php echo $imageLayout; ?>">
                 <div class="contentImageBlock__image__inner">
                     <?php if($imageType == 'image'): ?>
                         <?php if($image): ?>

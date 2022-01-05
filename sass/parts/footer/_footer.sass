@@ -6,8 +6,18 @@
 			padding-top: 60px
 			padding-bottom: 60px
 
-		&__col
-
+		&__col-4
+			+max-screen($breakpoint-lg)	
+				order: 1
+		&__col-1
+			+max-screen($breakpoint-lg)	
+				order: 2
+		&__col-2
+			+max-screen($breakpoint-lg)	
+				order: 3
+		&__col-3
+			+max-screen($breakpoint-lg)	
+				order: 4
 
 		&__logo
 			display: block
@@ -44,9 +54,17 @@
 			&__list
 				display: flex
 				flex-direction: column
+				+max-screen($breakpoint-md)	
+					flex-direction: row
+					align-items: center
+					justify-content: center
+					flex-wrap: wrap
 				li
 					line-height: 0
 					padding: 5px
+					+max-screen($breakpoint-md)
+						padding-left: 25px
+						padding-right: 25px	
 					a
 						line-height: 1
 						img

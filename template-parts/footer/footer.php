@@ -5,19 +5,19 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="col-12 col-lg-2 footer__main__col footer__main__col-1">
-					<nav class="footer__main__nav font-weight-600">
+					<div class="col-12 col-lg-2 col-md-4 col-sm-6 footer__main__col footer__main__col-1">
+						<nav class="footer__main__nav font-weight-600">
 							<?php wp_nav_menu( array('menu_id'=>'footer-nav','container_class' => 'footer-nav','theme_location' => 'footer-menu-1') ); ?>
 						</nav>
 					</div>
 					
-					<div class="col-12 col-lg-2  footer__main__col footer__main__col-2">
+					<div class="col-12 col-lg-2 col-md-4 col-sm-6 footer__main__col footer__main__col-2">
 						<nav class="footer__main__nav font-weight-600">
 							<?php wp_nav_menu( array('menu_id'=>'footer-nav','container_class' => 'footer-nav','theme_location' => 'footer-menu-2') ); ?>
 						</nav>
 					</div>
 
-					<div class="col-12 col-lg-2 footer__main__col footer__main__col-3">
+					<div class="col-12 col-lg-2 col-md-4 footer__main__col footer__main__col-3">
 						<?php 
 						$footerSocial = get_field('social_media_icons','option');
 						if($footerSocial):

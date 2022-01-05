@@ -1,0 +1,74 @@
+.contact
+    &__contacts
+        &Item
+            margin-bottom: 60px
+            &:last-child
+                margin-bottom: 0
+    &__infoWrapper
+        height: fit-content
+    &__offices
+        &List
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+        &Item
+            margin-bottom: 30px
+            &:last-child
+                margin-bottom: 0
+    &__social
+        &Item 
+            padding-left: 50px
+            padding-right: 50px
+            +max-screen($breakpoint-md)
+                padding-left: 25px
+                padding-right: 25px
+    &__formWrapper
+        .nf-form-content
+            display: flex
+            nf-fields-wrap
+                width: 100%
+                height: 100%
+                display: flex
+                flex-wrap: wrap
+                nf-field
+                    width: 50%
+                    +max-screen($breakpoint-md)
+                        width: 100%
+                    &:nth-child(odd)
+                        padding-right: 43px
+                        +max-screen($breakpoint-md)
+                            padding-right: 0
+                    &:nth-child(even)
+                        padding-left: 43px
+                        +max-screen($breakpoint-md)
+                            padding-left: 0
+                    &:nth-child(5)
+                        width: 100%
+                        padding-right: 0
+                    &:nth-child(6)
+                        width: 100%
+                        padding-left: 0
+                    .ninja-forms-req-symbol
+                        display: none
+                    .nf-element
+                        background: none
+                        border: none
+                        border-bottom: 1px solid #707070
+                        font-family: $font-family-base
+                    .nf-field-label
+                        label
+                            font-family: $font-family-base
+                            font-weight: 400
+                            font-size: 20px
+                    #nf-field-7
+                        border: 1px solid #707070
+                    .submit-wrap
+                        .nf-element
+                            color: #fff
+                            background: #000
+        .nf-field-container
+            margin-bottom: 45px
+        .nf-form-fields-required
+            display: none
+
+                        
