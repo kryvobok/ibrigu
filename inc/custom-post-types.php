@@ -79,7 +79,7 @@ function register_post_types(){
 		'rewrite'             => true,
 		'query_var'           => true,
 	] );
-	register_post_type( 'Campaigns', [
+	register_post_type( 'campaigns', [
 		'label'  => null,
 		'labels' => [
 			'name'               => 'Campaigns', 
@@ -109,7 +109,7 @@ function register_post_types(){
 		'rewrite'             => true,
 		'query_var'           => true,
 	] );
-	register_post_type( 'Stories', [
+	register_post_type( 'stories', [
 		'label'  => null,
 		'labels' => [
 			'name'               => 'Stories', 

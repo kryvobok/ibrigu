@@ -4,6 +4,7 @@
     $image2 = get_sub_field('image2');
     $image3 = get_sub_field('image3');
     $blockLayout = get_sub_field('block_layout');
+    $padding = get_sub_field('padding');
 
     $imageClasses = '';
     $ThirdColImageClasses = '';
@@ -36,7 +37,7 @@
         $RightColumnClasses.= 'col-md-6';
     endif; 
 ?>
-<section class="section image-tiles">
+<section class="section image-tiles py-<?php echo $padding ?>">
     <div class="container">
         <?php if($heading) : ?>
             <div class="row">

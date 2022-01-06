@@ -1,7 +1,8 @@
 <?php   
     $heading = get_sub_field('heading');
+    $padding = get_sub_field('padding');
 ?>
-<section class="section collection">
+<section class="section collection py-<?php echo $padding ?>">
     <div class="container">
         <?php if($heading): ?>
             <div class="row">

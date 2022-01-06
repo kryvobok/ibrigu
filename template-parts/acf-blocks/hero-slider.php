@@ -1,11 +1,15 @@
-<?php if( have_rows('slides') ):?>
-    <section class="section hero">
+
+<?php 
+$padding = get_sub_field('padding');
+if( have_rows('slides') ):?>
+    <section class="section hero py-<?php echo $padding ?>">
         <div class="container">
             <ul class="hero-slider__slides">
                 <?php while( have_rows('slides') ) : the_row();
                     $slideImage1 = get_sub_field('slideImage1');
                     $slideImage2 = get_sub_field('slideImage2');
                     $slideImage3 = get_sub_field('slideImage3');
+                    
                 ?>
                     <li>
                         <div class="hero-slider__slide row">

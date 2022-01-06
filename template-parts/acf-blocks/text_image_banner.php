@@ -4,9 +4,10 @@ $image = get_sub_field('image');
 $backgroundColor = get_sub_field('background_color');
 $offset = get_sub_field('add_image_offset');
 $blockID = get_sub_field('block_id');
+$padding = get_sub_field('padding');
 $id = $blockID?'id="'.$blockID.'"':'';
 ?>
-<section <?php echo $id; ?> class="textImageBanner <?php if($offset) echo 'textImageBanner--offset'; ?>" style="background-color: <?php echo $backgroundColor; ?>">
+<section <?php echo $id; ?> class="textImageBanner py-<?php echo $padding ?> <?php if($offset) echo 'textImageBanner--offset'; ?>" style="background-color: <?php echo $backgroundColor; ?>">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-5">

@@ -1,11 +1,11 @@
 <?php 
 
 $columns = get_sub_field('columns');
-
+$padding = get_sub_field('padding');
 $blockID = get_sub_field('block_id');
 $id = $blockID?'id="'.$blockID.'"':'';
 ?>
-    <div <?php echo $id; ?> class="section imagesGrid imagesGrid--<?php echo $columns; ?>">
+    <div <?php echo $id; ?> class="section imagesGrid py-<?php echo $padding ?> imagesGrid--<?php echo $columns; ?>">
         <ul class="row imagesGrid__row">
             <?php if( have_rows('images') ): ?>
                 <?php  while( have_rows('images') ) : the_row(); 

@@ -1,12 +1,12 @@
 <?php
 $heading = get_sub_field('heading');
 $items = get_sub_field('items');
-
+$padding = get_sub_field('padding');
 $blockID = get_sub_field('block_id');
 $id = $blockID?'id="'.$blockID.'"':'';
 if($items):
     ?>
-    <div <?php echo $id; ?> class="section section--spacing--lg numbersBlock">
+    <div <?php echo $id; ?> class="section section--spacing--lg numbersBlock py-<?php echo $padding ?>">
         <div class="container">
             <?php if($heading): ?>
             <div class="row numbersBlock__heading">

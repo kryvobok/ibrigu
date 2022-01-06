@@ -6,9 +6,10 @@
     $image4 = get_sub_field('image4');
     $image5 = get_sub_field('image5');
     $content = get_sub_field('content');
+    $padding = get_sub_field('padding');
     
 ?>
-<section class="section content-columns" style="background-color: <?php echo $backgroundColor; ?>">
+<section class="section content-columns py-<?php echo $padding ?>" style="background-color: <?php echo $backgroundColor; ?>">
     <div class="container">
         <div class="row content-columns__row">
             <div class="col-lg-6  content-columns__item content-columns__imagesCol">

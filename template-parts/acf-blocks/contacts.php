@@ -1,7 +1,8 @@
 <?php
     $form = get_sub_field('form');
+    $padding = get_sub_field('padding');
 ?>
-<section class="section">
+<section class="section py-<?php echo $padding ?>">
     <div class="container">
         <div class="contatc__row row">
             <div class="col-lg-6 contact__infoWrapper row">
