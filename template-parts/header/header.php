@@ -2,14 +2,19 @@
     $logo = get_field('logo','option')
 ?>
 <header id="header">
+    <div class="header__logo__wrapper">
+        <a href="<?php echo get_home_url(); ?>" class="header__logo">
+            <?php if( !empty( $logo ) ): ?>
+                <?php echo file_get_contents(esc_url(wp_get_original_image_path($logo['id']))); ?>
+            <?php endif; ?>
+        </a>
+        <span id="nav-toggle" class="nav-toggle">
+            <div class="nav-toggle-icon">
+                <span class="nav-toggle-icon__inner"></span>
+            </div>
+        </span>
+    </div>
     <div class="container header__container">
-        <div class="header__logo__wrapper">
-            <a href="<?php echo get_home_url(); ?>" class="header__logo">
-                <?php if( !empty( $logo ) ): ?>
-                    <?php echo file_get_contents(esc_url(wp_get_original_image_path($logo['id']))); ?>
-                <?php endif; ?>
-            </a>
-        </div>
         <div class="header__row">
             <div class="header__nav__wrapper">
                 <nav class="header__nav">
