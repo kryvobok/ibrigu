@@ -1,7 +1,9 @@
 .footer
+	background: #EBEBE8
 	&__main
 		padding-top: 100px
 		padding-bottom: 100px
+		background: #EBEBE8
 		+max-screen($breakpoint-md)
 			padding-top: 60px
 			padding-bottom: 60px
@@ -41,10 +43,11 @@
 				flex-direction: column
 				justify-content: center
 			li
-				padding: 10px 0
 				a
 					transition: 0.3s ease-out
 					display: inline-block
+					font-size: 18px
+					text-transform: uppercase
 					+min-screen($breakpoint-md)
 						&:hover
 							color: $color-primary
@@ -83,7 +86,8 @@
 							&:hover
 								opacity: 0.8
 	
-	
+	&__menu__title
+		margin-bottom: 20px
 	&__bottom
 		padding: 26px 0
 		&__wrapper

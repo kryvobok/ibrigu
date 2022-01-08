@@ -13,11 +13,12 @@ $videoFile = get_sub_field('video_file');
 $videoPreview = get_sub_field('video_poster');
 //video oembed
 $videoOembed = get_sub_field('video_link');
-$padding = get_sub_field('padding');
+$paddingTop = get_sub_field('paddingTop');
+$paddingBottom = get_sub_field('paddingBottom');
 // create id attribute for specific styling
 $id = get_sub_field('block_id');
 ?>
-<section id="<?php echo $id; ?>" class="videoBlock py-<?php echo $padding ?>">
+<section id="<?php echo $id; ?>" class="videoBlock pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>">
     <div class="section">
         <?php if($style == 'full'): ?>
             <?php if($videoType == 'html' && $videoFile): ?>

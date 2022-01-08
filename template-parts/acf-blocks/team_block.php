@@ -2,12 +2,13 @@
 $heading = get_sub_field('heading');
 $items = get_sub_field('items');
 $backgroundColor = get_sub_field('background_color');
-$padding = get_sub_field('padding');
+$paddingTop = get_sub_field('paddingTop');
+$paddingBottom = get_sub_field('paddingBottom');
 $blockID = get_sub_field('block_id');
 $id = $blockID?'id="'.$blockID.'"':'';
 if($items):
     ?>
-    <div <?php echo $id; ?> class="section section--spacing--lg  py-<?php echo $padding ?> teamBlock" style="background-color: <?php echo $backgroundColor; ?>">
+    <div <?php echo $id; ?> class="section section--spacing--lg  pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?> teamBlock" style="background-color: <?php echo $backgroundColor; ?>">
         <div class="container">
             <?php if($heading): ?>
             <div class="row teamBlock__heading">

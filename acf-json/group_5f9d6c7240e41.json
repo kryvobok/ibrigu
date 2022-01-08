@@ -160,8 +160,28 @@
                         },
                         {
                             "key": "field_61d6fc99348fe",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_61d95bdc656b9",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -374,8 +394,28 @@
                         },
                         {
                             "key": "field_61d6fcd9348ff",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_61d95c0c656ba",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -504,8 +544,28 @@
                         },
                         {
                             "key": "field_61d6fce734900",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_61d95c25656bb",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -677,8 +737,28 @@
                         },
                         {
                             "key": "field_61d6fcf334901",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_61d95c39656bc",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -1007,8 +1087,28 @@
                         },
                         {
                             "key": "field_61d6fd0634902",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_61d95c56656bd",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -1186,8 +1286,8 @@
                         },
                         {
                             "key": "field_61d6fd1834903",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -1203,6 +1303,25 @@
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_61d95c65656be",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -1312,8 +1431,28 @@
                         },
                         {
                             "key": "field_61d6fd6e34908",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_61d95c76656bf",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -1457,8 +1596,28 @@
                         },
                         {
                             "key": "field_61d6fd943490b",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_61d95c8c656c0",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -1675,8 +1834,28 @@
                         },
                         {
                             "key": "field_61d6fdc13490e",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_61d95c9c656c1",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -1830,8 +2009,28 @@
                         },
                         {
                             "key": "field_61d6fdee34911",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_61d95caf656c2",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -2011,8 +2210,28 @@
                         },
                         {
                             "key": "field_61d6fe0034912",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_61d95ccb656c4",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -2068,7 +2287,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
+                            "return_format": "array",
                             "preview_size": "medium",
                             "library": "all",
                             "min_width": "",
@@ -2092,7 +2311,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
+                            "return_format": "array",
                             "preview_size": "medium",
                             "library": "all",
                             "min_width": "",
@@ -2140,8 +2359,8 @@
                         },
                         {
                             "key": "field_61d6fe3334915",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -2157,6 +2376,25 @@
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_61d95ce4656c5",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -2337,8 +2575,8 @@
                         },
                         {
                             "key": "field_61d6fe5434918",
-                            "label": "Padding Top\/bottom",
-                            "name": "padding",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
                             "type": "range",
                             "instructions": "",
                             "required": 0,
@@ -2354,6 +2592,25 @@
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_61d95d04656c6",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -2386,6 +2643,13 @@
                 "operator": "==",
                 "value": "collections"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "stories"
+            }
         ]
     ],
     "menu_order": 0,
@@ -2397,5 +2661,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641479778
+    "modified": 1641636522
 }

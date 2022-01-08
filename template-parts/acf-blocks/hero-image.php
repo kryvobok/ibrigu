@@ -2,22 +2,19 @@
 $backgroundImage = get_sub_field('background_image');
 $backgroundImageMobile = get_sub_field('background_image_mobile');
 $heading = get_sub_field('heading');
-$padding = get_sub_field('padding');
+$paddingTop = get_sub_field('paddingTop');
+$paddingBottom = get_sub_field('paddingBottom');
 
 if($heading) : ?>
-    <section class="hero-image d-flex align-items-center justify-content-center py-<?php echo $padding ?>" style="height: 100vh">
-        <div class="container">
+    <section class="hero-image  pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>" >
+        <div class="hero-image__contentWrapper d-flex align-items-center justify-content-center">
+            <?php if( !empty( $backgroundImage ) ): ?>
+                <img class="hero-image__image" src="<?php echo esc_url($backgroundImage['url']); ?>" alt="<?php echo esc_attr($backgroundImage['alt']); ?>" />
+            <?php endif; ?>
+            <?php if( !empty( $backgroundImageMobile ) ): ?>
+                <img class="hero-image__image__mobile" src="<?php echo esc_url($backgroundImageMobile['url']); ?>" alt="<?php echo esc_attr($backgroundImageMobile['alt']); ?>" />
+            <?php endif; ?>
             <h1 class="text--center text--white"><?php echo $heading ?></h1>
         </div>
     </section>
 <?php endif; ?>
-<style>
-    .hero-image{
-        background-image: url(<?php echo $backgroundImage ?>)
-    }
-    @media only screen and (max-width: 600px) {
-    .hero-image {
-        background-image: url(<?php echo $backgroundImageMobile ?>)
-        }
-    }
-</style>

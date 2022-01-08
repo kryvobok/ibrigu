@@ -4,9 +4,31 @@
             max-width: 100%
             width: 100%
             object-fit: contain
+            height: auto
     &__heading
         margin-bottom: 80px
             
 .image-tiles—left,.image-tiles—right
     justify-content: space-around
-    
+.threeCols
+    .image-tiles__item—1
+        +max-screen($breakpoint-md)
+            img
+                max-width: 50%
+                z-index: -1
+                margin-bottom: -40px
+    .image-tiles__item—3
+         +max-screen($breakpoint-md)
+            display: flex
+            align-self: flex-end
+            justify-content: flex-end
+            img
+                max-width: 50%
+                margin-top: -40px
+                z-index: 1
+    .image-tiles__item—2
+         +max-screen($breakpoint-md)
+            display: flex
+            justify-content: center
+            img
+                max-width: 75%

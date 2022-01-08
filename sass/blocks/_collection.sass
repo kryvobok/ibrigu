@@ -2,15 +2,21 @@
     &__item
         padding-left: 23px
         padding-right: 23px
+        padding-bottom: 40px
         +max-screen($breakpoint-lg)
             margin-bottom: 40px
             display: flex
             flex-direction: column
             align-items: center
         img 
-            max-width: 100%
-            object-fit: contain
-            height: 100%
+            width: 100%
+            height: auto
+        &Title
+            padding-top: 40px
+            text-align: end
+    &__list
+        margin-left: -23px
+        margin-right: -23px
     .heading
         margin-bottom: 50px
             

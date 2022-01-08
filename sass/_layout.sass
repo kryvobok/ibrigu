@@ -1,9 +1,12 @@
 .container
 	+min-screen($breakpoint-xxl)
 		max-width: 1790px
-	+max-screen($breakpoint-md)
+	+min-screen($breakpoint-md)
 		padding-left: 30px
 		padding-right: 30px
+	+max-screen($breakpoint-md)
+		padding-left: 20px
+		padding-right: 20px
 	&--full
 		+min-screen($breakpoint-xxl)
 			max-width: 100%

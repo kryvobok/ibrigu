@@ -6,7 +6,8 @@ $blockHeight = get_sub_field('block_height');
 $blockID = get_sub_field('block_id');
 $blockLayout = get_sub_field('block_layout');
 $id = $blockID?'id="'.$blockID.'"':'';
-$padding = get_sub_field('padding');
+$paddingTop = get_sub_field('paddingTop');
+$paddingBottom = get_sub_field('paddingBottom');
 
 $contentClasses = '';
 if($blockLayout=='wrapped'):
@@ -16,7 +17,7 @@ else:
 endif; 
 if($content):
     ?>
-    <div <?php echo $id; ?> class="section contentBlock py-<?php echo $padding ?>" style="background-color: <?php echo $backgroundColor; ?>;background-image: url(<?php echo $backgroundImage; ?>);height:<?php echo $blockHeight; ?> ">
+    <div <?php echo $id; ?> class="section contentBlock pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>" style="background-color: <?php echo $backgroundColor; ?>;background-image: url(<?php echo $backgroundImage; ?>);height:<?php echo $blockHeight; ?> ">
         <div class="container">
             <div class="row">
                 <div class="<?php echo $contentClasses?> ">

@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
     <section class="stories">
-        <div class="container">
+        <div class="container stories__container">
             <ul class="row stories__list">
                 <?php
                     $args = array(
@@ -18,7 +18,7 @@
                     foreach($posts as $post){ setup_postdata($post);
                 ?>
                 <li class="stories__item col-lg-4 col-md-6">
-                    <a href="<?php the_permalink(); ?>">
+                    <a class="stories__imageWrapper" href="<?php the_permalink(); ?>">
                         <img class="stories__image" src="<?php echo get_the_post_thumbnail_url();?>" alt="">
                     </a>
                     <div class="stories__itemHeading">

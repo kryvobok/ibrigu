@@ -1,8 +1,9 @@
 
 <?php 
-$padding = get_sub_field('padding');
+    $paddingTop = get_sub_field('paddingTop');
+    $paddingBottom = get_sub_field('paddingBottom');
 if( have_rows('slides') ):?>
-    <section class="section hero py-<?php echo $padding ?>">
+    <section class="section hero pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>">
         <div class="container">
             <ul class="hero-slider__slides">
                 <?php while( have_rows('slides') ) : the_row();

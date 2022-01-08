@@ -1,8 +1,9 @@
 <?php   
     $heading = get_sub_field('heading');
-    $padding = get_sub_field('padding');
+    $paddingTop = get_sub_field('paddingTop');
+    $paddingBottom = get_sub_field('paddingBottom');
 ?>
-<section class="section collection py-<?php echo $padding ?>">
+<section class="section collection pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>">
     <div class="container">
         <?php if($heading): ?>
             <div class="row">
@@ -22,9 +23,9 @@
                             <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif; ?>
                         <?php if($title): ?>
-                            <span>
+                            <div class="collection__itemTitle">
                                 <?php echo $title; ?>
-                            </span>
+                            </div>
                         <?php endif; ?>
                     </div>
                 <?php endwhile;?>

@@ -33,6 +33,7 @@ $('.hero-slider__slides').slick({
         infinite: true,
         speed: 1000,
         slidesToShow: 1,
+        fade: true,
         adaptiveHeight: false,
         nextArrow: $('.hero-slider__slick--next')
       });

@@ -14,14 +14,17 @@
         &__inner
         .content-block
             p
-            
+    &__container
+        max-width: 98%
     &__image
         position: relative
-        max-width: 100%
-        object-fit: cover
+        padding-left: 30px
+        padding-right: 30px
         +max-screen($breakpoint-md)
             order: 2
             padding-top: rem(40px)
+        &__item
+            max-width: 100%
         &__inner
             position: relative
             .contentImageBlock__image--full &
@@ -36,7 +39,12 @@
                     float: left
                     +max-screen($breakpoint-md)
                         float: none
-
+    &__content
+        padding-left: 30px
+        padding-right: 30px
+    &__row
+        margin-left: -30px
+        margin-right: -30px
     &__buttons
         display: flex
         flex-wrap: wrap
