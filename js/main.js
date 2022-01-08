@@ -11,8 +11,7 @@ import { appearence } from './animations/appearence';
 
 //blocks
 import { videoBlock } from './template-parts/blocks/video';
-import { videoBanner } from './template-parts/blocks/video-banner';
-import { testimonialsSlider } from './template-parts/blocks/testimonials-slider';
+import { heroSlider } from './template-parts/blocks/hero-slider';
 
 
 (function() {
@@ -53,4 +52,4 @@ appearence();
 
 //blocks
 videoBlock();
-testimonialsSlider();
+heroSlider();
