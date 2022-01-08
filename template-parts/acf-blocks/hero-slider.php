@@ -14,17 +14,17 @@ if( have_rows('slides') ):?>
                 ?>
                     <li>
                         <div class="hero-slider__slide row">
-                            <div class="hero-slider__img__wrapper col-lg-5 d-flex justify-content-lg-end justify-content-sm-center align-items-center">
+                            <div class="hero-slider__img__wrapper col-lg-5 col-4 d-flex justify-content-lg-end justify-content-sm-center align-items-center">
                                 <?php if( !empty( $slideImage1 ) ): ?>
                                     <img class="hero-slider__slide__img-1 hero-slider__slide__img " src="<?php echo esc_url($slideImage1['url']); ?>" alt="<?php echo esc_attr($slideImage1['alt']); ?>">
                                 <?php endif; ?>
                             </div>
-                            <div class="hero-slider__img__wrapper col-lg-2 d-flex justify-content-center align-items-center">
+                            <div class="hero-slider__img__wrapper col-lg-2 col-4 d-flex justify-content-center align-items-center">
                                 <?php if( !empty( $slideImage2 ) ): ?>
                                     <img class="hero-slider__slide__img-2 hero-slider__slide__img " src="<?php echo esc_url($slideImage2['url']); ?>" alt="<?php echo esc_attr($slideImage2['alt']); ?>">
                                 <?php endif; ?>
                             </div>
-                            <div class="hero-slider__img__wrapper col-lg-5 d-flex justify-content-center align-items-center">
+                            <div class="hero-slider__img__wrapper col-lg-5 col-4 d-flex justify-content-center align-items-center">
                                 <?php if( !empty( $slideImage3 ) ): ?>
                                     <img class="hero-slider__slide__img-3 hero-slider__slide__img " src="<?php echo esc_url($slideImage3['url']); ?>" alt="<?php echo esc_attr($slideImage3['alt']); ?>">
                                 <?php endif; ?>
