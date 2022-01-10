@@ -13,17 +13,17 @@
 <section class="section content-columns pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>" style="background-color: <?php echo $backgroundColor; ?>">
     <div class="container">
         <div class="row content-columns__row">
-            <div class="col-lg-6  content-columns__item content-columns__imagesCol">
+            <div class="col-lg-6   content-columns__item content-columns__imagesCol ">
                 <?php if( !empty( $image1 ) ): ?>
                     <img class="content-columns__image  content-columns__image__big" src="<?php echo esc_url($image1['url']); ?>" alt="<?php echo esc_attr($image1['alt']); ?>" />
                 <?php endif; ?>
                 <div class="row d-flex justify-content-around align-items-center">
-                    <div class="col-auto">
+                    <div class="col-6">
                         <?php if( !empty( $image2 ) ): ?>
                             <img class="content-columns__image" src="<?php echo esc_url($image2['url']); ?>" alt="<?php echo esc_attr($image2['alt']); ?>" />
                         <?php endif; ?>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-6">
                         <?php if( !empty( $image3 ) ): ?>
                             <img class="content-columns__image" src="<?php echo esc_url($image3['url']); ?>" alt="<?php echo esc_attr($image3['alt']); ?>" />
                         <?php endif; ?>

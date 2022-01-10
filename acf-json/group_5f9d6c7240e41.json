@@ -2597,7 +2597,7 @@
                             "key": "field_61d95d04656c6",
                             "label": "Padding Bottom",
                             "name": "paddingBottom",
-                            "type": "text",
+                            "type": "range",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -2607,10 +2607,11 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
                             "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "append": ""
                         }
                     ],
                     "min": "",
@@ -2661,5 +2662,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641636522
+    "modified": 1641805788
 }

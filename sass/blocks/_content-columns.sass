@@ -14,11 +14,16 @@
             .content-columns__item
                 &__image
                     margin-bottom: 40px
+                    +max-screen($breakpoint-lg)
+                        order: 2
                 &__content
                     +max-screen($breakpoint-lg)
                         text-align: center
     &__image
-        max-width: 100%
-        object-fit: contain
+        width: 100%
+        height: auto
         &__big
             margin-bottom: 40px
+    &__imagesCol
+        display: flex
+        flex-direction: column

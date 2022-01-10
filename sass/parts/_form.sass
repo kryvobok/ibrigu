@@ -19,7 +19,7 @@
 		border-bottom: 1px solid #707070
 		padding-left: 0
 		color: #000
-		&:placeholder
+		&::placeholder
 			font-weight: 400
 			color: #000
 	.nf-form-fields-required
@@ -35,13 +35,31 @@
 	.nf-error .nf-error-msg
 		font-size: 12px
 	.nf-field-label
-		display: none
+
 	.submit-wrap
 		justify-content: center
 		.nf-field-element
 			width: fit-content
 	.nf-error-msg, .ninja-forms-req-symbol
-		color: #707070 !important
+		color: #000!important
+		position: absolute
+		font-size: 12px
+		top: 10px
+		left: 70px
+		font-weight: 400
+	#nf-field-16
+		background: #000
+		padding: 20px 55px
+	#nf-label-field-14
+		.ninja-forms-req-symbol
+			top: -2px
+			left: 77px
+	#nf-label-field-13
+		.ninja-forms-req-symbol
+			left: 56px
+	#nf-label-field-11
+		.ninja-forms-req-symbol
+			left: 41px
 .form--newsletter
 	nf-fields-wrap
 		flex-direction: column
