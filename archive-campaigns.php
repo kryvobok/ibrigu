@@ -18,7 +18,26 @@
                     foreach($posts as $post){ setup_postdata($post);
                         $heading = get_field('heading');
                         $image = get_field('image');
-                        $content = get_field('content')
+                        $content = get_field('content');
+
+                        $headingLayout = get_field('heading_layout');
+                        $contentLayout = get_field('content_layout');
+
+                        $headingClasses = '';
+                        if($headingLayout=='wrapped'):
+                            $headingClasses.= 'col-lg-8 offset-lg-2';
+                        else:
+                            $headingClasses.= 'col-12';
+                        endif; 
+
+                        $contentClasses = '';
+                        if($contentLayout=='wrapped'):
+                            $contentClasses.= 'col-lg-8 offset-lg-2';
+                        else:
+                            $contentClasses.= 'col-12';
+                        endif; 
+
+                        
                 ?>
                 <li class="campaigns__item col-12">
                     <a href="<?php the_permalink(); ?>">
@@ -26,7 +45,7 @@
                             <div class="section contentBlock">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-lg-8 offset-lg-2">
+                                        <div class="<?php echo $headingClasses ?>">
                                             <div class="content-block animate fade-up"><?php echo $heading; ?></div>
                                         </div>
                                     </div>
@@ -48,7 +67,7 @@
                         <div class="section contentBlock">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="<?php echo $contentClasses ?>">
                                         <div class="content-block animate fade-up"><?php echo $content; ?></div>
                                     </div>
                                 </div>
