@@ -4,26 +4,68 @@
     &__item
         padding-left: 18px
         padding-right: 18px
-        +max-screen($breakpoint-lg)
-            margin-bottom: 40px
+        +max-screen($breakpoint-md)
             display: flex
             align-items: center
             justify-content: center
+            padding-left: 12px
+            padding-right: 12px
+        +max-screen($breakpoint-sm)
+            padding-left: 8px
+            padding-right: 8px
         &__text
             flex-direction: column
             .content-columns__item
                 &__image
-                    margin-bottom: 40px
-                    +max-screen($breakpoint-lg)
+                    +max-screen($breakpoint-md)
                         order: 2
                 &__content
-                    +max-screen($breakpoint-lg)
+                    +max-screen($breakpoint-md)
                         text-align: center
+    &__item-1
+        +max-screen($breakpoint-md)
+            order: 1 
+            margin-bottom: 40px
+    &__item-2
+        transform: translateY(50%)
+        +max-screen($breakpoint-md)
+            order: 3
+            transform: translateY(0)
+            margin-bottom: 40px
+    &__item-3
+        +max-screen($breakpoint-md)
+            order: 2
+    &__item-4
+        +max-screen($breakpoint-md)
+            order: 5
+    &__item-5
+        margin-left: auto
+        margin-top: -150px
+        +max-screen($breakpoint-md)
+            order: 4
+            margin-top: 0
+            display: flex
+            flex-direction: column
+            justify-content: center
+            font-size: 16px
+        p
+            max-width: 273px
+            margin-left: auto
+            +max-screen(950px)
+                font-size: 16px
+            +max-screen($breakpoint-md)
+                margin-right: 0
+                margin-left: 0
+                max-width: 100%
+            +max-screen($breakpoint-sm)
+                margin-right: 0
+                margin-left: 0
+                max-width: 100%
+                font-size: 10px
+                line-height: 14px
     &__image
         width: 100%
         height: auto
-        &__big
-            margin-bottom: 40px
-    &__imagesCol
-        display: flex
-        flex-direction: column
+    &__row
+        +max-screen($breakpoint-md)
+            justify-content: center

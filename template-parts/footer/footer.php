@@ -29,11 +29,13 @@
 					<div class="col-12 col-lg-2 col-md-4 footer__main__col footer__main__col-3">
 						<?php 
 						$footerSocial = get_field('social_media_icons','option');
+						$socialTitle = get_field('socialTitle','option');
 						if($footerSocial):
 						?>
 							<div class="footer__main__social">
 							
 								<ul class="footer__main__social__list">
+									<div class="footer__menu__title"><?php echo $socialTitle ?></div>
 									<?php foreach($footerSocial as $item): 
 										$link = $item['link'];
 										if($link):

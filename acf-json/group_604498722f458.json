@@ -76,6 +76,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_61dc6096f3550",
+            "label": "Social Title",
+            "name": "socialTitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_60449934b304c",
             "label": "Social Media Icons",
             "name": "social_media_icons",
@@ -149,5 +168,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1640790721
+    "modified": 1641832650
 }
