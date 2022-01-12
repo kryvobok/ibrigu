@@ -54,9 +54,11 @@
             <li class="image-tiles__item image-tiles__item—2 <?php echo $RightColumnClasses ?>">
                 <img class="image-tiles__item__image" src="<?php echo esc_url($image2['url']); ?>" alt="<?php echo esc_attr($image2['alt']); ?>" />
             </li>
-            <li class="image-tiles__item image-tiles__item—3 col-3" style="<?php echo $ThirdColImageClasses?>">
-                <img class="image-tiles__item__image" src="<?php echo esc_url($image3['url']); ?>" alt="<?php echo esc_attr($image3['alt']); ?>" />
-            </li>
+            <?php if( !$blockLayout=='2colsLRB' || !$blockLayout=='2colsLRS' ): ?>
+                <li class="image-tiles__item image-tiles__item—3 col-3" style="<?php echo $ThirdColImageClasses?>">
+                    <img class="image-tiles__item__image" src="<?php echo esc_url($image3['url']); ?>" alt="<?php echo esc_attr($image3['alt']); ?>" />
+                </li>
+            <?php endif; ?>
         </ul>
     </div>
 </section>

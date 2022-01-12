@@ -1,6 +1,6 @@
 import $  from 'jquery';
 
-import { lazy } from './lazy';
+//import { lazy } from './lazy';
 import { lottie } from './lottie';
 
 import { header } from './template-parts/header/header';
@@ -43,7 +43,7 @@ import { heroSlider } from './template-parts/blocks/hero-slider';
   })();
 
 header();
-lazy();
+//lazy();
 lottie();
 
 //animations
