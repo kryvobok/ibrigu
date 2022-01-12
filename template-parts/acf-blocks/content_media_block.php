@@ -19,7 +19,7 @@ $paddingTop = get_sub_field('paddingTop');
 $paddingBottom = get_sub_field('paddingBottom');
 $paddingTop_mobile = get_sub_field('paddingTop_mobile');
 $paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
-
+$block_title = get_sub_field('block_title');
 //$imageClasses = '';
 //$contentClasses = '';
 //if($imagePosition=='left'):
@@ -33,13 +33,17 @@ $paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
 $blockID = get_sub_field('block_id');
 $id = $blockID?'id="'.$blockID.'"':'';
 ?>
-<section <?php echo $id; ?> class="section  contentImageBlock  pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>contentImageBlock--<?php echo $imagePosition; ?> contentImageBlock--<?php echo $imageLayout; ?>" style="background-color: <?php echo $backgroundColor; ?>">
+<section <?php echo $id; ?> class="section  contentImageBlock  pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?> contentImageBlock--<?php echo $imagePosition; ?> contentImageBlock--<?php echo $imageLayout; ?>" style="background-color: <?php echo $backgroundColor; ?>">
     <div class="container contentImageBlock__container">
         <div class="row contentImageBlock__row">
+            <div class="col-12 contentImageBlock__title__mobile"><h2><?php echo $block_title; ?></h2></div>
             <div class="col-12  col-lg-6 <?php echo $contentClasses; ?> contentImageBlock__content">
                     <div class="contentImageBlock__content__inner">
                         <?php if($content): ?>
-                            <div class="content-block animate fade-up"><?php echo $content; ?></div>
+                            <div class="content-block animate fade-up">
+                                <div class="contentImageBlock__title"><h2><?php echo $block_title; ?></h2></div>
+                                <?php echo $content; ?>
+                            </div>
                         <?php endif; ?>
                         <?php
                         if( get_sub_field('checkbox') ) {?>

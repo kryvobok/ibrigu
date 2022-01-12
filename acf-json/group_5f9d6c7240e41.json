@@ -173,7 +173,7 @@
                             },
                             "default_value": "",
                             "min": "",
-                            "max": 20,
+                            "max": 25,
                             "step": "",
                             "prepend": "",
                             "append": ""
@@ -213,7 +213,7 @@
                             },
                             "default_value": 2,
                             "min": "",
-                            "max": 20,
+                            "max": 25,
                             "step": "",
                             "prepend": "",
                             "append": ""
@@ -233,7 +233,7 @@
                             },
                             "default_value": "",
                             "min": "",
-                            "max": 20,
+                            "max": 25,
                             "step": "",
                             "prepend": "",
                             "append": ""
@@ -980,6 +980,25 @@
                             },
                             "placement": "top",
                             "endpoint": 0
+                        },
+                        {
+                            "key": "field_61dec6f0e0118",
+                            "label": "Block Title",
+                            "name": "block_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         },
                         {
                             "key": "field_602ebc30ceff1",
@@ -3202,5 +3221,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641977600
+    "modified": 1641989924
 }
