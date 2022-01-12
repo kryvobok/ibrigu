@@ -6,6 +6,8 @@
     $blockLayout = get_sub_field('block_layout');
     $paddingTop = get_sub_field('paddingTop');
     $paddingBottom = get_sub_field('paddingBottom');
+    $paddingTop_mobile = get_sub_field('paddingTop_mobile');
+    $paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
 
     $imageClasses = '';
     $ThirdColImageClasses = '';
@@ -38,7 +40,7 @@
         $RightColumnClasses.= 'col-6';
     endif; 
 ?>
-<section class="section image-tiles pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>">
+<section class="section image-tiles pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>">
     <div class="container">
         <?php if($heading) : ?>
             <div class="row">

@@ -2,8 +2,10 @@
     $heading = get_sub_field('heading');
     $paddingTop = get_sub_field('paddingTop');
     $paddingBottom = get_sub_field('paddingBottom');
+    $paddingTop_mobile = get_sub_field('paddingTop_mobile');
+    $paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
 ?>
-<section class="section collection pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>">
+<section class="section collection pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>">
     <div class="container">
         <?php if($heading): ?>
             <div class="row">
@@ -18,7 +20,7 @@
                  $image = get_sub_field('image');
                  $title = get_sub_field('title');
                 ?>
-                    <div class="col-lg-3 col-md-6 col-sm-6 collection__item">
+                    <div class="col-lg-3 col-md-6 col-6 collection__item">
                         <?php if( !empty( $image ) ): ?>
                             <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif; ?>

@@ -8,9 +8,11 @@
     $content = get_sub_field('content');
     $paddingTop = get_sub_field('paddingTop');
     $paddingBottom = get_sub_field('paddingBottom');
+    $paddingTop_mobile = get_sub_field('paddingTop_mobile');
+    $paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
     
 ?>
-<section class="section content-columns pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>" style="background-color: <?php echo $backgroundColor; ?>">
+<section class="section content-columns pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>" style="background-color: <?php echo $backgroundColor; ?>">
     <div class="container">
         <div class="row content-columns__row">
             <div class="col-md-5 col-8 content-columns__item-1 content-columns__item content-columns__imagesCol ">

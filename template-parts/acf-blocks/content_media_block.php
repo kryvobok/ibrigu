@@ -17,6 +17,8 @@ $checkbox = get_sub_field('checkbox');
 $additionalImage = get_sub_field('additional_image');
 $paddingTop = get_sub_field('paddingTop');
 $paddingBottom = get_sub_field('paddingBottom');
+$paddingTop_mobile = get_sub_field('paddingTop_mobile');
+$paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
 
 //$imageClasses = '';
 //$contentClasses = '';
@@ -31,7 +33,7 @@ $paddingBottom = get_sub_field('paddingBottom');
 $blockID = get_sub_field('block_id');
 $id = $blockID?'id="'.$blockID.'"':'';
 ?>
-<section <?php echo $id; ?> class="section  contentImageBlock  pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?> contentImageBlock--<?php echo $imagePosition; ?> contentImageBlock--<?php echo $imageLayout; ?>" style="background-color: <?php echo $backgroundColor; ?>">
+<section <?php echo $id; ?> class="section  contentImageBlock  pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>contentImageBlock--<?php echo $imagePosition; ?> contentImageBlock--<?php echo $imageLayout; ?>" style="background-color: <?php echo $backgroundColor; ?>">
     <div class="container contentImageBlock__container">
         <div class="row contentImageBlock__row">
             <div class="col-12  col-lg-6 <?php echo $contentClasses; ?> contentImageBlock__content">

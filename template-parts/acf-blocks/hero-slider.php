@@ -1,9 +1,11 @@
 
 <?php 
-    $paddingTop = get_sub_field('paddingTop');
-    $paddingBottom = get_sub_field('paddingBottom');
+$paddingTop = get_sub_field('paddingTop');
+$paddingBottom = get_sub_field('paddingBottom');
+$paddingTop_mobile = get_sub_field('paddingTop_mobile');
+$paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
 if( have_rows('slides') ):?>
-    <section class="section hero pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>">
+    <section class="section hero pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>">
         <div class="container">
             <ul class="hero-slider__slides">
                 <?php while( have_rows('slides') ) : the_row();

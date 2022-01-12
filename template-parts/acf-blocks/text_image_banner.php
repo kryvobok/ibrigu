@@ -6,9 +6,11 @@ $offset = get_sub_field('add_image_offset');
 $blockID = get_sub_field('block_id');
 $paddingTop = get_sub_field('paddingTop');
 $paddingBottom = get_sub_field('paddingBottom');
+$paddingTop_mobile = get_sub_field('paddingTop_mobile');
+$paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
 $id = $blockID?'id="'.$blockID.'"':'';
 ?>
-<section <?php echo $id; ?> class="textImageBanner pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?> <?php if($offset) echo 'textImageBanner--offset'; ?>" style="background-color: <?php echo $backgroundColor; ?>">
+<section <?php echo $id; ?> class="textImageBanner pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?> <?php if($offset) echo 'textImageBanner--offset'; ?>" style="background-color: <?php echo $backgroundColor; ?>">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-5">

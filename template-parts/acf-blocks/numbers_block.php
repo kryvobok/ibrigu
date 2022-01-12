@@ -3,11 +3,13 @@ $heading = get_sub_field('heading');
 $items = get_sub_field('items');
 $paddingTop = get_sub_field('paddingTop');
 $paddingBottom = get_sub_field('paddingBottom');
+$paddingTop_mobile = get_sub_field('paddingTop_mobile');
+$paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
 $blockID = get_sub_field('block_id');
 $id = $blockID?'id="'.$blockID.'"':'';
 if($items):
     ?>
-    <div <?php echo $id; ?> class="section section--spacing--lg numbersBlock pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>">
+    <div <?php echo $id; ?> class="section section--spacing--lg numbersBlock pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>">
         <div class="container">
             <?php if($heading): ?>
             <div class="row numbersBlock__heading">

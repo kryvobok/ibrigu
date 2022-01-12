@@ -8,6 +8,9 @@ $blockLayout = get_sub_field('block_layout');
 $id = $blockID?'id="'.$blockID.'"':'';
 $paddingTop = get_sub_field('paddingTop');
 $paddingBottom = get_sub_field('paddingBottom');
+$paddingTop_mobile = get_sub_field('paddingTop_mobile');
+$paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
+
 
 $contentClasses = '';
 if($blockLayout=='wrapped'):
@@ -17,7 +20,7 @@ else:
 endif; 
 if($content):
     ?>
-    <div <?php echo $id; ?> class="section contentBlock pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>" style="background-color: <?php echo $backgroundColor; ?>;background-image: url(<?php echo $backgroundImage; ?>);height:<?php echo $blockHeight; ?> ">
+    <div <?php echo $id; ?> class="section contentBlock pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>" style="background-color: <?php echo $backgroundColor; ?>;background-image: url(<?php echo $backgroundImage; ?>);height:<?php echo $blockHeight; ?> ">
         <div class="container">
             <div class="row">
                 <div class="<?php echo $contentClasses?> ">
