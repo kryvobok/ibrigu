@@ -41,7 +41,7 @@
             </div>
         </div>
         <?php if( have_rows('social_list') ):?>
-            <ul class="contact__social row d-flex align-items-center justify-content-center">
+            <ul class="contact__social pt-5 row d-flex align-items-center justify-content-center">
                 <?php  while( have_rows('social_list') ) : the_row();
                     $social = get_sub_field('social');
                 ?>

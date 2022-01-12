@@ -16,7 +16,7 @@ if( have_rows('slides') ):?>
                 ?>
                     <li>
                         <div class="hero-slider__slide row">
-                            <div class="hero-slider__img__wrapper col-lg-5 col-5 d-flex justify-content-lg-end justify-content-sm-center align-items-center">
+                            <div class="hero-slider__img__wrapper col-lg-5 col-4 d-flex justify-content-lg-end justify-content-sm-center align-items-center">
                                 <?php if( !empty( $slideImage1 ) ): ?>
                                     <img class="hero-slider__slide__img-1 hero-slider__slide__img " src="<?php echo esc_url($slideImage1['url']); ?>" alt="<?php echo esc_attr($slideImage1['alt']); ?>">
                                 <?php endif; ?>

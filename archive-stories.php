@@ -24,7 +24,7 @@
                            $titleClass.= 'ddd';
                         endif; 
                     ?>
-                        <li class="stories__item col-lg-4 col-md-6">
+                        <li class="stories__item col-lg-4 col-6">
                             <a class="stories__imageWrapper" href="<?php the_permalink(); ?>">
                                 <img class="stories__image" src="<?php echo get_the_post_thumbnail_url();?>" alt="">
                             </a>

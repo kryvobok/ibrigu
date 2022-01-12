@@ -43,12 +43,10 @@
                     <a href="<?php the_permalink(); ?>">
                         <?php if($heading) :?>
                             <div class="section contentBlock">
-                                <div class="container">
                                     <div class="row">
                                         <div class="<?php echo $headingClasses ?>">
                                             <div class="content-block animate fade-up"><?php echo $heading; ?></div>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -57,7 +55,7 @@
                             <?php  while( have_rows('images') ) : the_row(); 
                                 $image = get_sub_field('image');
                             ?>
-                            <li class="col-12 imagesGrid__item col-md-6">
+                            <li class="imagesGrid__item col-6">
                                 <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                             </li>
                             <?php endwhile; ?>
@@ -65,12 +63,10 @@
                     </ul>
                     <?php if($content) :?>
                         <div class="section contentBlock">
-                            <div class="container">
                                 <div class="row">
                                     <div class="<?php echo $contentClasses ?>">
                                         <div class="content-block animate fade-up"><?php echo $content; ?></div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                         <?php endif; ?>
@@ -81,4 +77,16 @@
             </ul>
         </div>
     </section>
+    <div class="page-blocks">
+              <?php 
+                if ( ! post_password_required() ) :
+                    // Your custom code should here
+                    get_template_part('template-parts/page/content','page');
+                    the_acf_loop();
+                else :
+                  // we will show password form here
+                  echo get_the_password_form();
+                endif;
+              ?>
+            </div>
 <?php get_footer(); ?>

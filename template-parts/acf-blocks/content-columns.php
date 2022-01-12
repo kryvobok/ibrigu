@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="col-md-5 col-12 content-columns__item-4 row d-flex justify-content-around align-items-center">
-                <div class="col-6">
+                <div class="col-4 align-self-baseline align-self-md-center">
                     <?php if( !empty( $image2 ) ): ?>
                         <img class="content-columns__image" src="<?php echo esc_url($image2['url']); ?>" alt="<?php echo esc_attr($image2['alt']); ?>" />
                     <?php endif; ?>

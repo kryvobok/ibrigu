@@ -1,6 +1,8 @@
 .form
 	.nf-field-container
 		margin-bottom: 40px
+		+max-screen($breakpoint-md)
+			margin-bottom: 0
 	#nf-field-14
 		border: 1px solid #707070
 		background: none
@@ -11,6 +13,9 @@
 				label
 					font-weight: 400
 					font-family: $font-family-base
+	#nf-field-14-container
+		+max-screen($breakpoint-md)
+			margin-top: 20px		
 	.nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button])
 		background: none
 		font-family: $font-family-base
@@ -54,6 +59,8 @@
 	#nf-field-16
 		background: #000
 		padding: 20px 55px
+		font-family: $font-family-base
+		height: 100%
 	#nf-label-field-14
 		.ninja-forms-req-symbol
 			top: -2px
@@ -68,6 +75,10 @@
 		+max-screen($breakpoint-md)
 			max-width: 80%
 			margin: auto
+	#nf-after-form-content
+		position: absolute
+		bottom: 20px
+
 .form--newsletter
 	nf-fields-wrap
 		flex-direction: column
@@ -105,5 +116,11 @@
 	.nf-error.field-wrap .nf-field-element:after
 		right: -50px
 		top: 2px
+		+max-screen($breakpoint-md)
+			right: 30px
+	.nf-error-msg, .form .ninja-forms-req-symbol
+		position: inherit
+		left: inherit
+		top: inherit
 
 

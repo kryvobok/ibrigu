@@ -16,13 +16,13 @@
     if($blockLayout=='2colsLRB'):
         $contentClasses.= 'image-tiles—right';
         $ThirdColImageClasses.= 'display: none;';
-        $LeftColumnClasses.= 'col-md-4 col-sm-5 col-5 a align-self-center d-flex align-items-center justify-content-center';
-        $RightColumnClasses.= 'col-md-6 col-sm-6 col-6  pt-md-0 ';
+        $LeftColumnClasses.= 'col-md-4 col-sm-5 col-4 a align-self-center d-flex align-items-center justify-content-center';
+        $RightColumnClasses.= 'col-md-6 col-sm-6 col-7  pt-md-0 ';
     elseif($blockLayout=='2colsLRS'):
         $contentClasses.= 'image-tiles—left';
         $ThirdColImageClasses.= 'display: none;';
-        $LeftColumnClasses.= 'col-md-6 col-sm-6 col-6  pt-md-0 ';
-        $RightColumnClasses.= 'col-md-4 col-sm-5 col-5  align-self-center d-flex align-items-center justify-content-center';
+        $LeftColumnClasses.= 'col-md-6 col-sm-6 col-4  pt-md-0 ';
+        $RightColumnClasses.= 'col-md-4 col-sm-5 col-7  align-self-center d-flex align-items-center justify-content-center';
     elseif($blockLayout=='3colsLU'):
         $contentClasses.= '';
         $ThirdColImageClasses.= 'display: flex; align-self: flex-start;';
@@ -54,7 +54,7 @@
             <li class="image-tiles__item image-tiles__item—2 <?php echo $RightColumnClasses ?>">
                 <img class="image-tiles__item__image" src="<?php echo esc_url($image2['url']); ?>" alt="<?php echo esc_attr($image2['alt']); ?>" />
             </li>
-            <?php if( !$blockLayout=='2colsLRB' || !$blockLayout=='2colsLRS' ): ?>
+            <?php if( $blockLayout=='3colsLU' || $blockLayout=='3colsRC' || $blockLayout=='3colsLD' ): ?>
                 <li class="image-tiles__item image-tiles__item—3 col-3" style="<?php echo $ThirdColImageClasses?>">
                     <img class="image-tiles__item__image" src="<?php echo esc_url($image3['url']); ?>" alt="<?php echo esc_attr($image3['alt']); ?>" />
                 </li>

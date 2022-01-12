@@ -6,7 +6,7 @@
     $paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
 ?>
 <section class="section collection pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>">
-    <div class="container">
+    <div class="container collection__container">
         <?php if($heading): ?>
             <div class="row">
                 <div class="col-lg-6 offset-lg-3 heading content-block text--center">

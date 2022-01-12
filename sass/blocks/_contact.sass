@@ -15,6 +15,11 @@
             margin-bottom: 30px
             &:last-child
                 margin-bottom: 0
+            h3
+                +max-screen($breakpoint-md)
+                    padding-bottom: 14px
+                    font-size: 16px
+
     &__social
         &Item 
             padding-left: 50px
@@ -23,6 +28,10 @@
                 padding-left: 25px
                 padding-right: 25px
     &__formWrapper
+        form
+            +max-screen($breakpoint-md)
+                max-width: 80%
+                margin: auto
         .nf-form-content
             display: flex
             nf-fields-wrap
@@ -66,12 +75,20 @@
                         .nf-element
                             color: #fff
                             background: #000
+        .nf-form-content .listselect-wrap .nf-field-element div, .nf-form-content .ninja-forms-field
+            +max-screen($breakpoint-md)
+                padding-left: 0
+        #nf-field-7-container
+            +max-screen($breakpoint-md)
+                margin-top: 20px
         .nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button]), .nf-form-content textarea
             &::placeholder
                 color: #000
                 font-size: 16px
         .nf-field-container
             margin-bottom: 45px
+            +max-screen($breakpoint-md)
+                margin-bottom: 0
         .nf-form-fields-required
             display: none
 

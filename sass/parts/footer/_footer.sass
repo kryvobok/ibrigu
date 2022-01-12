@@ -40,6 +40,8 @@
 					+min-screen($breakpoint-md)
 						&:hover
 							color: $color-primary
+					+max-screen($breakpoint-md)
+						font-size: 16px
 		
 		&__social
 			padding-top: 50px
@@ -76,6 +78,10 @@
 						display: block
 	&__menu__title
 		margin-bottom: 20px
+		+max-screen($breakpoint-md)
+			font-size: 16px
+			a
+				font-size: 16px
 	&__bottom
 		padding: 26px 0
 		&__wrapper

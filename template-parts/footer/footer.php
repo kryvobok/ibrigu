@@ -1,4 +1,4 @@
-<a class="back_to_top text--center py-5 d-flex align-items-center justify-content-center" title="">
+<a class="back_to_top text--center py-2 py-md-5 d-flex align-items-center justify-content-center" title="">
 	<svg xmlns="http://www.w3.org/2000/svg" width="26.006" height="24.764" viewBox="0 0 26.006 24.764">
   <g id="Icon_feather-arrow-up" data-name="Icon feather-arrow-up" transform="translate(-5.379 -6)">
     <path id="Контур_8" data-name="Контур 8" d="M18,29.264V7.5" transform="translate(0.382 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
