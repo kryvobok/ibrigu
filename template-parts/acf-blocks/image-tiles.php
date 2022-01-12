@@ -14,28 +14,28 @@
     if($blockLayout=='2colsLRB'):
         $contentClasses.= 'image-tiles—right';
         $ThirdColImageClasses.= 'display: none;';
-        $LeftColumnClasses.= 'col-md-4 col-sm-5 col-5 align-self-baseline align-self-md-center d-flex align-items-center justify-content-center';
-        $RightColumnClasses.= 'col-md-6 col-sm-6 col-6 pt-4 pt-md-0 ';
+        $LeftColumnClasses.= 'col-md-4 col-sm-5 col-5 a align-self-center d-flex align-items-center justify-content-center';
+        $RightColumnClasses.= 'col-md-6 col-sm-6 col-6  pt-md-0 ';
     elseif($blockLayout=='2colsLRS'):
         $contentClasses.= 'image-tiles—left';
         $ThirdColImageClasses.= 'display: none;';
-        $LeftColumnClasses.= 'col-md-6 col-sm-6 col-6 pt-4 pt-md-0 ';
-        $RightColumnClasses.= 'col-md-4 col-sm-5 col-5 align-self-baseline align-self-md-center d-flex align-items-md-center justify-content-center';
+        $LeftColumnClasses.= 'col-md-6 col-sm-6 col-6  pt-md-0 ';
+        $RightColumnClasses.= 'col-md-4 col-sm-5 col-5  align-self-center d-flex align-items-center justify-content-center';
     elseif($blockLayout=='3colsLU'):
         $contentClasses.= '';
         $ThirdColImageClasses.= 'display: flex; align-self: flex-start;';
-        $LeftColumnClasses.= 'col-md-3 align-self-end';
-        $RightColumnClasses.= 'col-md-6 ';
+        $LeftColumnClasses.= 'col-3 align-self-end';
+        $RightColumnClasses.= 'col-6 ';
     elseif($blockLayout=='3colsLD'):
         $contentClasses.= 'threeCols';
         $ThirdColImageClasses.= 'display: flex; align-self: flex-end;';
-        $LeftColumnClasses.= 'col-md-3 ';
-        $RightColumnClasses.= 'col-md-6';
+        $LeftColumnClasses.= 'col-3 ';
+        $RightColumnClasses.= 'col-6';
     elseif($blockLayout=='3colsRC'):
         $contentClasses.= 'threeCols';
         $ThirdColImageClasses.= 'display: flex; align-self: center;';
-        $LeftColumnClasses.= 'col-md-3';
-        $RightColumnClasses.= 'col-md-6';
+        $LeftColumnClasses.= 'col-3';
+        $RightColumnClasses.= 'col-6';
     endif; 
 ?>
 <section class="section image-tiles pt-<?php echo $paddingTop ?> pb-<?php echo $paddingBottom ?>">
@@ -52,7 +52,7 @@
             <li class="image-tiles__item image-tiles__item—2 <?php echo $RightColumnClasses ?>">
                 <img class="image-tiles__item__image" src="<?php echo esc_url($image2['url']); ?>" alt="<?php echo esc_attr($image2['alt']); ?>" />
             </li>
-            <li class="image-tiles__item image-tiles__item—3 col-md-3" style="<?php echo $ThirdColImageClasses?>">
+            <li class="image-tiles__item image-tiles__item—3 col-3" style="<?php echo $ThirdColImageClasses?>">
                 <img class="image-tiles__item__image" src="<?php echo esc_url($image3['url']); ?>" alt="<?php echo esc_attr($image3['alt']); ?>" />
             </li>
         </ul>
