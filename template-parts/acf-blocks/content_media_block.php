@@ -41,7 +41,9 @@ $id = $blockID?'id="'.$blockID.'"':'';
                     <div class="contentImageBlock__content__inner">
                         <?php if($content): ?>
                             <div class="content-block animate fade-up">
-                                <div class="contentImageBlock__title"><h2><?php echo $block_title; ?></h2></div>
+                                <?php if($block_title): ?>
+                                    <div class="contentImageBlock__title"><h2><?php echo $block_title; ?></h2></div>
+                                <?php endif; ?>
                                 <?php echo $content; ?>
                             </div>
                         <?php endif; ?>

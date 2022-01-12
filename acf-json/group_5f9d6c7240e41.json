@@ -173,7 +173,7 @@
                             },
                             "default_value": "",
                             "min": "",
-                            "max": 25,
+                            "max": 30,
                             "step": "",
                             "prepend": "",
                             "append": ""
@@ -193,27 +193,7 @@
                             },
                             "default_value": 2,
                             "min": "",
-                            "max": 20,
-                            "step": "",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_61de94fdd14a3",
-                            "label": "Padding Top (mobile) (copy)",
-                            "name": "paddingTop_mobile_copy",
-                            "type": "range",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": 2,
-                            "min": "",
-                            "max": 25,
+                            "max": 30,
                             "step": "",
                             "prepend": "",
                             "append": ""
@@ -233,7 +213,7 @@
                             },
                             "default_value": "",
                             "min": "",
-                            "max": 25,
+                            "max": 30,
                             "step": "",
                             "prepend": "",
                             "append": ""
@@ -253,7 +233,7 @@
                             },
                             "default_value": 1,
                             "min": "",
-                            "max": 20,
+                            "max": 30,
                             "step": "",
                             "prepend": "",
                             "append": ""
@@ -3221,5 +3201,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641989924
+    "modified": 1642014267
 }

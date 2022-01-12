@@ -42,7 +42,6 @@ import { heroSlider } from './template-parts/blocks/hero-slider';
     goTopBtn.addEventListener('click', backToTop);
   })();
 
-
 header();
 lazy();
 lottie();

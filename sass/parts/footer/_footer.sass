@@ -8,19 +8,6 @@
 			padding-top: 60px
 			padding-bottom: 60px
 
-		&__col-4
-			+max-screen($breakpoint-lg)	
-				order: 1
-		&__col-1
-			+max-screen($breakpoint-lg)	
-				order: 2
-		&__col-2
-			+max-screen($breakpoint-lg)	
-				order: 3
-		&__col-3
-			+max-screen($breakpoint-lg)	
-				order: 4
-
 		&__logo
 			display: block
 			width: 150px
@@ -34,6 +21,8 @@
 
 		&__nav
 			padding-top: 53px
+			+max-screen($breakpoint-lg)	
+				padding-top: 20px
 			h4
 				padding-bottom: 17px
 			ul
@@ -54,20 +43,17 @@
 		
 		&__social
 			padding-top: 50px
+			+max-screen($breakpoint-md)
+				padding-top: 20px
 			&__list
 				display: flex
 				flex-direction: column
-				+max-screen($breakpoint-md)	
-					flex-direction: row
-					align-items: center
-					justify-content: center
-					flex-wrap: wrap
 				li
 					line-height: 0
-					padding: 5px
-					+max-screen($breakpoint-md)
-						padding-left: 25px
-						padding-right: 25px	
+					padding-top: 5px
+					padding-bottom: 5px
+					&:not(.footer__menu__title)
+						display: none
 					a
 						line-height: 1
 						img
@@ -85,10 +71,9 @@
 						+min-screen($breakpoint-md)
 							&:hover
 								opacity: 0.8
-	#footer-nav
-		li
-			+max-screen($breakpoint-sm)
-				text-align: center
+				&:hover
+					li
+						display: block
 	&__menu__title
 		margin-bottom: 20px
 	&__bottom
@@ -98,7 +83,28 @@
 		&__inner
 			display: flex
 			flex-direction: column
-
-
-		
++max-screen($breakpoint-md)
+	#footer-nav
+		li
+			&:not(.footer__menu__title)
+				display: none
+	#footer-nav
+		&:hover
+			li
+				display: block
+	.footer__menu__title
+		position: relative
+		width: fit-content
+		padding-right: 20px
+		&::before
+			content: " "
+			position: absolute
+			width: 10px
+			height: 10px
+			border-bottom: 2px solid #000
+			border-left: 2px solid #000
+			top: 33%
+			transform: rotate(315deg) translateY(-50%)
+			right: 0
+			
 	

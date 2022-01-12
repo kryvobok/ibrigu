@@ -19,9 +19,13 @@
 		border-bottom: 1px solid #707070
 		padding-left: 0
 		color: #000
+		+max-screen($breakpoint-md)
+			font-size: 16px
 		&::placeholder
 			font-weight: 400
 			color: #000
+			+max-screen($breakpoint-md)
+				font-size: 16px
 	.nf-form-fields-required
 		display: none
 	.checkbox-container.label-right label
@@ -60,6 +64,10 @@
 	#nf-label-field-11
 		.ninja-forms-req-symbol
 			left: 41px
+	&--request-demo 
+		+max-screen($breakpoint-md)
+			max-width: 80%
+			margin: auto
 .form--newsletter
 	nf-fields-wrap
 		flex-direction: column

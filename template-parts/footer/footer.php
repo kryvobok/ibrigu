@@ -35,7 +35,7 @@
 							<div class="footer__main__social">
 							
 								<ul class="footer__main__social__list">
-									<div class="footer__menu__title"><?php echo $socialTitle ?></div>
+									<li class="footer__menu__title"><?php echo $socialTitle ?></li>
 									<?php foreach($footerSocial as $item): 
 										$link = $item['link'];
 										if($link):
