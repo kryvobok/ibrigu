@@ -26,17 +26,17 @@
     elseif($blockLayout=='3colsLU'):
         $contentClasses.= '';
         $ThirdColImageClasses.= 'display: flex; align-self: flex-start;';
-        $LeftColumnClasses.= 'col-3 align-self-end';
+        $LeftColumnClasses.= 'col-3 pt-3 align-self-end';
         $RightColumnClasses.= 'col-6 ';
     elseif($blockLayout=='3colsLD'):
         $contentClasses.= 'threeCols';
         $ThirdColImageClasses.= 'display: flex; align-self: flex-end;';
-        $LeftColumnClasses.= 'col-3 ';
+        $LeftColumnClasses.= 'col-3 pb-6';
         $RightColumnClasses.= 'col-6';
     elseif($blockLayout=='3colsRC'):
         $contentClasses.= 'threeCols';
         $ThirdColImageClasses.= 'display: flex; align-self: center;';
-        $LeftColumnClasses.= 'col-3';
+        $LeftColumnClasses.= 'col-3 pt-3';
         $RightColumnClasses.= 'col-6';
     endif; 
 ?>

@@ -54,8 +54,6 @@
 					line-height: 0
 					padding-top: 5px
 					padding-bottom: 5px
-					&:not(.footer__menu__title)
-						display: none
 					a
 						line-height: 1
 						img
@@ -70,12 +68,6 @@
 							top: 50%
 							left: 50%
 							transform: translate3d(-50%,-50%,0)
-						+min-screen($breakpoint-md)
-							&:hover
-								opacity: 0.8
-				&:hover
-					li
-						display: block
 	&__menu__title
 		margin-bottom: 20px
 		+max-screen($breakpoint-md)

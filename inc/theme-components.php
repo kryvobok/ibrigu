@@ -80,7 +80,7 @@ function image_acf($image,$class=''){
 
     ?>
     <div class="img-block" <?php echo $blockPadding; ?>>
-      <img data-src="<?php echo esc_url($image['url']); ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" class="lazy-img <?php echo $class; ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+      <img src="<?php echo esc_url($image['url']); ?>"  class="lazy-img <?php echo $class; ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
     </div>
     <noscript>
       <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />

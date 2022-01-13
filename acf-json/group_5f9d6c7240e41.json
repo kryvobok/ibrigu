@@ -2918,6 +2918,31 @@
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_61e07bb144b10",
+                            "label": "Layout",
+                            "name": "layout",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "full": "Full width",
+                                "wrapped": "Wrapped"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -3225,5 +3250,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1642022381
+    "modified": 1642101719
 }

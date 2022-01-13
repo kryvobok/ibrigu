@@ -27,4 +27,4 @@ if( !empty( $image ) ): ?>
             </div>
         <?php endif;  ?>
     </div>
-<?php endif;
+<?php endif;?>
