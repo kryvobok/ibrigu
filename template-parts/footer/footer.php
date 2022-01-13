@@ -6,7 +6,17 @@
   </g>
 </svg>
 </a>
+<?php 
+	$menu_location = 'footer-menu-1';
+	$menu_locations = get_nav_menu_locations();
+	$menu_object = (isset($menu_locations[$menu_location]) ? wp_get_nav_menu_object($menu_locations[$menu_location]) : null);
+	$menu_name = (isset($menu_object->name) ? $menu_object->name : '');
 
+	$menu_location_2 = 'footer-menu-2';
+	$menu_locations_2 = get_nav_menu_locations();
+	$menu_object_2 = (isset($menu_locations_2[$menu_location_2]) ? wp_get_nav_menu_object($menu_locations_2[$menu_location_2]) : null);
+	$menu_name_2 = (isset($menu_object_2->name) ? $menu_object_2->name : '');
+?>
 <footer id="footer" class="footer">
 
 	<div class="footer__main bg--white">
@@ -16,12 +26,14 @@
 
 					<div class="col-12 col-lg-2 col-md-4 col-sm-6 footer__main__col footer__main__col-1">
 						<nav class="footer__main__nav font-weight-600">
-							<?php wp_nav_menu( array('menu_id'=>'footer-nav','container_class' => 'footer-nav','theme_location' => 'footer-menu-1') ); ?>
+							<div class="#menuTitle_1 footer__menu__title"><?php echo esc_html($menu_name); ?></div>
+							<?php wp_nav_menu( array('menu_id'=>'footer-nav_1','container_class' => 'footer-nav','theme_location' => 'footer-menu-1') ); ?>
 						</nav>
 					</div>
 					
 					<div class="col-12 col-lg-2 col-md-4 col-sm-6 footer__main__col footer__main__col-2">
 						<nav class="footer__main__nav font-weight-600">
+						<div class="#menuTitle footer__menu__title"><?php echo esc_html($menu_name_2); ?></div>
 							<?php wp_nav_menu( array('menu_id'=>'footer-nav','container_class' => 'footer-nav','theme_location' => 'footer-menu-2') ); ?>
 						</nav>
 					</div>
@@ -35,7 +47,7 @@
 							<div class="footer__main__social">
 							
 								<ul class="footer__main__social__list">
-									<li class="footer__menu__title"><?php echo $socialTitle ?></li>
+									<li class="#menuTitle footer__menu__title"><?php echo $socialTitle ?></li>
 									<?php foreach($footerSocial as $item): 
 										$link = $item['link'];
 										if($link):
