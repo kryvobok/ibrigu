@@ -53,12 +53,7 @@
 		.nf-field-element
 			width: fit-content
 	.nf-error-msg, .ninja-forms-req-symbol
-		color: #000!important
-		position: absolute
-		font-size: 12px
-		top: 10px
-		left: 70px
-		font-weight: 400
+		display: none
 	#nf-field-16
 		background: #000
 		padding: 20px 55px
@@ -66,14 +61,13 @@
 		height: 100%
 	#nf-label-field-14
 		.ninja-forms-req-symbol
-			top: -2px
-			left: 77px
+			display: none
 	#nf-label-field-13
 		.ninja-forms-req-symbol
-			left: 56px
+			display: none
 	#nf-label-field-11
 		.ninja-forms-req-symbol
-			left: 41px
+			display: none
 	&--request-demo 
 		+max-screen($breakpoint-md)
 			max-width: 80%
@@ -85,6 +79,11 @@
 		display: none
 	.nf-pass.field-wrap .nf-field-element:after
 		display: none
+	#nf-label-field-15
+        .ninja-forms-req-symbol
+            display: none
+	.nf-response-msg
+		text-align: center
 .form--newsletter
 	nf-fields-wrap
 		flex-direction: column
@@ -130,4 +129,9 @@
 		display: none
 	.nf-pass.field-wrap .nf-field-element:after
 		display: none
+	p
+		font-size: 18px
+	.checkbox-container.label-right label
+		font-size: 18px
+	
 
