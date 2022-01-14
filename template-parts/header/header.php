@@ -2,38 +2,61 @@
     $logo = get_field('logo','option')
 ?>
 <header id="header" class="header">
-    <div class="header__logo__wrapper">
-        <a href="<?php echo get_home_url(); ?>" class="header__logo">
-            <?php if( !empty( $logo ) ): ?>
-                <?php echo file_get_contents(esc_url(wp_get_original_image_path($logo['id']))); ?>
-            <?php endif; ?>
-        </a>
-    </div>
     <div class="container header__container">
         <div class="header__row">
-            <div class="header__nav__wrapper">
-                
-                <nav class="header__nav">
-                    <span id="nav-toggle" class="nav-toggle">
-                        <div class="nav-toggle-icon">
-                            <span class="nav-toggle-icon__inner"></span>
-                        </div>
-                    </span>
-                    <div class="main-nav">
-                        <?php wp_nav_menu( array('menu_id'=>'main-nav','container_class' => '','theme_location' => 'main-menu') ); ?>
+            <div class="header__left">
+                <span id="nav-toggle" class="nav-toggle">
+                    <div class="nav-toggle-icon">
+                        <span class="nav-toggle-icon__inner"></span>
                     </div>
-                </nav>
+                </span>
             </div>
+
+                
+            <nav class="header__nav">
+                <div class="main-nav">
+                    <?php wp_nav_menu( array('menu_id'=>'main-nav','container_class' => '','theme_location' => 'main-menu') ); ?>
+                </div>
+            </nav>
+
+            <div class="header__logo__wrapper">
+                <a href="<?php echo get_home_url(); ?>" class="header__logo">
+                    <?php if( !empty( $logo ) ): ?>
+                        <?php echo file_get_contents(esc_url(wp_get_original_image_path($logo['id']))); ?>
+                    <?php endif; ?>
+                </a>
+            </div>
+
             <div class="header__lang">
-                <ul class="header__lang__list">
-                    <li class="header__lang__item">
-                        <a href="#" class="header__lang__item__link">IT</a>
-                    </li>
-                    <li class="header__lang__item-sep">/</li>
-                    <li class="header__lang__item">
-                        <a href="#" class="header__lang__item__link">EN</a>
-                    </li>
-                </ul>
+                <?php
+                if (function_exists('icl_get_languages')) {
+                    $languages = icl_get_languages('skip_missing=0');
+                    $loopCounter = 0;
+                    if(true || 1 < count($languages)){ ?>
+                        <ul class="header__lang__list">
+                            <?php
+                            foreach($languages as $l){
+                                $label = $l['language_code']=='it'?'IT':'EN';
+                                ?>
+                                <?php if($loopCounter!=0): ?>
+                                    <li class="header__lang__item-sep">/</li>
+                                <?php endif; ?>
+                                <li class="header__lang__item">
+                                    <a href="<?php echo $l['url']; ?>" class="header__lang__item__link<?php if($l['active']) echo ' active'; ?> <?php echo $l['language_code']; ?>"><?php echo $label; ?></a>
+                                </li>
+                                <?php
+                                $loopCounter++;
+                            }
+                            ?>
+                        </ul>
+                        <?php
+                    } else{
+                        
+                    }
+                } else{
+                    echo 'EN / IT';
+                }
+                ?>
             </div>
         </div>
     </div>

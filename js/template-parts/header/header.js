@@ -69,10 +69,6 @@ function header(){
         lastScrollTop = st;
     }
     
-     $('#menuTitle_1').on('click',function(e){
-         e.preventDefault();
-         $('#footer-nav_1').toggleClass('active');     
-     });
 }
 
 

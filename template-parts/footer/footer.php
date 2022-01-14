@@ -26,14 +26,14 @@
 
 					<div class="col-12 col-lg-2 col-md-4 col-sm-6 footer__main__col footer__main__col-1">
 						<nav class="footer__main__nav font-weight-600">
-							<div class="#menuTitle_1 footer__menu__title"><?php echo esc_html($menu_name); ?></div>
+							<h4 class="font-weight-400 footer__menu__title"><?php echo esc_html($menu_name); ?></h4>
 							<?php wp_nav_menu( array('menu_id'=>'footer-nav_1','container_class' => 'footer-nav','theme_location' => 'footer-menu-1') ); ?>
 						</nav>
 					</div>
 					
 					<div class="col-12 col-lg-2 col-md-4 col-sm-6 footer__main__col footer__main__col-2">
 						<nav class="footer__main__nav font-weight-600">
-						<div class="#menuTitle footer__menu__title"><?php echo esc_html($menu_name_2); ?></div>
+							<h4 class="font-weight-400 footer__menu__title"><?php echo esc_html($menu_name_2); ?></h4>
 							<?php wp_nav_menu( array('menu_id'=>'footer-nav','container_class' => 'footer-nav','theme_location' => 'footer-menu-2') ); ?>
 						</nav>
 					</div>
@@ -44,10 +44,9 @@
 						$socialTitle = get_field('socialTitle','option');
 						if($footerSocial):
 						?>
-							<div class="footer__main__social">
-							
-								<ul class="footer__main__social__list">
-									<li class="#menuTitle footer__menu__title"><?php echo $socialTitle ?></li>
+							<div class="footer__main__nav footer__main__social">
+								<h4 class="font-weight-400 footer__menu__title"><?php echo $socialTitle; ?></h4>
+								<ul class="footer-nav footer__main__social__list">
 									<?php foreach($footerSocial as $item): 
 										$link = $item['link'];
 										if($link):
