@@ -20,7 +20,7 @@ import { heroSlider } from './template-parts/blocks/hero-slider';
 header();
 footer();
 //lazy();
-lottie();
+//lottie();
 
 //animations
 appearence();
