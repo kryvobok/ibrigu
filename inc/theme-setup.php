@@ -40,7 +40,3 @@ function login_enqueue_scripts() {
 }
 add_action('login_head', 'login_enqueue_scripts');
 
-add_filter( 'login_headerurl', 'my_custom_login_url' );
-function my_custom_login_url($url) {
-    return 'https://rocket-saas.io/';
-}
