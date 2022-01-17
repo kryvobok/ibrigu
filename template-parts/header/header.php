@@ -54,7 +54,7 @@
                         
                     }
                 } else{
-                    echo 'EN / IT';
+                    
                 }
                 ?>
             </div>
