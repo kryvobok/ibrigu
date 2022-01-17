@@ -37,7 +37,7 @@
                                                 <span class="articles-block__item__date"><?php echo $date; ?></span>
                                                 <h3 class="articles-block__item__title"><?php echo $title; ?></h3>
                                             </div>
-                                            <?php echo button(__('Read more','rocket-sass'),$permalink); ?>
+                                            <?php echo button(__('Read more','ibrigu'),$permalink); ?>
                                         </div>
                                     </a>
                                 </li>

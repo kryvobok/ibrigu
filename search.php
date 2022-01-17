@@ -21,14 +21,14 @@
 			<div class="section container searchBlock__item__title">
 	  			<div class="row">
 	  				<div class="col-lg-10 offset-lg-1">
-					  	<h1 class="h1 searchBlock__title"><?php printf( __( 'Search results for: %s', 'rocket-sass' ), get_search_query() ); ?></h1>
+					  	<h1 class="h1 searchBlock__title"><?php printf( __( 'Search results for: %s', 'ibrigu' ), get_search_query() ); ?></h1>
 					
 						<?php if ( have_posts() ) : ?>
 								<ul class="searchBlock__list">
 									<?php while ( have_posts() ) : the_post(); ?>
 										<li class="searchBlock__item">
 											<h2 class="searchBlock__item__title text--24 font--weight--semiBold " ><?php the_title(); ?></h2>
-											<a class="text--18 link--underline--2 text--color--primary searchBlock__item__link" href="<?php the_permalink(); ?>"><?php _e('Read More','rocket-sass'); ?></a>
+											<a class="text--18 link--underline--2 text--color--primary searchBlock__item__link" href="<?php the_permalink(); ?>"><?php _e('Read More','ibrigu'); ?></a>
 										</li>
 									<?php endwhile; ?>
 								</ul>

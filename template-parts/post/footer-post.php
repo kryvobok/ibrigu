@@ -19,7 +19,7 @@
             endif;
             
             $relatedPostsTitle = get_field('related_articles_heading');
-            if(!$relatedPostsTitle) $relatedPostsTitle =  __('Related articles','rocket-sass');
+            if(!$relatedPostsTitle) $relatedPostsTitle =  __('Related articles','ibrigu');
             if($relatedPosts):
             ?>
             <div class="section col-lg-12 blog-post__footer__related">

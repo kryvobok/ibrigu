@@ -10,7 +10,7 @@
         <div class="contatc__row row">
             <div class="col-lg-6 contact__infoWrapper row">
                 <?php if( have_rows('offices') ):?>
-                    <ul class="col-sm-6 contact__officesList">
+                    <ul class="col-sm-6 contact__officesList animate fade-up">
                         <?php  while( have_rows('offices') ) : the_row();
                             $office = get_sub_field('office');
                         ?>
@@ -23,7 +23,7 @@
                     </ul>
                 <?php endif;?>
                 <?php if( have_rows('contacts') ):?>
-                    <ul class="col-sm-6 contact__contactsList">
+                    <ul class="col-sm-6 contact__contactsList animate fade-up">
                         <?php  while( have_rows('contacts') ) : the_row();
                             $contacts = get_sub_field('contactsItem');
                         ?>
@@ -36,12 +36,12 @@
                     </ul>
                 <?php endif;?>
             </div>
-            <div class="col-lg-6 contact__formWrapper">
+            <div class="col-lg-6 contact__formWrapper animate fade-up">
                 <?php echo $form ?>
             </div>
         </div>
         <?php if( have_rows('social_list') ):?>
-            <ul class="contact__social pt-5 row d-flex align-items-center justify-content-center">
+            <ul class="contact__social pt-5 row d-flex align-items-center justify-content-center animate fade-up">
                 <?php  while( have_rows('social_list') ) : the_row();
                     $social = get_sub_field('social');
                 ?>
