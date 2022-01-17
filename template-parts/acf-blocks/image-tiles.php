@@ -30,8 +30,8 @@
         $RightColumnClasses.= 'col-6 ';
     elseif($blockLayout=='3colsLD'):
         $contentClasses.= 'threeCols';
-        $ThirdColImageClasses.= 'display: flex; align-self: flex-end;';
-        $LeftColumnClasses.= 'col-3 pb-6';
+        $ThirdColImageClasses.= 'display: flex; align-self: flex-start; padding-top: 30px';
+        $LeftColumnClasses.= 'col-3 pb-6 align-self-end';
         $RightColumnClasses.= 'col-6';
     elseif($blockLayout=='3colsRC'):
         $contentClasses.= 'threeCols';

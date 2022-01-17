@@ -27,7 +27,7 @@
             order: 1 
             margin-bottom: 40px
     &__item-2
-        transform: translateY(50%)
+        transform: translateY(16%)
         +max-screen($breakpoint-md)
             order: 3
             transform: translateY(0)
@@ -36,11 +36,21 @@
         +max-screen($breakpoint-md)
             order: 2
     &__item-4
+        margin-top: -150px
+        +max-screen($breakpoint-lg)
+            margin-top: -250px
         +max-screen($breakpoint-md)
             order: 5
+            margin-top: 0
     &__item-5
         margin-left: auto
-        margin-top: -150px
+        margin-top: -250px
+        padding-left: 18px
+        padding-right: 18px
+        +max-screen(1270px)
+            margin-top: -200px
+        +max-screen($breakpoint-lg)
+            margin-top: -160px
         +max-screen($breakpoint-md)
             order: 4
             margin-top: 0
