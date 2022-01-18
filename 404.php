@@ -4,8 +4,8 @@
     	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="container txt--center">
                     <section class="text--center section section--fullscreen">
-                            <h1 class="h1 spacing-pb-40"><?php _e('Page not found.','rocket-sass'); ?></h1>
-                            <?php echo button(__('Back to home','rocket-sass'),get_home_url(),'_self','button--bg'); ?>
+                            <h1 class="h1 spacing-pb-40"><?php _e('Page not found.','ibrigu'); ?></h1>
+                            <?php echo button(__('Back to home','ibrigu'),get_home_url(),'_self','button--bg'); ?>
                     </section>
             </div>
         </div>

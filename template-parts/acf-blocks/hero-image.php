@@ -9,7 +9,7 @@ $paddingBottom_mobile = get_sub_field('paddingBottom_mobile');
 $style = get_sub_field('layout');
 if($heading) : ?>
 <?php if($style == 'full'): ?>
-    <section class="hero-image  pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>" >
+    <section class="hero-image  pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?> animate fade-up" >
             <div class="hero-image__image">
                 <?php if( !empty( $backgroundImage ) ): ?>
                     <?php image_acf($backgroundImage); ?>
@@ -24,7 +24,8 @@ if($heading) : ?>
     </section>
 <?php else: ?>
     <section class="hero-image  pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>" >
-<div class="container" style="max-width: 100%">
+<div class="container hero-image__container animate fade-up">
+
             <div class="hero-image__image">
                 <?php if( !empty( $backgroundImage ) ): ?>
                     <?php image_acf($backgroundImage); ?>

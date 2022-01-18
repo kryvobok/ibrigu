@@ -3,8 +3,8 @@
     <div id="app" class="app-container" data-class="<?php if(get_field('white_header')) echo 'header-white'; ?> <?php if(get_field('transparent_header')) echo 'header-transparent'; ?> <?php echo get_field('page_classes'); ?>">
     	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="container pb-3" style="max-width: 100%">
-        <div class="stories__itemTitle"><?php echo get_the_title() ?></div>
-        <div class="stories__itemDate"><?php echo get_the_date('F jS Y'); ?></div>
+        <div class="stories__itemTitle animate fade-up"><?php echo get_the_title() ?></div>
+        <div class="stories__itemDate animate fade-up"><?php echo get_the_date('F jS Y'); ?></div>
       </div>
             <div class="page-blocks">
               <?php 

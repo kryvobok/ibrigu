@@ -14,7 +14,7 @@ $blockID = get_sub_field('block_id');
 $id = $blockID?'id="'.$blockID.'"':'id="request_a_quote"';
 ?>
 <section <?php echo $id; ?> class="pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?> section formImageBlock formImageBlock--<?php echo $imagePosition; ?>" style="background-color: <?php echo $backgroundColor; ?>">
-    <div class="container">
+    <div class="container animate fade-up">
         <div class="row row--y--midle">
             <div class="col-lg-6 offset-lg-3<?php echo $contentClasses; ?> formImageBlock__content text-color-white">
                     <div class="formImageBlock__content__inner">

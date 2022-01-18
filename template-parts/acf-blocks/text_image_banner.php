@@ -15,12 +15,12 @@ $id = $blockID?'id="'.$blockID.'"':'';
         <div class="row">
             <div class="col-lg-4 col-md-5">
                 <?php if($content): ?>
-                    <div class="content-block textImageBanner__content text-color-white"><?php echo $content; ?></div>
+                    <div class="content-block textImageBanner__content text-color-white animate fade-up"><?php echo $content; ?></div>
                 <?php endif; ?>
             </div>
             <div class="col-md-6 offset-lg-2 offset-md-1">
                 <?php if($image): ?>
-                    <div class="textImageBanner__image">
+                    <div class="textImageBanner__image animate fade-up">
                         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
                     </div>
                 <?php endif; ?>

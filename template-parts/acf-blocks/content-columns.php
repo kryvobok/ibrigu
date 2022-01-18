@@ -15,12 +15,12 @@
 <section class="section content-columns pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>" style="background-color: <?php echo $backgroundColor; ?>">
     <div class="container">
         <div class="row content-columns__row">
-            <div class="col-md-5 col-8 content-columns__item-1 content-columns__item content-columns__imagesCol ">
+            <div class="col-md-5 col-8 content-columns__item-1 content-columns__item content-columns__imagesCol animate fade-up">
                 <?php if( !empty( $image1 ) ): ?>
                     <img class="content-columns__image  content-columns__image__big" src="<?php echo esc_url($image1['url']); ?>" alt="<?php echo esc_attr($image1['alt']); ?>" />
                 <?php endif; ?>
             </div>
-            <div class="col-md-4 col-6 content-columns__item-2 content-columns__item content-columns__image d-flex justify-content-center align-items-center">
+            <div class="col-md-4 col-6 content-columns__item-2 content-columns__item content-columns__image d-flex justify-content-center align-items-center animate fade-up">
                 <?php if( !empty( $image4 ) ): ?>
                     <img class="content-columns__image" src="<?php echo esc_url($image4['url']); ?>" alt="<?php echo esc_attr($image4['alt']); ?>" />
                 <?php endif; ?>
@@ -32,19 +32,19 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-5 col-12 content-columns__item-4 row d-flex justify-content-around align-items-center">
-                <div class="col-4 align-self-baseline align-self-md-center">
+            <div class="col-md-5 col-12 content-columns__item-4 row d-flex justify-content-around align-items-center ">
+                <div class="col-4 align-self-baseline align-self-md-center animate fade-up">
                     <?php if( !empty( $image2 ) ): ?>
                         <img class="content-columns__image" src="<?php echo esc_url($image2['url']); ?>" alt="<?php echo esc_attr($image2['alt']); ?>" />
                     <?php endif; ?>
                 </div>
-                <div class="col-6">
+                <div class="col-6 animate fade-up">
                     <?php if( !empty( $image3 ) ): ?>
                         <img class="content-columns__image" src="<?php echo esc_url($image3['url']); ?>" alt="<?php echo esc_attr($image3['alt']); ?>" />
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-3 col-6 content-columns__item-5 content-columns__item__content">
+            <div class="col-md-3 col-6 content-columns__item-5 content-columns__item__content animate fade-up">
                 <?php if($content): ?>
                     <?php echo $content; ?>
                 <?php endif; ?>

@@ -42,7 +42,7 @@
                 <li class="campaigns__item col-12">
                     <a href="<?php the_permalink(); ?>">
                         <?php if($heading) :?>
-                            <div class="section contentBlock">
+                            <div class="section contentBlock animate fade-up">
                                     <div class="row">
                                         <div class="<?php echo $headingClasses ?>">
                                             <div class="content-block animate fade-up"><?php echo $heading; ?></div>
@@ -55,14 +55,14 @@
                             <?php  while( have_rows('images') ) : the_row(); 
                                 $image = get_sub_field('image');
                             ?>
-                            <li class="imagesGrid__item col-6">
+                            <li class="imagesGrid__item col-6 animate fade-up">
                                 <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                             </li>
                             <?php endwhile; ?>
                         <?php endif; ?>
                     </ul>
                     <?php if($content) :?>
-                        <div class="section contentBlock">
+                        <div class="section contentBlock animate fade-up">
                                 <div class="row">
                                     <div class="<?php echo $contentClasses ?>">
                                         <div class="content-block animate fade-up"><?php echo $content; ?></div>

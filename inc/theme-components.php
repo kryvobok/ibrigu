@@ -48,7 +48,7 @@ function button_icon_bg_acf($link,$class='',$customLabel=''){
 function button_download_acf($file,$class='',$customLabel=''){
   if( $file ): 
       $link_url = $file['url'];
-      $link_title = __('Download PDF','rocket-sass');
+      $link_title = __('Download PDF','ibrigu');
       $link_target = '_blank';
       if($customLabel) $link_title = $customLabel;
       return '<a class="button button--download '.$class.'" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'"><span class="button__inner"><span class="button__icon">'.get_inline_svg('icon-download.svg').'</span><span class="button__text">'.esc_html( $link_title ).'</span></span></a>';
