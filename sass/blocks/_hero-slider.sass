@@ -5,6 +5,8 @@
         flex-wrap: wrap
         +max-screen($breakpoint-lg)
             justify-content: center
+        +max-screen($breakpoint-md)
+            justify-content: space-between
         &__img-2
             align-self: center
         &__img
@@ -12,9 +14,14 @@
             width: 100%
             max-width: 100%
         &__img-3
+    &__container
+        +max-screen($breakpoint-md)
+            padding: 0
     &__img__wrapper
         +max-screen($breakpoint-lg)
             margin-bottom: 30px
+        +max-screen($breakpoint-md)
+            padding: 0
     &__slick--next
         display: none !important
         justify-content: center
