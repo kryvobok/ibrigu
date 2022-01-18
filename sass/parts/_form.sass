@@ -86,6 +86,8 @@
             display: none
 	.nf-response-msg
 		text-align: center
+	#nf-form-title-4
+		display: none
 .form--newsletter
 	nf-fields-wrap
 		flex-direction: column
@@ -115,6 +117,8 @@
 	#nf-label-field-9
 		.ninja-forms-req-symbol
 			display: none
+	#nf-field-9-container
+		margin-bottom: 30px
 	#nf-label-field-23
 		.ninja-forms-req-symbol
 			display: none
@@ -133,7 +137,14 @@
 		display: none
 	p
 		font-size: 18px
+		+max-screen($breakpoint-md)
+			font-size: 16px
 	.checkbox-container.label-right label
 		font-size: 18px
+		+max-screen($breakpoint-md)
+			font-size: 16px
+	.nf-error-msg, .form .ninja-forms-req-symbol
+		display: block
+		font-size: 12px
 	
 
