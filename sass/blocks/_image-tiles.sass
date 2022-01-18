@@ -16,8 +16,18 @@
             height: auto
     &__heading
             
-.image-tiles—left,.image-tiles—right
+.image-tiles—right
     justify-content: space-around
+.image-tiles—left
+    justify-content: space-around
+    +max-screen($breakpoint-md)
+        justify-content: space-between
+        .container
+            padding-left: 0
+            padding-right: 0 
+        .image-tiles__item
+            padding-left: 0
+            padding-right: 0
 .threeCols
     .image-tiles__item—1
         +max-screen($breakpoint-md)
@@ -30,8 +40,11 @@
             padding: 0
     .image-tiles__item—2
          +max-screen($breakpoint-md)
-            padding-left: 30px
-            padding-right: 30px
+            padding-left: 20px
+            padding-right: 20px
+    .container
+        padding-left: 0
+        padding-right: 0
 .imageBlock
     &__container
         max-width: 100%

@@ -24,8 +24,7 @@ if($heading) : ?>
     </section>
 <?php else: ?>
     <section class="hero-image  pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>" >
-<div class="container hero-image__container animate fade-up">
-
+<div class="container hero-image__container">
             <div class="hero-image__image">
                 <?php if( !empty( $backgroundImage ) ): ?>
                     <?php image_acf($backgroundImage); ?>

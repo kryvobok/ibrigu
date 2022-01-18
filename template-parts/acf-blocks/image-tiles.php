@@ -62,7 +62,7 @@
             </li>
             <?php if( $blockLayout=='3colsLU' || $blockLayout=='3colsRC' || $blockLayout=='3colsLD' ): ?>
                 <li class="image-tiles__item image-tiles__item—3 col-3 <?php echo $ThirdolumnStyle ?>" style="<?php echo $ThirdColImageClasses?>">
-                    <img class="image-tiles__item__image animate fade-up" src="<?php echo esc_url($image3['url']); ?>" alt="<?php echo esc_attr($image3['alt']); ?>" />
+                    <img class="image-tiles__item__image" src="<?php echo esc_url($image3['url']); ?>" alt="<?php echo esc_attr($image3['alt']); ?>" />
                 </li>
             <?php endif; ?>
         </ul>
