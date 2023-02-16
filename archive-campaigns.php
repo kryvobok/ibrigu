@@ -9,9 +9,9 @@
             <ul class="campaigns__list">
                 <?php
                     $args = array(
-                        'numberposts' => 6,
+                        'numberposts' => -1,
                         'post_type' => 'campaigns',
-                        'suppres_filters' => true,
+                        'suppress_filters' => 0
                     );
                     $posts = get_posts( $args );
 
