@@ -21,6 +21,7 @@ function theme_setup(){
 			'main-menu' => __( 'Main Menu', 'ibrigu' ),
 			'footer-menu-1' => __( 'Footer Menu 1', 'ibrigu'),
 			'footer-menu-2' => __( 'Footer Menu 2', 'ibrigu'),
+			'footer-menu-3' => __( 'Footer Menu 3', 'ibrigu'),
             'footer-bottom-menu' => __( 'Footer Bottom Menu', 'ibrigu'),  
 		)
     );

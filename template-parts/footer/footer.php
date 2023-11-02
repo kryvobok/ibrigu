@@ -16,6 +16,13 @@
 	$menu_locations_2 = get_nav_menu_locations();
 	$menu_object_2 = (isset($menu_locations_2[$menu_location_2]) ? wp_get_nav_menu_object($menu_locations_2[$menu_location_2]) : null);
 	$menu_name_2 = (isset($menu_object_2->name) ? $menu_object_2->name : '');
+
+	$menu_location_3 = 'footer-menu-3';
+	$menu_locations_3 = get_nav_menu_locations();
+	$menu_object_3 = (isset($menu_locations_3[$menu_location_3]) ? wp_get_nav_menu_object($menu_locations_3[$menu_location_3]) : null);
+	$menu_name_3 = (isset($menu_object_3->name) ? $menu_object_3->name : '');
+
+	$footer_text = get_field('footer_text','option');
 ?>
 <footer id="footer" class="footer">
 
@@ -66,8 +73,17 @@
 							</div>
 						<?php endif; ?>
 					</div>
+					
+					<?php 
+					if($footer_text): ?>
+					<div class="col-12 col-lg-2 col-md-12 col-sm-12 footer__main__col footer__main__col-2">
+						<nav class="footer__main__nav footer__main__nav-text" style="font-size: 10px; line-height: 1.4em;">
+							<?php echo $footer_text; ?>
+						</nav>
+					</div>
+					<?php endif; ?>
 
-					<div class="col-12 col-lg-4 offset-lg-2 footer__main__col footer__main__col-4">
+					<div class="col-12 col-lg-4 <?php echo $footer_text?'':'offset-lg-2'; ?> footer__main__col footer__main__col-4">
 						
 						<?php 
 						$enableFooterNewsletter = get_field('enable_footer_newsletter','option');

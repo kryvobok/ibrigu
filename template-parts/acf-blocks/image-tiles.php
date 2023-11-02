@@ -24,7 +24,7 @@
         $contentClasses.= 'image-tiles—left';
         $ThirdColImageClasses.= 'display: none;';
         $LeftColumnClasses.= 'col-md-6 col-sm-6 col-7 pt-md-0 ';
-        $RightColumnClasses.= 'col-md-4 col-sm-5 col-4  align-self-center d-flex align-items-center justify-content-center';
+        $RightColumnClasses.= 'col-md-4 col-sm-5 col-5  align-self-center d-flex align-items-center justify-content-center';
         $ThirdolumnStyle= '';
     elseif($blockLayout=='3colsLU'):
         $contentClasses.= '';

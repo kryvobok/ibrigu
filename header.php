@@ -11,6 +11,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
 	<?php the_field('header_scripts','option'); ?>
+	<meta name="facebook-domain-verification" content="s3elub0jsx3vr82n4lz6ti6s8x9b7p" />
 </head>
 
 <?php
