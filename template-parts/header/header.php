@@ -4,25 +4,22 @@
 <header id="header" class="header">
     <div class="container header__container">
         <div class="header__row">
-            <div class="header__left">
-                <span id="nav-toggle" class="nav-toggle">
-                    <div class="nav-toggle-icon">
-                        <span class="nav-toggle-icon__inner"></span>
-                    </div>
-                </span>
+            <div class="header__toggle nav-toggle">
+                <div class="nav-toggle-icon">
+                    <span></span>
+                </div>
             </div>
-
-                
+            
             <nav class="header__nav">
                 <div class="main-nav">
                     <?php wp_nav_menu( array('menu_id'=>'main-nav','container_class' => '','theme_location' => 'main-menu') ); ?>
                 </div>
             </nav>
 
-            <div class="header__logo__wrapper">
-                <a href="<?php echo get_home_url(); ?>" class="header__logo">
+            <div class="header__logo">
+                <a href="<?php echo get_home_url(); ?>" class="header--logo">
                     <?php if( !empty( $logo ) ): ?>
-                        <?php echo file_get_contents(esc_url(wp_get_original_image_path($logo['id']))); ?>
+                        <?php echo file_get_contents(esc_url($logo['url'])); ?>
                     <?php endif; ?>
                 </a>
             </div>
@@ -36,7 +33,7 @@
                         <ul class="header__lang__list">
                             <?php
                             foreach($languages as $l){
-                                $label = $l['language_code']=='it'?'IT':'EN';
+                                $label = $l['language_code']=='it'?'ITA':'ENG';
                                 ?>
                                 <?php if($loopCounter!=0): ?>
                                     <li class="header__lang__item-sep">/</li>
@@ -57,6 +54,18 @@
                     
                 }
                 ?>
+            </div>
+            
+            <div class="header__wishlist">
+                <a href="<?php echo get_site_url() . '/wishlist';?>">
+                    <?php echo file_get_contents(esc_url(get_template_directory_uri() . '/assets/images/wishlist_icon.svg')); ?>
+                </a>
+            </div>
+            
+            <div class="header__cart">
+                <a href="<?php echo get_site_url() . '/cart';?>">
+                    <?php echo file_get_contents(esc_url(get_template_directory_uri() . '/assets/images/cart_icon.svg')); ?>
+                </a>
             </div>
         </div>
     </div>

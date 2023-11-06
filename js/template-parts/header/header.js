@@ -1,22 +1,25 @@
 import $  from 'jquery';
 
 function header(){
-    $('#nav-toggle').on('click',function(e){
+    $('.header__toggle').on('click',function(e){
         e.preventDefault();
         $('body').toggleClass('header-active');     
     });
 
-    $('.menu-item__parent').each(function(){
-        let block = $(this);
-        let btn = $(this).find('.menu-item__icon');
-        let subNav = $(this).next();
-        btn.on('click',function(e){
-            e.preventDefault();
-            subNav.slideToggle();
-            block.toggleClass('active');
-        });
+    $(document).on('click', '.menu-item__parent a', function (e) {
+        e.preventDefault();
+
+        const menuItem = $(this).closest('.menu-item-has-children');
+        const subMenu = menuItem.find('.sub-menu');
+
+        menuItem.toggleClass('menu-active');
+
+        if (menuItem.hasClass('menu-active')) {
+            subMenu.css('height', subMenu[0].scrollHeight + 'px');
+        } else {
+            subMenu.css('height', 0)
+        }
     })
-    
 
     //header hide on scrolling
     // Hide Header on on scroll down

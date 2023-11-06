@@ -45,5 +45,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1640774427
+    "acfml_field_group_mode": "translation",
+    "modified": 1699271823
 }
