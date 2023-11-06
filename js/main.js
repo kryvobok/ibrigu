@@ -9,12 +9,13 @@ import { footer } from './template-parts/footer/footer';
 
 //animations
 import { scrollToAnchor,scrollToHash, requestQuoteLink } from './animations/scroll-to-anchor';
-import { appearence } from './animations/appearence';
+// import { appearence } from './animations/appearence';
 
 //blocks
-import { videoBlock } from './template-parts/blocks/video';
+// import { videoBlock } from './template-parts/blocks/video';
+import { categoriesList } from './template-parts/blocks/categories-list';
 import { heroSlider } from './template-parts/blocks/hero-slider';
-
+import { shopFilters } from './template-parts/blocks/shop-filters';
 
 
 header();
@@ -23,8 +24,10 @@ footer();
 //lottie();
 
 //animations
-appearence();
+// appearence();
 
 //blocks
-videoBlock();
-heroSlider();
+// videoBlock();
+shopFilters();
+categoriesList();
+// heroSlider();

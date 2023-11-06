@@ -18,6 +18,8 @@ body
 	::selection
 		color: $color-primary
 		background: transparent
+	+max-screen($breakpoint-md)
+		font-size: 10px
 h1
 	font-weight: 400
 	font-size: 63px
@@ -26,6 +28,8 @@ h1
 		font-size: 34px
 	+max-screen($breakpoint-sm)
 		font-size: 20px
+		&.lg 
+			font-size: 22px
 .contentBlock
 	display: flex
 	align-items: center
@@ -54,7 +58,18 @@ h3
 	padding-bottom: 25px
 
 h4
-	
+	+max-screen($breakpoint-md)
+		font-size: 13px
+		font-weight: 400
+		&.sm 
+			font-size: 12px
+		&.lg 
+			font-size: 14px
+			line-height: 1
+h5 
+	+max-screen($breakpoint-md)
+		font-size: 10px
+		font-weight: 400
 
 p
 	padding-bottom: 20px
