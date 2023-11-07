@@ -3,6 +3,69 @@
     "title": "Theme Options : Footer",
     "fields": [
         {
+            "key": "field_60449934b304c",
+            "label": "Footer socials",
+            "name": "footer_socials",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_654909932ac50",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_60449ad2d8b83",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "65",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "return_format": "array"
+                }
+            ]
+        },
+        {
             "key": "field_6193ca1a0238a",
             "label": "Enable Footer Newsletter",
             "name": "enable_footer_newsletter",
@@ -19,7 +82,8 @@
             "default_value": 0,
             "ui": 1,
             "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_off_text": "",
+            "wpml_cf_preferences": 1
         },
         {
             "key": "field_6193d131d43e7",
@@ -46,7 +110,8 @@
             "tabs": "all",
             "media_upload": 1,
             "delay": 0,
-            "toolbar": "full"
+            "toolbar": "full",
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_6193ca0202389",
@@ -73,62 +138,8 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_61dc6096f3550",
-            "label": "Social Title",
-            "name": "socialTitle",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_60449934b304c",
-            "label": "Social Media Icons",
-            "name": "social_media_icons",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_60449ad2d8b83",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array"
-                }
-            ]
+            "maxlength": "",
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_60449b5d06cd5",
@@ -147,7 +158,8 @@
             "toolbar": "full",
             "media_upload": 1,
             "default_value": "",
-            "delay": 0
+            "delay": 0,
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_63403a15f2df6",
@@ -166,7 +178,8 @@
             "tabs": "all",
             "media_upload": 1,
             "delay": 0,
-            "toolbar": "full"
+            "toolbar": "full",
+            "wpml_cf_preferences": 2
         }
     ],
     "location": [
@@ -187,5 +200,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1665153578
+    "acfml_field_group_mode": "translation",
+    "modified": 1699285450
 }

@@ -19,34 +19,66 @@
 	.nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button])
 		background: none
 		font-family: $font-family-base
-		padding: 20px
+		padding: 20px 10px 20px 0
 		border: none
 		border-bottom: 1px solid #707070
-		padding-left: 0
 		color: #000
-		+max-screen($breakpoint-md)
+		+min-screen($breakpoint-lg)
 			font-size: 16px
+		+max-screen($breakpoint-md)
+			padding: 12px 10px 12px 0
+			font-size: 12px
+		+max-screen($breakpoint-sm)
+			padding: 4px 10px 4px 0
+			font-size: 9px
 		&::placeholder
 			font-weight: 400
 			color: #000
-			+max-screen($breakpoint-md)
+			+min-screen($breakpoint-lg)
 				font-size: 16px
+			+max-screen($breakpoint-md)
+				font-size: 12px
+			+max-screen($breakpoint-sm)
+				font-size: 9px
+	.nf-form-content input[type=submit]
+		border-bottom: 0 !important
+		+max-screen($breakpoint-md)
+			padding: 16px 11px 0 0
+		+max-screen($breakpoint-sm)
+			padding: 0 3px 0 0
 	.nf-form-fields-required
 		display: none
+	.checkbox-container
+		padding-top: 10px
 	.checkbox-container.label-right label
 		font-family: $font-family-base
 		font-weight: 400
 		font-size: 14px
+	.checkbox-wrap .nf-field-label label
+		min-height: 28px
+		+max-screen($breakpoint-sm)
+			margin-left: 16px !important
 	.checkbox-wrap .nf-field-label label:after
+		width: 9.03px
+		height: 9.03px
 		border-radius: 2px
 		border: 1px solid #000
-		background: #FFF
+		background: transparent
+		+max-screen($breakpoint-md)
+			width: 14px
+			height: 14px
+		+max-screen($breakpoint-sm)
+			width: 9.03px
+			height: 9.03px
+			left: -16px !important
 	.nf-error .nf-error-msg
 		font-size: 12px
-		position: absolute
+		position: unset
 		left: 0
 		top: 0
-	.nf-field-label
+	.nf-field
+		.nf-field-label
+			margin: 0 !important
 
 	.submit-wrap
 		justify-content: center
@@ -98,6 +130,7 @@
 				right: 5px
 	.nf-form-content
 		position: relative
+		padding: 0
 	.nf-form-content input[type=button]
 		border: 0
 		background: none
@@ -107,13 +140,22 @@
 			&::after
 				content: " "
 				position: absolute
-				width: 23px
-				height: 21px
+				width: calc(7.86px * 2)
+				height: calc(6.74px * 2)
 				background-image: url(../assets/images/send.svg)
 				background-repeat: no-repeat
+				background-position: center
+				background-size: contain
 				top: 50%
 				left: 0
 				transform: translateY(-50%)
+				+max-screen($breakpoint-md)
+					width: calc(7.86px * 2)
+					height: calc(6.74px * 2)
+				+max-screen($breakpoint-sm)
+					width: calc(7.86px)
+					height: calc(6.74px)
+
 	#nf-label-field-9
 		.ninja-forms-req-symbol
 			display: none
@@ -137,14 +179,25 @@
 		display: none
 	p
 		font-size: 18px
-		+max-screen($breakpoint-md)
+		+min-screen($breakpoint-lg)
 			font-size: 16px
+		+max-screen($breakpoint-md)
+			font-size: 12px
+		+max-screen($breakpoint-sm)
+			font-size: 9px
 	.checkbox-container.label-right label
 		font-size: 18px
-		+max-screen($breakpoint-md)
+		line-height: 1
+		+min-screen($breakpoint-lg)
 			font-size: 16px
+		+max-screen($breakpoint-md)
+			font-size: 12px
+		+max-screen($breakpoint-sm)
+			font-size: 9px
 	.nf-error-msg, .form .ninja-forms-req-symbol
 		display: block
 		font-size: 12px
+	.ninja-forms-field
+		height: auto !important
 	
 
