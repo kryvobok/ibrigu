@@ -33,7 +33,7 @@ do_action( 'woocommerce_before_single_product' );
     </div>
     <div class="singleProduct__button">
         <div class="singleProduct__buttonLeftCol"><h2 class="sm"><?php the_title(); ?></h2><div class="wishlistIcon"><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ) ?></div></div>
-        <div class="singleProduct__buttonCart">
+        <div class="singleProduct__buttonCart productAddTocart">
             <?php do_action('woocommerce_product_add_to_cart'); ?>
         </div>
     </div>

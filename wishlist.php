@@ -9,19 +9,62 @@ $empty_wishlist_text = get_field('empty_wishlist_text', 'options');
 $slider_title = get_field('empty_wishlist_related_products_title', 'options');
 ?>
 <section class="wishlist">
-    <div class="wishlist__userName"><?php echo 'Welcome ' . $customer_name . '!'; ?></div>
-    <div class="wishlist__menu account__menu">
-        <h5 class="account__menuItem">
-            <a href="<?php echo get_home_url() . '/my-account'; ?>">My information</a>
-        </h5>
-        <h5 class="account__menuItem current">
-            My wishlist
-        </h5>
+    <div class="wishlist__top">
+        <div class="wishlist__userName"><?php echo 'Welcome ' . $customer_name . '!'; ?></div>
+        <div class="wishlist__menu account__menu">
+            <h5 class="account__menuItem">
+                <a href="<?php echo get_home_url() . '/my-account'; ?>">My information</a>
+            </h5>
+            <h5 class="account__menuItem current">
+                My wishlist
+            </h5>
+        </div>
+        <h1 class="wishlist__title sm"><?php the_title(); ?></h1>
     </div>
-    <h1 class="wishlist__title sm"><?php the_title(); ?></h1>
-    <?php if($wishlist->has_items()): ?>
-
-    <?php else: ?>
+    <div class="wishlist__itemsList">
+        <?php foreach ( $wishlist_items as $item ) :
+            global $product;
+            $product      = $item->get_product();
+            $availability = $product->get_availability();
+            $stock_status = isset( $availability['class'] ) ? $availability['class'] : false; ?>
+            <div class="wishlist__itemWrapper">
+                <div class="wishlist__item">
+                    <div class="wishlist__itemImage"><?php echo $product->get_image(); ?></div>
+                    <div class="wishlist__itemTitle"><?php echo $product->get_title(); ?></div>
+                    <div class="wishlist__itemBottom">
+                        <div class="wishlist__itemAttributes">
+                            <h5 class="wishlist__itemPrice"><?php do_action('woocommerce_product_price'); ?></h5>
+                            <div class="wishlist__itemAttributes__list">
+                                <?php 
+                                $attributes = $product->get_attributes();
+                                foreach($attributes as $attribute):
+                                    $attributelabel = wc_attribute_label( $attribute['name'] );
+                                    $results = woocommerce_get_product_terms($product->id, $attribute['name'], 'names');?>
+                                    <div class="wishlist__itemAttributes__item">
+                                        <div class="wishlist__itemAttributes__itemLabel"><?php echo $attributelabel . ': '; ?></div>
+                                        <div class="wishlist__itemAttributes__itemOptions">
+                                            <?php $count = count($results); ?>
+                                            <?php $i = 1; foreach($results as $result): ?>
+                                                <?php 
+                                                    echo $result; 
+                                                    if($i != $count){
+                                                        echo ', ';
+                                                    }
+                                                ?>
+                                            <?php $i++; endforeach;?>
+                                        </div>
+                                    </div>
+                                <?php endforeach;?>
+                                <div class="wishlist__itemRemove"><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ) ?></div>
+                            </div>
+                        </div>
+                        <div class="wishlist__itemButton productAddTocart"><?php do_action('woocommerce_product_add_to_cart'); ?></div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="wishlist__empty">
         <?php 
         $args = array(
             'post_type' => 'product',
@@ -31,7 +74,7 @@ $slider_title = get_field('empty_wishlist_related_products_title', 'options');
         $the_query = new WP_Query($args);
         ?>
         <?php if($empty_wishlist_text): ?>
-            <div class="wishlist__empty"><?php echo $empty_wishlist_text ?></div>
+            <div class="wishlist__emptyText"><?php echo $empty_wishlist_text ?></div>
         <?php endif; ?>
         <div class="wishlist__relatedProducts relatedProducts">
             <?php if($slider_title): ?>
@@ -57,6 +100,6 @@ $slider_title = get_field('empty_wishlist_related_products_title', 'options');
             <?php endif; ?>
         </div>
         <div class="wishlist__subscribtion"></div>
-    <?php endif; ?>
+    </div>
 </section>
 <?php get_footer(  ) ?>
