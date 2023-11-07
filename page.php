@@ -10,6 +10,9 @@
                     // Your custom code should here
                     get_template_part('template-parts/page/content','page');
                     the_acf_loop();
+                    if(!empty(get_the_content())):
+                        the_content();
+                    endif;
                 else :
                   // we will show password form here
                   echo get_the_password_form();

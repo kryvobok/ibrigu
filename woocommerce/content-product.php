@@ -26,7 +26,14 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 <div class="catalog__listItem__wrapper col-6">
     <a class="catalog__listItem" href="<?php the_permalink(); ?>">
-        <div class="catalog__listItem__image"><img src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" alt=""></div>
+        <?php 
+        if(!empty(wp_get_attachment_url( $product->get_image_id() ))):
+            $image = wp_get_attachment_url( $product->get_image_id() );
+        else: 
+            $image = wc_placeholder_img_src();
+        endif;
+        ?>
+        <div class="catalog__listItem__image"><img src="<?php echo $image; ?>" alt=""></div>
         <h5 class="catalog__listItem__title"><?php echo $product->get_title(); ?></h5>
         <h5 class="catalog__listItem__price"><?php echo $product->get_price() . ' '; show_currency_symbol(); ?></h5>
         <div class="catalog__listItem__wishlist"><?php do_action( 'woocommerce_after_shop_loop_item' ); ?></div>
