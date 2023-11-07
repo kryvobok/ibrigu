@@ -1,13 +1,14 @@
 .footer
 	background: #EBEBE8
 	&__main
-		padding-top: 100px
-		padding-bottom: 100px
+		padding: 100px 0
 		background: #EBEBE8
+		+max-screen($breakpoint-lg)
+			padding: 60px 0
 		+max-screen($breakpoint-md)
-			padding-top: 60px
-			padding-bottom: 60px
-
+			padding: 40px 0
+		+max-screen($breakpoint-sm)
+			padding: 14px 27.5px 0 0
 		&__logo
 			display: block
 			width: 150px
@@ -21,10 +22,14 @@
 
 		&__nav
 			padding-top: 53px
-			+max-screen($breakpoint-lg)	
+			+max-screen($breakpoint-lg)
+				padding-top: 40px
+			+max-screen($breakpoint-md)
 				padding-top: 20px
+			+max-screen($breakpoint-sm)
+				padding-top: 5px
 			h4
-				//padding-bottom: 17px
+				margin-bottom: 0
 			ul
 				width: 100%
 				margin: -10px 0
@@ -37,66 +42,107 @@
 					transition: 0.3s ease-out
 					display: inline-block
 					font-size: 18px
-					+min-screen($breakpoint-md)
+					+min-screen($breakpoint-lg)
+						font-size: 16px
+					+max-screen($breakpoint-md)
+						font-size: 12px
+					+max-screen($breakpoint-sm)
+						font-size: 9px
 						&:hover
 							color: $color-primary
-					+max-screen($breakpoint-md)
-						font-size: 16px
-		
+
 		&__social
-			padding-top: 50px
-			+max-screen($breakpoint-md)
-				padding-top: 20px
 			&__list
-				//display: flex
+				display: flex
+				gap: 14px
+				li
+					a
+						img
+							width: auto
+							height: 30px
+							+max-screen($breakpoint-lg)
+								height: 20px
+							+max-screen($breakpoint-sm)
+								height: 11px
 				//flex-direction: column
 				
 		&__newsletter
+			padding-top: 40px
 			+max-screen($breakpoint-lg)
 				padding-top: 40px
-
+			+max-screen($breakpoint-md)
+				padding-top: 20px
+			+max-screen($breakpoint-sm)
+				padding-top: 5px
 			p
-				padding-bottom: 50px
+				padding-bottom: 40px
 				+max-screen($breakpoint-lg)
-					padding-bottom: 25px
+					padding-bottom: 40px
+				+max-screen($breakpoint-md)
+					padding-bottom: 20px
+				+max-screen($breakpoint-sm)
+					padding-bottom: 5px
+			.nf-form-cont
+				padding-bottom: 7px
+				+max-screen($breakpoint-md)
+					padding-bottom: 0
 	&__menu__title
 		margin-bottom: 5px
 		text-transform: uppercase
-		font-weight: 400
-		+max-screen($breakpoint-md)
+		+min-screen($breakpoint-lg)
 			font-size: 16px
+		+max-screen($breakpoint-md)
+			font-size: 12px
+		+max-screen($breakpoint-sm)
+			font-size: 9px
 			a
-				font-size: 16px
+				+min-screen($breakpoint-lg)
+					font-size: 16px
+				+max-screen($breakpoint-md)
+					font-size: 12px
+				+max-screen($breakpoint-sm)
+					font-size: 9px
 	&__bottom
 		padding: 26px 0
+		+max-screen($breakpoint-sm)
+			padding: 0 0 13px
 		&__wrapper
 			text-align: center
 		&__inner
 			display: flex
 			flex-direction: column
+		&__copyright
+			+min-screen($breakpoint-lg)
+				font-size: 16px
+			+max-screen($breakpoint-md)
+				font-size: 12px
+			+max-screen($breakpoint-sm)
+				font-size: 9px
 
 
 +max-screen($breakpoint-md)
 	.footer__menu__title
 		position: relative
 		width: fit-content
-		padding-right: 30px
+		padding-right: calc(8.5px + 7.223px)
 		&::before
 			content: " "
 			position: absolute
-			width: 16px
-			height: 16px
+			width: 7.223px
+			height: 3.707px
 			
-			background-image: url(../assets/images/icon-arrow-down.svg)
-			background-size: contain
+			background-image: url('../assets/images/dropdown_arrow.svg')
+			background-size: cover
 			background-position: center
 			background-repeat: no-repeat
 
-			top: 17%
+			top: 50%
 			right: 0
+			transform: translateY(-50%)
+			transform-origin: center
 			transition: 0.3s
 			.footer-active &
-				transform: rotate(-180deg)
+				transform: rotate(-180deg) translateY(50%)
 			
 	.footer-nav
 		+max-screen($breakpoint-md)

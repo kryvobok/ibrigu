@@ -17,91 +17,84 @@
 		max-width: 100%
 	&__row
 		display: flex
-		justify-content: center
+		//justify-content: center
 		align-items: center
 		width: 100%
 		+max-screen($breakpoint-lg)
-			justify-content: space-between
-	&__left
-		display: none
-		+max-screen($breakpoint-lg)
-			display: block
-			width: 20%
-			min-width: 80px
-	&__logo
-		position: relative
-		width: 155px
-		line-height: 0
-		+max-screen($breakpoint-lg)
-			width: 150px
-		+max-screen($breakpoint-sm)
-			width: 100px
-		&__wrapper
-			text-align: center
-			display: flex
-			align-items: center
-			justify-content: center
-		svg
-			width: 100%
-			height: auto
+			justify-content: unset
+	&__toggle
+		order: 1
 	&__nav
-		position: fixed
-		top: 0
+		position: absolute
+		padding-left: 0
+		padding-top: 0
+		top: 99%
 		left: 0
-		padding: 10px
-		padding-top: 68px
-		padding-left: 52px
+		width: 100%
+		padding: 0
 		background: #F2F2EF
-		+max-screen(1340px)
-			padding-left: 30px
+	&__logo
+		display: flex
+		align-items: center
+		justify-content: center
+		order: 3
+		margin: 0 auto
 		+max-screen($breakpoint-lg)
-			position: absolute
-			padding-left: 0
-			padding-top: 0
-			top: 99%
-			left: 0
-			width: 100%
-			padding: 0
-		+max-screen($breakpoint-md)
-		
+
+		.header--logo
+			width: 155px
+			+max-screen($breakpoint-lg)
+				width: 150px
+			+max-screen($breakpoint-md)
+				width: 128px
+			svg
+				width: 100%
+				height: auto
 
 	&__lang
-		position: fixed
-		top: 68px
-		right: 52px
-		+max-screen(1340px)
-			right: 30px
-		+max-screen($breakpoint-lg)
-			position: relative
-			padding-right: 0
-			padding-top: 0
-			top: 0
-			right: 0
-			width: 20%
-			min-width: 80px
-			text-align: right
+		order: 2
+		+max-screen($breakpoint-md)
+			align-self: flex-end
 		*
 			//color: #fff
 		&__list
 			display: flex
-			justify-content: flex-end
-			font-size: 18px
+			margin-left: 7px
 			+max-screen($breakpoint-md)
-				font-size: 16px
+				margin-bottom: 15px
+			a
+				font-size: 18px
+				+max-screen($breakpoint-lg)
+					font-size: 16px
+				+max-screen($breakpoint-md)
+					font-size: 10px
+	&__wishlist
+		order: 4
+		margin-right: 10px
+	&__cart
+		order: 5
+
+	&__wishlist, &__cart
+		a
+			display: flex
+			align-items: center
+			justify-content: center
 
 .main-nav
-	+max-screen($breakpoint-lg)
-		max-height: 0px
-		overflow: hidden
-		transition: max-height 0.6s linear 0.3s
-		.header-active &
-			max-height: 300px
-			transition: max-height 0.6s ease-out 0s
+	max-height: 0px
+	overflow: hidden
+	transition: max-height 0.6s linear 0.3s
+	.header-active &
+		max-height: 300px
+		overflow-y: auto
+		transition: max-height 0.6s ease-out 0s
 #main-nav
-	+max-screen($breakpoint-lg)
-		padding: 30px
-		padding-top: 20px
+	padding: 30px
+	padding-top: 20px
 	.sub-menu
+		height: 0
+		overflow: hidden
+		transition: $default-transition
 		.menu-item
 			padding-bottom: 3px
 			padding-top: 3px
@@ -135,26 +128,17 @@
 
 
 .nav-toggle
-	width: 30px
-	height: 30px
-	display: none
+	width: 27px
+	height: 16px
 	z-index: 6
 	position: relative
-	+max-screen($breakpoint-lg)
-		display: block
-	+max-screen($breakpoint-sm)
-		width: 20px
-		height: 20px
-		
+
 	&-icon
 		position: absolute
-		width: 30px
-		height: 16px
-		+max-screen($breakpoint-sm)
-			width: 20px
-			height: 12px
+		width: 100%
+		height: 100%
 
-		&__inner,
+		span,
 		&:before,
 		&:after
 			content: ''
@@ -166,13 +150,13 @@
 			.scrolled &
 				background-color: #000
 
-		&__inner
+		span
 			top: 0
 			left: 0
 			transition: opacity 0.25s linear 0s , top 0.25s linear 0.25s
 		&:before
 			top: 50%
-			left: 0			
+			left: 0
 			transition: opacity 0.25s linear 0s , top 0.25s linear 0.25s , transform 0.25s linear 0s
 		&:after
 			top: 100%
@@ -180,7 +164,7 @@
 			transition: opacity 0.25s linear 0s , top 0.25s linear 0.25s , transform 0.25s linear 0s
 
 		.header-active &,&.nav-close
-			&__inner
+			span
 				opacity: 0
 				top: 50%
 				transition: opacity 0.25s linear 0.25s , top 0.25s linear 0s
