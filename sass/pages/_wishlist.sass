@@ -1,0 +1,138 @@
+.woocommerce-wishlist 
+    padding-top: 24px
+.account__menu
+    display: flex 
+    padding-left: 12px
+    margin: 0 -13px 
+    margin-bottom: 19px
+    &Item 
+        margin: 0 13px 
+        &.current 
+            font-weight: 700
+            text-decoration: underline
+.wishlist 
+    padding-bottom: 12px
+    &__userName 
+        text-align: center 
+        font-weight: 700
+        margin-bottom: 17px
+    &__title 
+        text-align: center
+        margin-bottom: 28px
+        line-height: 1.25
+        text-transform: uppercase
+    &__empty 
+        &Text
+            font-weight: 700
+            max-width: 180px 
+            text-align: center
+            margin: auto 
+            margin-bottom: 15px
+            line-height: 1.55
+            margin-top: 32px
+    &.hasItems
+        .wishlist__empty 
+            visibility: hidden 
+            opacity: 0
+            height: 0
+    &.empty 
+        .wishlist__empty 
+            visibility: visible 
+            opacity: 1
+            height: auto
+        .wishlist__itemsList 
+            display: none
+    &__itemsList 
+        margin-bottom: -53px
+    &__item
+        margin-bottom: 53px
+        &Price 
+            p 
+                padding-bottom: 11px
+        &Title 
+            padding-left: 14px
+            margin-bottom: 7px
+            padding-right: 13px
+        &Image 
+            width: 37.5% 
+            margin: auto 
+            min-width: 140px 
+            margin-bottom: 32px
+        &Bottom 
+            display: flex
+            padding-left: 14px
+            padding-right: 13px
+            align-items: flex-end
+        &Attributes 
+            width: calc( 100% - 71px )
+            &__item
+                display: flex 
+                &Label 
+                    margin-right: 0.6em
+        &Button  
+            body.woocommerce.woocommerce-page &
+                button.single_add_to_cart_button.button 
+                    width: 71px 
+                    padding: 9.5px 
+                    padding-bottom: 16.5px
+                    .price 
+                        padding-bottom: 8px
+                        p 
+                            padding-bottom: 0
+                    .label 
+                        line-height: 1
+                    h2 
+                        font-size: 10px
+            .out-of-stock
+                font-size: 10px
+                text-align: right
+                padding-bottom: 0
+        &Remove 
+            .yith-wcwl-add-to-wishlist
+                margin-top: 3px
+            .delete_item
+                font-size: 0
+                position: relative
+                &::before 
+                    content: "Cancel"
+                    font-size: 10px
+                    font-weight: 700
+                    padding-bottom: 3px
+                &::after
+                    content: ""
+                    position: absolute
+                    left: 0
+                    right: 0
+                    bottom: -5px
+                    height: 1px 
+                    background-color: $color-black
+                i
+                    display: none 
+
+    &__relatedProducts
+        padding-bottom: 40px
+        padding-left: 27px
+        padding-right: 22px
+        .slick-dots
+            margin-top: 20px
+        &Title 
+            text-align: center
+            margin-bottom: 15px
+        .relatedProducts
+            &__link 
+                text-align: center 
+                width: fit-content
+                display: block
+                margin: auto
+                margin-top: 2.5px
+                padding-bottom: 2.5px
+                position: relative
+                &::before 
+                    content: ""
+                    position: absolute
+                    left: 0
+                    right: 0
+                    bottom: -0.5px 
+                    height: 1px 
+                    background-color: $color-black
+

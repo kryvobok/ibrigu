@@ -13,6 +13,7 @@ function theme_load_scripts(){
 
     //main.js
     wp_enqueue_script( 'slick-js', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
+    wp_enqueue_script( 'swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
     wp_enqueue_script( 'main', get_template_directory_uri() . '/dist/main.min.js', false , false , true);
     wp_localize_script( 'main', 'customjs_ajax_object',
         array( 

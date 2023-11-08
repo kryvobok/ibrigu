@@ -26,6 +26,8 @@ h1
 	line-height: 1
 	+max-screen($breakpoint-md)
 		font-size: 34px
+		&.sm 
+			font-size: 22px
 	+max-screen($breakpoint-sm)
 		font-size: 20px
 		&.lg 
@@ -51,12 +53,19 @@ h2
 	+max-screen($breakpoint-md)
 		font-size: 16px
 		padding-bottom: 0
+		&.md 
+			font-size: 17px
+		&.sm 
+			font-size: 15px
+		&.sm,
+		&.md 
+			p 
+				font-size: 1em
 h3
 	font-weight: 400
 	font-size: 20px
 	line-height: 1
 	padding-bottom: 25px
-
 h4
 	+max-screen($breakpoint-md)
 		font-size: 13px
@@ -70,6 +79,9 @@ h5
 	+max-screen($breakpoint-md)
 		font-size: 10px
 		font-weight: 400
+		a,
+		p
+			font-size: inherit 
 
 p
 	padding-bottom: 20px
@@ -79,3 +91,22 @@ p
 	p
 		&:first-child
 			padding-bottom: 50px
+.woocommerce-text
+	p 
+		padding-bottom: 18px
+	& > *
+		font-size: 10px
+	ul 
+		padding-left: 18px
+		padding-top: 3px
+		padding-bottom: 4px
+		li
+			position: relative
+			&::before
+				content: ""
+				position: absolute
+				left: -6px 
+				width: 3px 
+				height: 3px 
+				background-color: $color-black
+				top: 7px 

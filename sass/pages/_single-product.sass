@@ -1,0 +1,278 @@
+body.woocommerce.woocommerce-page 
+    .single_add_to_cart_button.button
+        background-color: $color-black
+        padding: 16px
+        padding-bottom: 27px
+        text-align: left
+        border-radius: 0
+        opacity: 1
+        max-width: 112px
+        .price 
+            font-weight: 700
+            padding-bottom: 10px
+            line-height: 1.2
+            p 
+                padding-bottom: 0
+        .label
+            font-weight: 400
+            line-height: 1.2
+    .productAddTocart
+        table,
+        .quantity
+            display: none
+.single-product 
+    .woocommerce-breadcrumb 
+        display: flex 
+        font-size: 13px
+        color: $color-black
+        margin-bottom: 10px
+        padding-left: 12px
+        padding-top: 15px 
+        a 
+            font-size: 13px
+            color: $color-black
+            padding-right: 0.6em
+            &::after 
+                content: " / "
+        & > a 
+            display: none 
+        & > a:first-of-type,
+        & > a:last-of-type
+            display: block 
+.singleProduct
+    margin-bottom: 31px
+    &__imagesList
+        &__item 
+            position: relative
+            &.slick-slide
+                img
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100% !important 
+                    object-fit: cover 
+                    object-position: center
+            &::before
+                content: ""
+                padding-bottom: 153.5%
+                display: block
+        .slick-dots
+            position: absolute
+            left: 12px 
+            top: 50% 
+            transform: translateY(-50%)
+            li 
+                button 
+                    display: block 
+                    background-color: transparent 
+                    border: 1px solid $color-bg-light
+                    width: 9px 
+                    height: 9px 
+                    margin: 4px 0
+                    font-size: 0
+                &.slick-active 
+                    button 
+                        border-color: $color-black
+                        background-color: $color-black
+    &__button
+        display: flex 
+        margin-bottom: 24px
+        &LeftCol
+            padding-top: 21px
+            padding-left: 12px
+            padding-right: 40px
+            width: 100%
+            max-width: calc( 100% - 112px )
+            border-top: 1px solid $color-black
+            border-bottom: 1px solid $color-black
+            position: relative
+            .wishlistIcon 
+                position: absolute
+                top: 25px
+                right: 26px 
+                .yith-wcwl-add-to-wishlist 
+                    margin-top: 0
+                .yith-wcwl-add-button,
+                .yith-wcwl-add-button *
+                    font-size: 0
+                    .yith-wcwl-icon
+                        font-size: 12px
+                        margin-right: 0
+                .yith-wcwl-add-button a > *
+                    display: none !important
+                .yith-wcwl-add-button a > i 
+                    display: block !important
+    &__features 
+        margin-bottom: 25px
+        &Item 
+            display: flex 
+            align-items: center
+            padding-left: 12px
+            margin-bottom: 6px
+            &:last-child
+                margin-bottom: 0
+            &__icon
+                margin-right: 11px
+                width: 17px
+                height: 17px 
+                img
+                    width: 100% 
+                    height: 100%
+                    object-fit: contain
+                    object-position: left center
+    &__description 
+        max-height: 3.5em
+        overflow: hidden
+        line-height: 1.75
+        p 
+            & + ul
+                margin-top: -18px
+        .attributesItem 
+            display: flex 
+            &__label 
+                margin-right: 0.6em
+        &__wrapper
+            padding-left: 12px
+            .showContent 
+                margin-top: 6px
+                margin-bottom: 24px
+                .less 
+                    display: none
+            &.opened 
+                .showContent
+                    .more 
+                        display: none
+                    .less 
+                        display: block 
+.singleProduct__infoTab
+    &s__list
+    &__title 
+        padding: 14px 32px 11px 12px 
+        border-top: 1px solid $color-black
+        position: relative
+        &::after 
+            content: ""
+            width: 7px 
+            height: 13px 
+            position: absolute
+            right: 14px 
+            top: 13px 
+            background-image: url('../assets/images/filterArrow.svg')
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+    &__wrapper
+        &:last-child
+            .singleProduct__infoTab__title
+                border-bottom: 1px solid $color-black
+    &__popup 
+        position: fixed 
+        top: 0
+        right: 100%
+        width: 100%
+        height: 100%
+        z-index: 999999
+        background-color: $color-bg-white
+        transition: .3s
+        padding-top: 110px
+        padding-left: 16px
+        padding-right: 16px
+        padding-bottom: 36px
+        &.opened
+            right: 0
+        &Close 
+            position: absolute
+            right: 17px
+            top: 78px 
+            background-image: url('../assets/images/closePopup.svg')
+            background-size: contain
+            background-position: center
+            background-repeat: no-repeat
+            width: 21px
+            height: 21px
+        &Title 
+            position: relative
+            padding-bottom: 7.5px
+            font-weight: 700
+            &::after 
+                content: ""
+                position: absolute
+                left: -16px
+                right: -16px 
+                bottom: 0
+                height: 1px 
+                background-color: $color-black            
+        &Text 
+            margin-top: 11px
+            line-height: 1.8
+        &Image 
+            margin-left: -16px
+            margin-right: -16px
+            margin-top: 53px
+.singleProductCard
+    &sList
+        display: flex 
+        flex-wrap: wrap
+        padding: 0 4px 
+        margin-bottom: -17px
+        justify-content: center
+        &__title
+            font-size: 15px
+            text-transform: uppercase
+            margin-bottom: 14px
+        &__wrapper 
+            padding-left: 12px
+            padding-right: 36px
+            margin-bottom: 41px
+    &__wrapper 
+        padding: 0 20px
+        width: 50%
+        margin-bottom: 17px
+    &__title 
+        text-align: center
+    &__image 
+        margin-bottom: 8px
+        position: relative
+        img
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+        .slick-slide & img 
+            height: 100% !important
+        &::before 
+            content: ""
+            padding-bottom: 150%
+            display: block
+    &__price 
+        margin-top: 6px
+        font-weight: 700
+        text-align: center
+        p
+            padding-bottom: 0
+            font-size: 1em
+.relatedProducts 
+    &__list 
+        width: 51%
+        margin: auto
+    .slick-list 
+        margin-bottom: -17px
+    .slick-dots 
+        display: flex 
+        justify-content: center 
+        margin-top: 8px
+        li 
+            button 
+                border: 1px solid $color-bg-light
+                font-size: 0
+                width: 9px 
+                height: 9px 
+                display: block
+                margin: 0 4px 
+            &.slick-active
+                button 
+                    border-color: $color-black
+                    background-color: $color-black

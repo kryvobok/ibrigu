@@ -61,6 +61,20 @@
                         &::after 
                             content: "Out of stock"
                             font-size: 8px
+                    .yith-wcwl-wishlistaddedbrowse
+                        & > a 
+                            display: none
+                    .feedback,
+                    .delete_item
+                        font-size: 0
+                        i
+                            font-size: 8px
+                            margin-top: 5px
+                    .yith-wcwl-add-button
+                        a > i
+                            display: block !important
+                        a > * 
+                            display: none !important
             &__image 
                 position: relative
                 margin-bottom: 12.5px
@@ -74,6 +88,8 @@
                     top: 0 
                     left: 0
                     width: 100% 
+                    object-fit: cover 
+                    object-position: center
                     height: 100%
             &__price 
                 margin-top: 5px
@@ -217,3 +233,6 @@
                 &.colors 
                     .catalog__filtersList__attributeItem.active h4
                         font-weight: 700
+.woocommerce 
+    .back_to_top
+        display: none !important
