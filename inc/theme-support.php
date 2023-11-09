@@ -24,3 +24,5 @@ function show_currency_symbol( ) {
 	global  $woocommerce;
 	echo get_woocommerce_currency_symbol();
  }
+ 
+show_admin_bar(false);

@@ -1,9 +1,18 @@
 import $  from 'jquery';
 
 function header(){
+    let headerToggle = false;
+
     $('.header__toggle').on('click',function(e){
         e.preventDefault();
-        $('body').toggleClass('header-active');     
+
+        if(headerToggle) {
+            $('body').addClass('header-unactive').removeClass('header-active');
+            headerToggle = !headerToggle;
+        } else {
+            $('body').addClass('header-active').removeClass('header-unactive');
+            headerToggle = !headerToggle;
+        }
     });
 
     $(document).on('click', '.menu-item__parent a', function (e) {
@@ -18,6 +27,16 @@ function header(){
             subMenu.css('height', subMenu[0].scrollHeight + 'px');
         } else {
             subMenu.css('height', 0)
+        }
+    })
+
+    // add class to header on scrolling
+    $(document).on('scroll', function () {
+        if($(window).scrollTop() > 46) {
+            $('.header').addClass('header--scrolled').removeClass('header--unscrolled');
+        } else {
+            $('.header').addClass('header--unscrolled').removeClass('header--scrolled');
+
         }
     })
 

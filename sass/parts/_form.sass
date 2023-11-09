@@ -59,8 +59,8 @@
 		+max-screen($breakpoint-sm)
 			margin-left: 16px !important
 	.checkbox-wrap .nf-field-label label:after
-		width: 9.03px
-		height: 9.03px
+		width: 20px
+		height: 20px
 		border-radius: 2px
 		border: 1px solid #000
 		background: transparent
@@ -70,6 +70,14 @@
 		+max-screen($breakpoint-sm)
 			width: 9.03px
 			height: 9.03px
+			left: -16px !important
+	.checkbox-wrap .nf-field-label label:before
+		left: -28px !important
+		font-size: 20px
+		+max-screen($breakpoint-md)
+			font-size: 14px
+		+max-screen($breakpoint-sm)
+			font-size: 9.03px
 			left: -16px !important
 	.nf-error .nf-error-msg
 		font-size: 12px

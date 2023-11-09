@@ -8,22 +8,22 @@
 	display: flex
 	justify-content: center
 	padding: 30px 0
-	//mix-blend-mode: difference
 	+max-screen($breakpoint-md)
 		padding: 20px 0
-	+max-screen($breakpoint-sm)
-
 	&__container
 		max-width: 100%
 	&__row
 		display: flex
-		//justify-content: center
 		align-items: center
 		width: 100%
 		+max-screen($breakpoint-lg)
 			justify-content: unset
+		.home &
+			gap: 0 16px
 	&__toggle
-		order: 1
+		.home &
+			order: 5
+
 	&__nav
 		position: absolute
 		padding-left: 0
@@ -33,14 +33,29 @@
 		width: 100%
 		padding: 0
 		background: #F2F2EF
+	&__lang
+		margin-bottom: 1px
+		+max-screen($breakpoint-md)
+			align-self: flex-end
+		.home &
+			order: 2
+		&__list
+			display: flex
+			margin-left: 7px
+			a
+				font-size: 18px
+				+max-screen($breakpoint-lg)
+					font-size: 16px
+				+max-screen($breakpoint-md)
+					font-size: 10px
 	&__logo
 		display: flex
 		align-items: center
 		justify-content: center
-		order: 3
 		margin: 0 auto
-		+max-screen($breakpoint-lg)
-
+		.home &
+			order: 1
+			margin: 0 auto 0 0
 		.header--logo
 			width: 155px
 			+max-screen($breakpoint-lg)
@@ -51,46 +66,33 @@
 				width: 100%
 				height: auto
 
-	&__lang
-		order: 2
-		+max-screen($breakpoint-md)
-			align-self: flex-end
-		*
-			//color: #fff
-		&__list
-			display: flex
-			margin-left: 7px
-			+max-screen($breakpoint-md)
-				margin-bottom: 15px
-			a
-				font-size: 18px
-				+max-screen($breakpoint-lg)
-					font-size: 16px
-				+max-screen($breakpoint-md)
-					font-size: 10px
-	&__wishlist
-		order: 4
-		margin-right: 10px
-	&__cart
-		order: 5
-
 	&__wishlist, &__cart
 		a
 			display: flex
 			align-items: center
 			justify-content: center
+	&__wishlist
+		margin-right: 10px
+		.home &
+			order: 4
+			margin: 0
+	&__cart
+		.home &
+			order: 3
 
 .main-nav
 	max-height: 0px
 	overflow: hidden
-	transition: max-height 0.6s linear 0.3s
+	transition: max-height 0.42s linear 0s
 	.header-active &
 		max-height: 300px
 		overflow-y: auto
-		transition: max-height 0.6s ease-out 0s
+		transition: max-height 0.42s ease-out 0s
 #main-nav
-	padding: 30px
+	padding: 20px 30px 30px
 	padding-top: 20px
+	+max-screen($breakpoint-md)
+		padding: 20px 15px
 	.sub-menu
 		height: 0
 		overflow: hidden
@@ -111,22 +113,22 @@
 		padding-bottom: 3px				
 		+max-screen($breakpoint-lg)
 			opacity: 0
-			transition: 0.3s
+			transition: 0.42s
 			padding-bottom: 12px
 			.header-active &
 				opacity: 1
 				@for $i from 1 to 10
 					&:nth-child(#{$i})
-						transition-delay: 0.3s + $i * 0.1s
+						transition-delay: 0.42s + $i * 0.1s
 		+max-screen($breakpoint-md)
 			font-size: 16px
+		&:last-of-type
+			padding-bottom: 0
 		&>a
 			
 		&.current-menu-item
 			&>a
 				text-decoration: underline
-
-
 .nav-toggle
 	width: 27px
 	height: 16px
@@ -176,6 +178,151 @@
 				transform: rotate(-45deg)
 				top: 50%
 				transition: opacity 0.25s linear 0.25s , top 0.25s linear 0s , transform 0.25s linear 0.25s
-html 
-	+max-screen($breakpoint-md)
-		margin-top: 60px
+.header--scrolled
+	&.header
+		background: #F2F2EF !important
+		transition: all 0.35s linear !important
+	.header
+		&__toggle
+			.nav-toggle-icon
+				span,
+				&:before,
+				&:after
+					background: #000 !important
+					transition: all 0.35s linear !important
+		&__logo
+			.header--logo
+				svg
+					path
+						fill: #000 !important
+						transition: all 0.35s linear !important
+		&__lang
+			&__list
+				color: #000 !important
+				transition: all 0.35s linear !important
+				a
+					color: #000 !important
+					transition: all 0.35s linear !important
+		&__wishlist, &__cart
+			a
+				svg
+					path
+						fill: #000 !important
+						transition: all 0.35s linear !important
+.header--unscrolled
+	&.header
+		transition: all 0.2s linear !important
+	.header
+		&__toggle
+			.nav-toggle-icon
+				span,
+				&:before,
+				&:after
+					transition: all 0.35s linear !important
+		&__logo
+			.header--logo
+				svg
+					path
+						transition: all 0.35s linear !important
+		&__lang
+			&__list
+				transition: all 0.35s linear !important
+				a
+					transition: all 0.35s linear !important
+		&__wishlist, &__cart
+			a
+				svg
+					path
+						transition: all 0.35s linear !important
+
+.header--white-transparent
+	.header-active &
+		&.header
+			background: #F2F2EF
+			transition: all 0.6s ease-out 0s
+		.header
+			&__toggle
+				.nav-toggle-icon
+					span,
+					&:before,
+					&:after
+						background: #000
+						transition: all 0.35s ease-out 0s
+			&__logo
+				.header--logo
+					svg
+						path
+							fill: #000
+							transition: all 0.35s ease-out 0s
+			&__lang
+				&__list
+					color: #000
+					transition: all 0.35s ease-out 0s
+					a
+						color: #000
+						transition: all 0.35s ease-out 0s
+			&__wishlist, &__cart
+				a
+					svg
+						path
+							fill: #000
+							transition: all 0.35s ease-out 0s
+.header--white-transparent
+	.header-unactive &
+		&.header
+			background: transparent
+			transition: all 0.4s linear 0.5s
+		.header
+			&__toggle
+				.nav-toggle-icon
+					span,
+					&:before,
+					&:after
+						background: #fff
+						transition: all 0.4s linear 0.5s
+			&__logo
+				.header--logo
+					svg
+						path
+							fill: #fff
+							transition: all 0.4s linear 0.5s
+			&__lang
+				&__list
+					color: #fff
+					transition: all 0.4s linear 0.5s
+					a
+						color: #fff
+						transition: all 0.4s linear 0.5s
+			&__wishlist, &__cart
+				a
+					svg
+						path
+							fill: #fff
+							transition: all 0.4s linear 0.5s
+
+
+.header--white-transparent
+	&.header
+		background: transparent
+	.header
+		&__toggle
+			.nav-toggle-icon
+				span,
+				&:before,
+				&:after
+					background: #fff
+		&__logo
+			.header--logo
+				svg
+					path
+						fill: #fff
+		&__lang
+			&__list
+				color: #fff
+				a
+					color: #fff
+		&__wishlist, &__cart
+			a
+				svg
+					path
+						fill: #fff

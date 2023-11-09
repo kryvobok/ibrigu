@@ -28,6 +28,10 @@ if($headerDark || is_404() || is_category()):
 	$body_classes.=' header__dark';
 endif;
 
+if(is_front_page()) {
+    $body_classes.=' header--white-transparent';
+}
+
 ?>
 <body <?php body_class($body_classes); ?>>
 	
