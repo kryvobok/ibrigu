@@ -25,12 +25,12 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <div class="u-columns col2-set" id="customer_login">
 
-	<div class="">
+	<div class="woocommerceLogin woocommerceAccountForm">
 
 <?php endif; ?>
 
-		<h2><?php esc_html_e( 'Registered customer', 'woocommerce' ); ?></h2>
-		<div class="login__formText">If you already have an account, please enter your email and password.</div>
+		<h4 class="woocommerceLogin__title sm woocommerceAccountForm__title"><?php esc_html_e( 'Registered customer', 'woocommerce' ); ?></h4>
+		<div class="woocommerceLogin__text woocommerce-text woocommerceAccountForm__text">If you already have an account, please enter your email and password.</div>
 
 		<form class="woocommerce-form woocommerce-form-login login" method="post">
 
@@ -44,17 +44,18 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 			</p>
 
 			<?php do_action( 'woocommerce_login_form' ); ?>
-
-			<p class="form-row">
+			<p class="woocommerce-LostPassword lost_password woocommerce-text sm">
+				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Forgot the password?', 'woocommerce' ); ?></a>
+			</p>
+			<div class="form-row loginFormButtons">
 				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
 					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e( 'Remember me', 'woocommerce' ); ?></span>
 				</label>
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-				<button type="submit" class="woocommerce-button button woocommerce-form-login__submit<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Log in', 'woocommerce' ); ?></button>
-			</p>
-			<p class="woocommerce-LostPassword lost_password">
-				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Forgot the password?', 'woocommerce' ); ?></a>
-			</p>
+				<button type="submit" class="woocommerce-button woocommerceAccountForm__buttonSubmit button button--black button--fz--md woocommerce-form-login__submit<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>"><?php esc_html_e( 'Login', 'woocommerce' ); ?></button>
+				<div class="registerAccountBtn button button--grey button--fz--sm">Create an account</div>
+			</div>
+			
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
 
@@ -64,10 +65,10 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 	</div>
 
-	<div class="u-column2 col-2">
+	<div class="woocommerceRegister">
 
-		<h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
-
+		<h4 class="woocommerceRegister__title sm woocommerceAccountForm__title"><?php esc_html_e( 'Create an account', 'woocommerce' ); ?></h4>
+		<div class="woocommerceRegister__text woocommerceAccountForm__text">Follow orders, save shipping details, track favourite pieces for access on any device, and more.</div>
 		<form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
 
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
@@ -82,8 +83,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 			<?php endif; ?>
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-				<label for="reg_email"><?php esc_html_e( 'Email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-				<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+				<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" placeholder="Email *" /><?php // @codingStandardsIgnoreLine ?>
 			</p>
 
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
@@ -95,16 +95,15 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 			<?php else : ?>
 
-				<p><?php esc_html_e( 'A link to set a new password will be sent to your email address.', 'woocommerce' ); ?></p>
 
 			<?php endif; ?>
 
-			<?php do_action( 'woocommerce_register_form' ); ?>
 
-			<p class="woocommerce-form-row form-row">
+			<div class="woocommerce-form-row form-row registerFormButtons">
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-				<button type="submit" class="woocommerce-Button woocommerce-button button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?> woocommerce-form-register__submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
-			</p>
+				<button type="submit" class="woocommerce-Button woocommerceAccountForm__buttonSubmit woocommerce-button button--black button--fz--md button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?> woocommerce-form-register__submit" name="register" value="<?php esc_attr_e( 'CONTINUE', 'woocommerce' ); ?>"><?php esc_html_e( 'CONTINUE', 'woocommerce' ); ?></button>
+				<div class="loginFormButton button button--grey button--fz--sm">I already have an account</div>
+			</div>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
 

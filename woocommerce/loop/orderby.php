@@ -78,7 +78,7 @@
                         <?php $i++; endforeach; ?>
                         </div>
                     </div>
-                <h4 class="catalog__filtersList__attributeItem__apply button sm">APPLICA</h4>
+                <h4 class="catalog__filtersList__attributeItem__apply button sm">APPLY</h4>
             </div>
         </div>
     </div>
