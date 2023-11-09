@@ -14,7 +14,7 @@ $blockID = get_sub_field('block_id');
 $id = $blockID?'id="'.$blockID.'"':'';
 
 if( !empty( $image ) ): ?>
-    <div <?php echo $id; ?> class="section imageBlock pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?> animate fade-up">
+    <div <?php echo $id; ?> class="section imageBlock pt-<?php echo $paddingTop_mobile ?> pb-<?php echo $paddingBottom_mobile ?> pt-md-<?php echo $paddingTop ?> pb-md-<?php echo $paddingBottom ?>">
         <?php if($style == 'full'): ?>
             <div class="imageBlock__imageWrapper"><?php image_acf($image); ?></div>
             <div class="imageBlock__imageWrapper__mobile"><?php image_acf($imageMobile); ?></div>

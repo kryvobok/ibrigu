@@ -3356,12 +3356,29 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_654a5733e9183": {
-                    "key": "layout_654a5733e9183",
+                "layout_654b95bfef12f": {
+                    "key": "layout_654b95bfef12f",
                     "name": "product_category",
                     "label": "Product category",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_654b95bfef130",
+                            "label": "Content",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "placement": "top",
+                            "endpoint": 0
+                        },
                         {
                             "key": "field_654a575ee9184",
                             "label": "Categories",
@@ -3376,7 +3393,7 @@
                                 "id": ""
                             },
                             "wpml_cf_preferences": 3,
-                            "taxonomy": "category",
+                            "taxonomy": "product_cat",
                             "field_type": "multi_select",
                             "allow_null": 0,
                             "add_term": 1,
@@ -3384,6 +3401,261 @@
                             "load_terms": 0,
                             "return_format": "object",
                             "multiple": 0
+                        },
+                        {
+                            "key": "field_654b95bfef138",
+                            "label": "Layout",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_654b95bfef139",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_654b95bfef13a",
+                            "label": "Padding Top (mobile)",
+                            "name": "paddingTop_mobile",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "default_value": 2,
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_654b95bfef13b",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_654b95bfef13c",
+                            "label": "Padding Bottom (mobile)",
+                            "name": "paddingBottom_mobile",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "default_value": 1,
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_654b960fef13d": {
+                    "key": "layout_654b960fef13d",
+                    "name": "products",
+                    "label": "Products",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_654b9610ef13e",
+                            "label": "Content",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_654b6740d1289",
+                            "label": "Products list",
+                            "name": "products_list",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "post_type": [
+                                "product"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "object"
+                        },
+                        {
+                            "key": "field_654b9610ef140",
+                            "label": "Layout",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_654b9610ef141",
+                            "label": "Padding Top",
+                            "name": "paddingTop",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_654b9610ef142",
+                            "label": "Padding Top (mobile)",
+                            "name": "paddingTop_mobile",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "default_value": 2,
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_654b9610ef143",
+                            "label": "Padding Bottom",
+                            "name": "paddingBottom",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "default_value": "",
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_654b9610ef144",
+                            "label": "Padding Bottom (mobile)",
+                            "name": "paddingBottom_mobile",
+                            "type": "range",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "default_value": 1,
+                            "min": "",
+                            "max": 20,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
                         }
                     ],
                     "min": "",
@@ -3435,5 +3707,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "localization",
-    "modified": 1699372189
+    "modified": 1699452831
 }
