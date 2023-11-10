@@ -10,7 +10,7 @@ body
 		min-height: auto 
 
 #app-wrapper
-	padding-bottom: 15px
+	//padding-bottom: 15px
 	.header-transparent &
 		padding-top: 0
 	+max-screen($breakpoint-xl)
@@ -52,3 +52,17 @@ body
 //		top: 32px
 //		+max-screen(782px)
 //			top: 46px
+
+.page-heading
+	padding-top: 95.8px
+	+max-screen($breakpoint-lg)
+		padding-top: 94.65px
+	+max-screen($breakpoint-md)
+		padding-top: 69.56px
+	&__title
+		padding-bottom: 21px
+		text-align: center
+	&__content
+		padding-bottom: 18px
+		h5
+			font-weight: 700
