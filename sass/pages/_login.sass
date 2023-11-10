@@ -1,0 +1,89 @@
+.woocommerce-account
+    .woocommerce-notices-wrapper
+        margin-left: 14px
+        margin-right: 14px
+        ul 
+            border-color: $color-black
+            margin-bottom: 0
+            &::before 
+                color: $color-black
+            * 
+                color: $color-black
+        * 
+            font-size: inherit
+    .woocommerceAccountForm
+        padding-top: 13px
+        &__title 
+            font-weight: 700
+            margin-bottom: 20px
+            padding-left: 14px
+        &__text 
+            padding-left: 20px
+            max-width: 260px
+        form 
+            margin-top: 30px
+    &.woocommerce-page #main .woocommerce form .woocommerceAccountForm
+        &__buttonSubmit 
+            width: 100%
+            padding-top: 10px 
+            padding-bottom: 8px
+            border-radius: 0
+    .woocommerce
+        form.woocommerce-form
+            padding: 0
+            margin 0 
+            border: 0
+            padding-left: 20px
+            padding-right: 20px
+            .woocommerce-form-row 
+                padding: 0
+                padding-right: 33px
+            .woocommerce-LostPassword 
+                padding-right: 33px
+            .woocommerce-form-login__rememberme 
+                display: none
+        .woocommerce-LostPassword
+            text-align: right 
+            margin-top: 5px
+        .woocommerce-form-row 
+            margin-bottom: 0
+            &:nth-last-child(3)
+                input 
+                    margin-bottom: 0 !important
+        .loginFormButtons
+            width: fit-content 
+            margin: auto
+            padding: 0
+            min-width: 133px 
+            display: flex 
+            flex-direction: column 
+            justify-content: center
+        .registerAccountBtn
+            width: 100%
+            text-transform: none
+            margin-top: 6px
+            padding: 10.5px 19.5px 
+.woocommerceLogin
+    visibility: hidden 
+    height: 0 
+    opacity: 0
+// .woocommerce.registerForm
+//     .woocommerceLogin
+//         visibility: hidden 
+//         height: 0 
+//         opacity: 0
+//     .woocommerceRegister
+//         visibility: visible 
+//         height: auto
+//         opacity: 1
+.woocommerce-account.woocommerce-page.woocommerce-lost-password .woocommerce form .button.woocommerce-Button
+    border-radius: 0
+.lostPasswordForm__wrapper
+    form 
+        .button-wrapper 
+            padding-right: 0
+            text-align: center
+.lostPasswordRest
+    &__text 
+        p
+            padding-bottom: 0

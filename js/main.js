@@ -18,7 +18,7 @@ import { heroSlider } from './template-parts/blocks/hero-slider';
 import { shopFilters } from './template-parts/blocks/shop-filters';
 import { singleProduct } from './template-parts/blocks/single-product';
 import { wishlist } from './template-parts/blocks/wishlist';
-
+import { loginForm } from './template-parts/blocks/login-form';
 
 header();
 footer();
@@ -34,4 +34,5 @@ shopFilters();
 categoriesList();
 singleProduct();
 wishlist();
+loginForm();
 // heroSlider();

@@ -1,11 +1,11 @@
-.button
+.button,
+.woocommerce-account.woocommerce-page .woocommerce form .button
     --webkit-appearence: none
     position: relative
     display: inline-block
     box-sizing: border-box
     transition: 0.3s
     font-weight: 500
-
     padding: 18px 30px
     background-color: $color-primary
     color: #fff
@@ -32,7 +32,23 @@
             color: #fff
             .button__text
                 color: #fff
-
+    &--black 
+        background-color: $color-black
+        color: $color-white
+        border-color: $color-black
+        &:hover 
+            background-color: transparent
+            color: $color-black
+    &--grey 
+        background-color: $color-bg-grey
+        color: $color-black
+        border-color: $color-bg-grey
+        &:hover 
+            background-color: transparent
+    &--fz--md
+        font-size: 11px
+    &--fz--sm
+        font-size: 9px
    
 
 .buttonsBlock
