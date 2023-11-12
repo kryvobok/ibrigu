@@ -24,7 +24,7 @@ if($content):
         <div class="container">
             <div class="row">
                 <div class="<?php echo $contentClasses?> ">
-                    <div class="content-block animate fade-up"><?php echo $content; ?></div>
+                    <div class="content-block"><?php echo $content; ?></div>
                 </div>
             </div>
         </div>

@@ -2759,7 +2759,9 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "wpml_cf_preferences": 3,
                             "choices": {
+                                "2colsS": "2 images (are the same)",
                                 "2colsLRB": "2 images (left small , right big)",
                                 "2colsLRS": "2 images (left big , right small)",
                                 "3colsLU": "3 images (left up)",
@@ -2772,8 +2774,7 @@
                             "ui": 0,
                             "return_format": "value",
                             "ajax": 0,
-                            "placeholder": "",
-                            "wpml_cf_preferences": 3
+                            "placeholder": ""
                         },
                         {
                             "key": "field_61d6fe0034912",
@@ -3019,7 +3020,7 @@
                             "key": "field_61d95ce4656c5",
                             "label": "Padding Bottom",
                             "name": "paddingBottom",
-                            "type": "text",
+                            "type": "range",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -3028,12 +3029,13 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
+                            "wpml_cf_preferences": 2,
+                            "default_value": 1,
+                            "min": "",
+                            "max": 20,
+                            "step": "",
                             "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "wpml_cf_preferences": 2
+                            "append": ""
                         },
                         {
                             "key": "field_61de94da40162",
@@ -3707,5 +3709,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "localization",
-    "modified": 1699452831
+    "modified": 1699546788
 }

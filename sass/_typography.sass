@@ -6,7 +6,7 @@ body
 	font-size: $default-font-size
 	font-weight: $default-font-weight
 	font-style: normal
-	line-height: $default-line-height
+	line-height: calc(1em)
 	color: $default-text-color
 	-webkit-font-smoothing: antialiased
 	-moz-osx-font-smoothing: grayscale
@@ -19,7 +19,12 @@ body
 		color: $color-primary
 		background: transparent
 	+max-screen($breakpoint-md)
+		font-size: 16px
+		line-height: calc(1em * 1.4)
+	+max-screen($breakpoint-sm)
 		font-size: 10px
+		line-height: calc(1em * 1.8)
+
 h1
 	font-weight: 400
 	font-size: 63px
@@ -35,6 +40,16 @@ h1
 .contentBlock
 	display: flex
 	align-items: center
+	.content-block div
+		letter-spacing: -1px
+		&:not(:last-child)
+			margin-bottom: 3px
+		+max-screen($breakpoint-md)
+			font-size: 15px
+			line-height: calc(1em * 1.5)
+		+max-screen($breakpoint-sm)
+			font-size: 9px
+			line-height: calc(1em * 2)
 	a
 		text-decoration: underline !important
 .text
@@ -84,9 +99,12 @@ h5
 			font-size: inherit 
 
 p
-	padding-bottom: 20px
+	&:not(:last-of-type):not(:last-child)
+		padding-bottom: 20px
 	+max-screen($breakpoint-md)
 		font-size: 16px
+	+max-screen($breakpoint-sm)
+		font-size: 10px
 .heading
 	p
 		&:first-child
