@@ -185,7 +185,6 @@ function custom_account_profile_form() {
     <?php
 }
 
-// Обробка оновлення інших даних при відправці форми
 add_action('init', 'process_profile_update');
 
 function process_profile_update() {
@@ -193,31 +192,26 @@ function process_profile_update() {
         if (isset($_POST['update_profile_nonce']) && wp_verify_nonce($_POST['update_profile_nonce'], 'update_profile')) {
             $user_id = get_current_user_id();
 
-            // Оновлення електронної пошти
             if (isset($_POST['account_email'])) {
                 $account_email = sanitize_email($_POST['account_email']);
                 wp_update_user(array('ID' => $user_id, 'user_email' => $account_email));
             }
 
-            // Оновлення імені
             if (isset($_POST['first_name'])) {
                 $first_name = sanitize_text_field($_POST['first_name']);
                 update_user_meta($user_id, 'first_name', $first_name);
             }
 
-            // Оновлення прізвища
             if (isset($_POST['last_name'])) {
                 $last_name = sanitize_text_field($_POST['last_name']);
                 update_user_meta($user_id, 'last_name', $last_name);
             }
 
-            // Оновлення країни
             if (isset($_POST['billing_country'])) {
                 $billing_country = sanitize_text_field($_POST['billing_country']);
                 update_user_meta($user_id, 'billing_country', $billing_country);
             }
 
-            // Оновлення номера телефону
             if (isset($_POST['billing_phone'])) {
                 $billing_phone = sanitize_text_field($_POST['billing_phone']);
                 update_user_meta($user_id, 'billing_phone', $billing_phone);
@@ -227,3 +221,48 @@ function process_profile_update() {
         }
     }
 }
+
+
+if ( defined( 'YITH_WCWL' ) && ! function_exists( 'yith_wcwl_get_items_count' ) ) {
+	function yith_wcwl_get_items_count() {
+	  ob_start();
+	  ?>
+		<?php echo esc_html( yith_wcwl_count_all_products() ); ?>
+	  <?php
+	  return ob_get_clean();
+	}
+  
+	add_shortcode( 'yith_wcwl_items_count', 'yith_wcwl_get_items_count' );
+  }
+  
+  if ( defined( 'YITH_WCWL' ) && ! function_exists( 'yith_wcwl_ajax_update_count' ) ) {
+	function yith_wcwl_ajax_update_count() {
+	  wp_send_json( array(
+		'count' => yith_wcwl_count_all_products()
+	  ) );
+	}
+  
+	add_action( 'wp_ajax_yith_wcwl_update_wishlist_count', 'yith_wcwl_ajax_update_count' );
+	add_action( 'wp_ajax_nopriv_yith_wcwl_update_wishlist_count', 'yith_wcwl_ajax_update_count' );
+  }
+  
+  if ( defined( 'YITH_WCWL' ) && ! function_exists( 'yith_wcwl_enqueue_custom_script' ) ) {
+	function yith_wcwl_enqueue_custom_script() {
+	  wp_add_inline_script(
+		'jquery-yith-wcwl',
+		"
+		  jQuery( function( $ ) {
+			$( document ).on( 'added_to_wishlist removed_from_wishlist', function() {
+			  $.get( yith_wcwl_l10n.ajax_url, {
+				action: 'yith_wcwl_update_wishlist_count'
+			  }, function( data ) {
+				$('.yith-wcwl-items-count').children('i').html( data.count );
+			  } );
+			} );
+		  } );
+		"
+	  );
+	}
+  
+	add_action( 'wp_enqueue_scripts', 'yith_wcwl_enqueue_custom_script', 20 );
+  }

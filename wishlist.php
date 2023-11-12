@@ -22,6 +22,7 @@ $slider_title = get_field('empty_wishlist_related_products_title', 'options');
         <h1 class="wishlist__title myAccount__title sm"><?php the_title(); ?></h1>
     </div>
     <div class="wishlist__itemsList">
+        
         <?php foreach ( $wishlist_items as $item ) :
             global $product;
             $product      = $item->get_product();
