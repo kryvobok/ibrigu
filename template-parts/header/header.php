@@ -1,7 +1,7 @@
 <?php 
     $logo = get_field('logo','option')
 ?>
-<header id="header" class="header <?php echo is_front_page() ? 'header--white-transparent' : '';?>">
+<header id="header" class="header <?php echo is_front_page() ? 'header--white-transparent' : ''; ?>">
     <div class="container header__container">
         <div class="header__row">
             <div class="header__toggle nav-toggle">
