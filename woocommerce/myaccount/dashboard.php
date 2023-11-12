@@ -37,7 +37,7 @@ endif;
 <section class="myAccount">
 	<div class="myAccount__top">
 		<h1 class="myAccount__title sm"><?php the_title(); ?></h1>
-		<div class="myAccount__userName"><?php echo 'Welcome ' . $customer_name . '!'; ?></div>
+		<h4 class="myAccount__userName sm"><?php echo 'Welcome ' . $customer_name . '!'; ?></h4>
 		<div class="wishlist__menu account__menu">
 			<h5 class="account__menuItem current">
 				My information
@@ -47,10 +47,10 @@ endif;
 			</h5>
 		</div>
 	</div>
-	<div class="myAccount__editData">
-
+	<div class="myAccount__editData editAccount__formWrapper">
+		<?php do_action('woocommerce_edit_account'); ?>
 	</div>
-	<div class="myAccount__changePasswordForm__wrapper">
+	<div class="myAccount__changePasswordForm__wrapper editAccount__formWrapper">
 		<?php do_action('woocommerce_account_change_password'); ?>
 	</div>
 

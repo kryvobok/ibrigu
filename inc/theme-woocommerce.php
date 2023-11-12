@@ -101,16 +101,16 @@ function save_custom_registration_fields($customer_id) {
 }
 
 
-
+//Password Chnage Form
 add_action('woocommerce_account_change_password', 'custom_account_password_form');
 
 function custom_account_password_form() {
     ?>
     <div class="woocommerce-MyAccount-content myAccount__changePasswordForm">
-		<div class="myAccount__changePasswordForm__title woocommerce-text">
+		<div class="myAccount__changePasswordForm__title woocommerce-text editAccount__form__title">
 			Change password
 		</div>
-        <form action="" method="post">
+        <form action="" method="post" id="chnagePassword">
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_current" id="password_current" placeholder="Current password *" />
             </p>
@@ -120,7 +120,7 @@ function custom_account_password_form() {
 			<p class="woocommerce-form-text woocommerce-text chnage-password-text">
 				8-15 characters
 			</p>
-            <p>
+            <p class="submitBtn__wrapper">
                 <input type="hidden" name="action" value="change_password" />
                 <?php wp_nonce_field('change_password', 'change_password_nonce'); ?>
                 <button type="submit" class="woocommerce-Button button button--size--md button--black button--fz--md" name="save_password" value="Change Password">SAVE</button>
@@ -147,6 +147,83 @@ function process_password_change() {
 
             wp_set_password($password_1, $user->ID);
             wc_add_notice('Пароль успішно змінено.', 'success');
+        }
+    }
+}
+
+
+//Edit Account Data Form
+add_action('woocommerce_edit_account', 'custom_account_profile_form');
+
+function custom_account_profile_form() {
+    ?>
+    <div class="woocommerce-MyAccount-content">
+		<div class="myAccount__editData__title woocommerce-text editAccount__form__title">Edit account</div>
+        <form action="" method="post" id="editAccountData">
+            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" placeholder="Email" name="account_email" id="account_email" value="" />
+            </p>
+            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" placeholder="Name" name="first_name" id="first_name" value="" />
+            </p>
+            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" placeholder="Surname" name="last_name" id="last_name" value="" />
+            </p>
+            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide country">
+                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" placeholder="Country" name="billing_country" id="billing_country" value="" />
+            </p>
+            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" placeholder="Cellphone" name="billing_phone" id="billing_phone" value="" />
+            </p>
+            <p class="submitBtn__wrapper">
+                <input type="hidden" name="action" value="update_profile" />
+                <?php wp_nonce_field('update_profile', 'update_profile_nonce'); ?>
+                <button type="submit" class="woocommerce-Button button button button--size--md button--black button--fz--md" name="save_profile" value="Update Profile">Save</button>
+            </p>
+        </form>
+    </div>
+    <?php
+}
+
+// Обробка оновлення інших даних при відправці форми
+add_action('init', 'process_profile_update');
+
+function process_profile_update() {
+    if (isset($_POST['action']) && $_POST['action'] === 'update_profile') {
+        if (isset($_POST['update_profile_nonce']) && wp_verify_nonce($_POST['update_profile_nonce'], 'update_profile')) {
+            $user_id = get_current_user_id();
+
+            // Оновлення електронної пошти
+            if (isset($_POST['account_email'])) {
+                $account_email = sanitize_email($_POST['account_email']);
+                wp_update_user(array('ID' => $user_id, 'user_email' => $account_email));
+            }
+
+            // Оновлення імені
+            if (isset($_POST['first_name'])) {
+                $first_name = sanitize_text_field($_POST['first_name']);
+                update_user_meta($user_id, 'first_name', $first_name);
+            }
+
+            // Оновлення прізвища
+            if (isset($_POST['last_name'])) {
+                $last_name = sanitize_text_field($_POST['last_name']);
+                update_user_meta($user_id, 'last_name', $last_name);
+            }
+
+            // Оновлення країни
+            if (isset($_POST['billing_country'])) {
+                $billing_country = sanitize_text_field($_POST['billing_country']);
+                update_user_meta($user_id, 'billing_country', $billing_country);
+            }
+
+            // Оновлення номера телефону
+            if (isset($_POST['billing_phone'])) {
+                $billing_phone = sanitize_text_field($_POST['billing_phone']);
+                update_user_meta($user_id, 'billing_phone', $billing_phone);
+            }
+
+            wc_add_notice('Your profile has successfully been updated.', 'success');
         }
     }
 }

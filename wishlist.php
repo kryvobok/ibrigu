@@ -10,7 +10,7 @@ $slider_title = get_field('empty_wishlist_related_products_title', 'options');
 ?>
 <section class="wishlist">
     <div class="wishlist__top">
-        <div class="wishlist__userName myAccount__userName"><?php echo 'Welcome ' . $customer_name . '!'; ?></div>
+        <h4 class="wishlist__userName myAccount__userName sm"><?php echo 'Welcome ' . $customer_name . '!'; ?></h4>
         <div class="wishlist__menu account__menu">
             <h5 class="account__menuItem">
                 <a href="<?php echo get_home_url() . '/my-account'; ?>">My information</a>
@@ -69,7 +69,6 @@ $slider_title = get_field('empty_wishlist_related_products_title', 'options');
         $args = array(
             'post_type' => 'product',
             'posts_per_page' => 3,
-            'post__not_in' => array (get_the_ID()),
         );
         $the_query = new WP_Query($args);
         ?>
