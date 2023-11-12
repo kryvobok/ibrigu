@@ -102,24 +102,28 @@ function save_custom_registration_fields($customer_id) {
 
 
 
-add_action('woocommerce_before_account_navigation', 'custom_account_password_form');
+add_action('woocommerce_account_change_password', 'custom_account_password_form');
 
 function custom_account_password_form() {
     ?>
-    <div class="woocommerce-MyAccount-content">
+    <div class="woocommerce-MyAccount-content myAccount__changePasswordForm">
+		<div class="myAccount__changePasswordForm__title woocommerce-text">
+			Change password
+		</div>
         <form action="" method="post">
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                <label for="password_current">Поточний пароль</label>
-                <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_current" id="password_current" />
+                <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_current" id="password_current" placeholder="Current password *" />
             </p>
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                <label for="password_1">Новий пароль</label>
-                <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_1" id="password_1" />
+                <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_1" id="password_1" placeholder="New password *" />
             </p>
+			<p class="woocommerce-form-text woocommerce-text chnage-password-text">
+				8-15 characters
+			</p>
             <p>
                 <input type="hidden" name="action" value="change_password" />
                 <?php wp_nonce_field('change_password', 'change_password_nonce'); ?>
-                <button type="submit" class="woocommerce-Button button" name="save_password" value="Change Password">Змінити пароль</button>
+                <button type="submit" class="woocommerce-Button button button--size--md button--black button--fz--md" name="save_password" value="Change Password">SAVE</button>
             </p>
         </form>
     </div>

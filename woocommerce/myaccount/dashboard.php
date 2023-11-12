@@ -27,55 +27,32 @@ $allowed_html = array(
 	),
 );
 ?>
+<?php $customer = new WC_Customer( get_current_user_id() ); 
+if($customer->first_name != "" or $customer->last_name != ""): 
+    $customer_name = $customer->last_name . " " . $customer->first_name; 
+else: 
+    $customer_name = $customer->display_name; 
+endif;
+?>
+<section class="myAccount">
+	<div class="myAccount__top">
+		<h1 class="myAccount__title sm"><?php the_title(); ?></h1>
+		<div class="myAccount__userName"><?php echo 'Welcome ' . $customer_name . '!'; ?></div>
+		<div class="wishlist__menu account__menu">
+			<h5 class="account__menuItem current">
+				My information
+			</h5>
+			<h5 class="account__menuItem ">
+				<a href="<?php echo get_home_url() . '/wishlist'; ?>">My wishlist</a>
+			</h5>
+		</div>
+	</div>
+	<div class="myAccount__editData">
 
-<p>
-	<?php
-	printf(
-		/* translators: 1: user display name 2: logout url */
-		wp_kses( __( 'Hello %1$s (not %1$s? <a href="%2$s">Log out</a>)', 'woocommerce' ), $allowed_html ),
-		'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
-		esc_url( wc_logout_url() )
-	);
-	?>
-</p>
+	</div>
+	<div class="myAccount__changePasswordForm__wrapper">
+		<?php do_action('woocommerce_account_change_password'); ?>
+	</div>
 
-<p>
-	<?php
-	/* translators: 1: Orders URL 2: Address URL 3: Account URL. */
-	$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">billing address</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
-	if ( wc_shipping_enabled() ) {
-		/* translators: 1: Orders URL 2: Addresses URL 3: Account URL. */
-		$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">shipping and billing addresses</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
-	}
-	printf(
-		wp_kses( $dashboard_desc, $allowed_html ),
-		esc_url( wc_get_endpoint_url( 'orders' ) ),
-		esc_url( wc_get_endpoint_url( 'edit-address' ) ),
-		esc_url( wc_get_endpoint_url( 'edit-account' ) )
-	);
-	?>
-</p>
+</section>
 
-<?php
-	/**
-	 * My Account dashboard.
-	 *
-	 * @since 2.6.0
-	 */
-	do_action( 'woocommerce_account_dashboard' );
-
-	/**
-	 * Deprecated woocommerce_before_my_account action.
-	 *
-	 * @deprecated 2.6.0
-	 */
-	do_action( 'woocommerce_before_my_account' );
-
-	/**
-	 * Deprecated woocommerce_after_my_account action.
-	 *
-	 * @deprecated 2.6.0
-	 */
-	do_action( 'woocommerce_after_my_account' );
-
-/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
