@@ -31,6 +31,9 @@ endif;
 if(is_front_page()) {
     $body_classes.=' header--white-transparent';
 }
+if(WC()->cart->get_cart_contents_count() == 0 && is_cart()){
+    $body_classes .= ' empty-cart';
+}
 
 ?>
 <body <?php body_class($body_classes); ?>>

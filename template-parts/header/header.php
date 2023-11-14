@@ -1,7 +1,7 @@
 <?php 
     $logo = get_field('logo','option')
 ?>
-<header id="header" class="header <?php echo is_front_page() ? 'header--white-transparent' : '';?>">
+<header id="header" class="header <?php echo is_front_page() ? 'header--white-transparent' : ''; ?>">
     <div class="container header__container">
         <div class="header__row">
             <div class="header__toggle nav-toggle">
@@ -59,6 +59,9 @@
             <div class="header__wishlist">
                 <a href="<?php echo get_site_url() . '/wishlist';?>">
                     <?php echo file_get_contents(esc_url(get_template_directory_uri() . '/assets/images/wishlist_icon.svg')); ?>
+                    <div class="header__wishlistCount">
+                        <?php echo do_shortcode('[yith_wcwl_items_count]'); ?>
+                    </div>
                 </a>
             </div>
             

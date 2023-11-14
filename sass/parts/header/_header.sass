@@ -75,13 +75,25 @@
 			justify-content: center
 	&__wishlist
 		margin-right: 10px
+		position: relative
 		.home &
 			order: 4
 			margin: 0
+		&Count 
+			position: absolute
+			font-size: 8px
+			top: -5px
+			border-radius: 50%
+			right: -5px
+			display: flex
+			justify-content: center
+			align-items: center
+			left: 50%
+			top: 50%
+			transform: translate(-50%,-50%)
 	&__cart
 		.home &
 			order: 3
-
 .main-nav
 	max-height: 0px
 	overflow: hidden
@@ -211,6 +223,7 @@
 					path
 						fill: #000 !important
 						transition: all 0.35s linear !important
+
 .header--unscrolled
 	&.header
 		transition: all 0.2s linear !important

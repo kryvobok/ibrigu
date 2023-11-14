@@ -11,6 +11,12 @@
                 color: $color-black
         * 
             font-size: inherit
+    .woocommerce-message
+        border-color: $color-black
+        &::before 
+            color: $color-black
+        * 
+            color: $color-black
     .woocommerceAccountForm
         padding-top: 13px
         &__title 
@@ -58,24 +64,49 @@
             display: flex 
             flex-direction: column 
             justify-content: center
+            margin-top: 40px
         .registerAccountBtn
             width: 100%
             text-transform: none
             margin-top: 6px
             padding: 10.5px 19.5px 
-.woocommerceLogin
+        div.button.loginFormButton
+            padding-left: 5px 
+            padding-right: 5px
+            margin-top: 6px
+            text-transform: none
+.woocommerceRegister
     visibility: hidden 
     height: 0 
     opacity: 0
-// .woocommerce.registerForm
-//     .woocommerceLogin
-//         visibility: hidden 
-//         height: 0 
-//         opacity: 0
-//     .woocommerceRegister
-//         visibility: visible 
-//         height: auto
-//         opacity: 1
+.woocommerce.registerForm
+    .woocommerceLogin
+        visibility: hidden 
+        height: 0 
+        opacity: 0
+    .woocommerceRegister 
+        visibility: visible
+        opacity: 1
+        height: auto
+#main 
+    .woocommerceRegister
+        form.register 
+            display: flex 
+            margin-top: 15px
+            flex-direction: column
+            .form-row 
+                input 
+                    margin-bottom: 15.3px
+            .email
+                order: -1  
+            .registerFormButtons
+                padding-right: 0
+                display: flex 
+                flex-direction: column 
+                width: fit-content 
+                margin: auto 
+                margin-top: 35px
+
 .woocommerce-account.woocommerce-page.woocommerce-lost-password .woocommerce form .button.woocommerce-Button
     border-radius: 0
 .lostPasswordForm__wrapper
@@ -87,3 +118,7 @@
     &__text 
         p
             padding-bottom: 0
+.lostPasswordConfirm
+    padding-left: 15px
+    padding-right: 15px
+    padding-top: 30px

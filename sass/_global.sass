@@ -8,7 +8,8 @@ body
 	+max-screen($breakpoint-sm)
 	#main 
 		min-height: auto 
-
+body.woocommerce-page
+	padding-top: 58px
 #app-wrapper
 	//padding-bottom: 15px
 	.header-transparent &
@@ -46,17 +47,31 @@ body
 		background-color: $color-bg-light
 	&--white-light
 		background-color: $color-bg-white-light
-
-.page-heading
-	padding-top: 95.8px
-	+max-screen($breakpoint-lg)
-		padding-top: 94.65px
-	+max-screen($breakpoint-md)
-		padding-top: 69.56px
-	&__title
-		padding-bottom: 21px
-		text-align: center
-	&__content
-		padding-bottom: 18px
-		h5
-			font-weight: 700
+body:not(.woocommerce-page)
+	.page-heading
+		padding-top: 95.8px
+		+max-screen($breakpoint-lg)
+			padding-top: 94.65px
+		+max-screen($breakpoint-md)
+			padding-top: 69.56px
+		&__title
+			padding-bottom: 21px
+			text-align: center
+		&__content
+			padding-bottom: 18px
+			h5
+				font-weight: 700
+.woocommerce-page
+	.page-heading
+		&__title
+			display: none
+.woocommerce-page 
+	.woocommerce-message,
+	.woocommerce-info
+		border-color: $color-black 
+		margin-left: 14px
+		margin-right: 14px
+		.button 
+			margin-left: 6px
+		&::before 
+			color: $color-black
