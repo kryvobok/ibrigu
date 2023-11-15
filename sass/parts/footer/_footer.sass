@@ -6,7 +6,7 @@
 		+max-screen($breakpoint-lg)
 			padding: 60px 0
 		+max-screen($breakpoint-md)
-			padding: 40px 0
+			padding: 40px 0 0
 		+max-screen($breakpoint-sm)
 			padding: 14px 27.5px 0 0
 		&__logo
@@ -64,8 +64,6 @@
 								height: 20px
 							+max-screen($breakpoint-sm)
 								height: 11px
-				//flex-direction: column
-				
 		&__newsletter
 			padding-top: 40px
 			+max-screen($breakpoint-lg)
@@ -75,13 +73,11 @@
 			+max-screen($breakpoint-sm)
 				padding-top: 5px
 			p
-				padding-bottom: 40px
-				+max-screen($breakpoint-lg)
-					padding-bottom: 40px
+				padding-bottom: 40px !important
 				+max-screen($breakpoint-md)
-					padding-bottom: 20px
+					padding-bottom: 20px !important
 				+max-screen($breakpoint-sm)
-					padding-bottom: 5px
+					padding-bottom: 5px !important
 			.nf-form-cont
 				padding-bottom: 7px
 				+max-screen($breakpoint-md)
@@ -112,6 +108,7 @@
 			display: flex
 			flex-direction: column
 		&__copyright
+			margin-top: 18px
 			+min-screen($breakpoint-lg)
 				font-size: 16px
 			+max-screen($breakpoint-md)

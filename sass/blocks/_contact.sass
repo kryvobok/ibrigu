@@ -1,5 +1,7 @@
-.contact
+.contacts-block
     &__contacts
+        &List
+            gap: 13px 0
         &Item
             margin-bottom: 60px
             +max-screen($breakpoint-md)
@@ -8,6 +10,14 @@
                 margin-bottom: 0
     &__infoWrapper
         height: fit-content
+        h3
+            font-weight: 700
+            +max-screen($breakpoint-md)
+                padding-bottom: 14px
+            +max-screen($breakpoint-sm)
+                padding-bottom: 6px
+                font-size: 10px
+
     &__offices
         &List
             display: flex
@@ -17,10 +27,10 @@
             margin-bottom: 30px
             &:last-child
                 margin-bottom: 0
-            h3
-                +max-screen($breakpoint-md)
-                    padding-bottom: 14px
-                    font-size: 16px
+            //h3
+            //    +max-screen($breakpoint-md)
+            //        padding-bottom: 10px
+                    //font-size: 16px
 
     &__social
         &Item 
@@ -29,92 +39,125 @@
             +max-screen($breakpoint-md)
                 padding-left: 25px
                 padding-right: 25px
-    &__formWrapper
-        form
-            +max-screen($breakpoint-md)
-                max-width: 80%
-                margin: auto
-        .nf-form-content
-            display: flex
-            nf-fields-wrap
-                width: 100%
-                height: 100%
-                display: flex
-                flex-wrap: wrap
-                nf-field
-                    width: 50%
-                    +max-screen($breakpoint-md)
-                        width: 100%
-                    &:nth-child(odd)
-                        padding-right: 43px
-                        +max-screen($breakpoint-md)
-                            padding-right: 0
-                    &:nth-child(even)
-                        padding-left: 43px
-                        +max-screen($breakpoint-md)
-                            padding-left: 0
-                    &:nth-child(5)
-                        width: 100%
-                        padding-right: 0
-                    &:nth-child(6)
-                        width: 100%
-                        padding-left: 0
-                    .ninja-forms-req-symbol
-                        display: none
-                    .nf-element
-                        background: none
-                        border: none
-                        border-bottom: 1px solid #707070
-                        font-family: $font-family-base
-                    .nf-field-label
-                        label
-                            font-family: $font-family-base
-                            font-weight: 400
-                            font-size: 16px
-                    #nf-field-7
-                        border: 1px solid #707070
-                    .submit-wrap
-                        .nf-element
-                            color: #fff
-                            background: #000
-        .nf-form-content .listselect-wrap .nf-field-element div, .nf-form-content .ninja-forms-field
-            +max-screen($breakpoint-md)
-                padding-left: 0
-        #nf-field-8
-            +max-screen($breakpoint-md)
-                padding-left: 12px
-        #nf-field-7-container
-            +max-screen($breakpoint-md)
-                margin-top: 20px
-        .nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button]), .nf-form-content textarea
-            &::placeholder
-                color: #000
-                font-size: 16px
-        .nf-field-container
-            margin-bottom: 45px
-            +max-screen($breakpoint-md)
-                margin-bottom: 0
-        .nf-form-fields-required
-            display: none
-        .nf-error.field-wrap .nf-field-element:after
-            display: none
-        .nf-error .nf-error-msg
-            font-size: 12px
-        .nf-error-msg
-            font-size: 12px
-        .nf-pass.field-wrap .nf-field-element:after
-            display: none
-        .nf-after-form-content
-            nf-section
-                .nf-error-msg 
-                    position: absolute
-                    bottom: 10px
-                    +max-screen($breakpoint-md)
-                        bottom: -40px
-        #nf-label-field-26
-            +max-screen($breakpoint-md)
-                font-size: 12px
-        #nf-field-8
-            border-radius: 0
-            -webkit-appearance: none
+    //&__formWrapper
+    //    padding-top: 30px
+    //    form
+    //        +max-screen($breakpoint-md)
+    //            //max-width: 80%
+    //            margin: auto
+    //    .nf-form-content
+    //        padding: 0
+    //        display: flex
+    //        nf-fields-wrap
+    //            width: 100%
+    //            height: 100%
+    //            display: flex
+    //            flex-wrap: wrap
+    //            nf-field
+    //                width: 50%
+    //                +max-screen($breakpoint-md)
+    //                    width: 100%
+    //                .nf-field-label
+    //                    margin: 0 !important
+    //                    padding: 0 !important
+    //                    label
+    //                        font-size: 10px !important
+    //                        +max-screen($breakpoint-sm)
+    //                            font-size: 8px !important
+    //                .nf-field-element
+    //                    input, textarea
+    //                        font-size: 12px !important
+    //                        padding: 4px 0 !important
+    //                        &::placeholder
+    //                            font-size: 12px !important
+    //                        +max-screen($breakpoint-sm)
+    //                            font-size: 10px !important
+    //                            &::placeholder
+    //                                font-size: 10px !important
+    //                    textarea
+    //                        padding: 4px 0 4px 7px !important
+    //                        height: 120px
+    //                    input
+    //                        height: auto
+    //                        max-width: 50%
+    //                        width: 100%
+    //                        &[type=checkbox], &[type=submit]
+    //                            max-width: 100%
+    //                            margin-bottom: 0 !important
+    //
+    //                &:nth-child(odd)
+    //                    padding-right: 43px
+    //                    +max-screen($breakpoint-md)
+    //                        padding-right: 0
+    //                &:nth-child(even)
+    //                    padding-left: 43px
+    //                    +max-screen($breakpoint-md)
+    //                        padding-left: 0
+    //                &:nth-child(5)
+    //                    width: 100%
+    //                    padding-right: 0
+    //                &:nth-child(6)
+    //                    width: 100%
+    //                    padding-left: 0
+    //                .ninja-forms-req-symbol
+    //                    display: none
+    //                .nf-element
+    //                    background: none
+    //                    border: none
+    //                    border-bottom: 1px solid #707070
+    //                    font-family: $font-family-base
+    //                .nf-field-label
+    //                    label
+    //                        font-family: $font-family-base
+    //                        font-weight: 400
+    //                        font-size: 16px
+    //                #nf-field-7
+    //                    border: 1px solid #707070
+    //                .submit-wrap
+    //                    .nf-element
+    //                        color: #fff
+    //                        background: #000
+    //    .nf-form-content .listselect-wrap .nf-field-element div, .nf-form-content .ninja-forms-field
+    //        +max-screen($breakpoint-md)
+    //            padding-left: 0
+    //    #nf-field-6
+    //        +max-screen($breakpoint-md)
+    //            margin-bottom: 20px
+    //    #nf-field-8
+    //        +max-screen($breakpoint-md)
+    //            padding-left: 12px
+    //    #nf-field-7-container
+    //        +max-screen($breakpoint-md)
+    //            //margin-top: 20px
+    //    .nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button]), .nf-form-content textarea
+    //        &::placeholder
+    //            color: #000
+    //            font-size: 16px
+    //    .nf-field-container
+    //        margin-bottom: 45px
+    //        +max-screen($breakpoint-md)
+    //            margin-bottom: 0
+    //    .nf-form-fields-required
+    //        display: none
+    //    .nf-error.field-wrap .nf-field-element:after
+    //        display: none
+    //    .nf-error .nf-error-msg
+    //        font-size: 12px
+    //    .nf-error-msg
+    //        font-size: 12px
+    //    .nf-pass.field-wrap .nf-field-element:after
+    //        display: none
+    //    .nf-after-form-content
+    //        nf-section
+    //            .nf-error-msg
+    //                position: absolute
+    //                bottom: 10px
+    //                +max-screen($breakpoint-md)
+    //                    bottom: -40px
+    //    #nf-label-field-26
+    //        +max-screen($breakpoint-md)
+    //            font-size: 12px
+    //    #nf-field-8
+    //        border-radius: 0
+    //        -webkit-appearance: none
 
