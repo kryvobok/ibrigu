@@ -14,11 +14,12 @@ import { scrollToAnchor,scrollToHash, requestQuoteLink } from './animations/scro
 //blocks
 // import { videoBlock } from './template-parts/blocks/video';
 import { categoriesList } from './template-parts/blocks/categories-list';
-import { heroSlider } from './template-parts/blocks/hero-slider';
+// import { heroSlider } from './template-parts/blocks/hero-slider';
 import { shopFilters } from './template-parts/blocks/shop-filters';
 import { singleProduct } from './template-parts/blocks/single-product';
 import { wishlist } from './template-parts/blocks/wishlist';
 import { loginForm } from './template-parts/blocks/login-form';
+import { dropdown } from './template-parts/blocks/dropdown';
 
 header();
 footer();
@@ -35,4 +36,5 @@ categoriesList();
 singleProduct();
 wishlist();
 loginForm();
+dropdown();
 // heroSlider();

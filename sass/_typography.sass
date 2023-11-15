@@ -6,7 +6,7 @@ body
 	font-size: $default-font-size
 	font-weight: $default-font-weight
 	font-style: normal
-	line-height: calc(1em)
+	line-height: calc(1em * 1.8)
 	color: $default-text-color
 	-webkit-font-smoothing: antialiased
 	-moz-osx-font-smoothing: grayscale
@@ -20,10 +20,10 @@ body
 		background: transparent
 	+max-screen($breakpoint-md)
 		font-size: 16px
-		line-height: calc(1em * 1.4)
+		//line-height: calc(1em * 1.4)
 	+max-screen($breakpoint-sm)
 		font-size: 10px
-		line-height: calc(1em * 1.8)
+		//line-height: calc(1em * 1.8)
 
 h1, .h1
 	font-weight: 400

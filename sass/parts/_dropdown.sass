@@ -1,0 +1,28 @@
+.dropdown
+    &--item
+    &--title
+        display: flex
+        align-items: center
+        justify-content: space-between
+        transition: $default-transition
+        .dropdown--active &
+            padding-bottom: 5px
+        &__text
+            font-weight: 700
+            +max-screen($breakpoint-md)
+                font-size: 16px
+            +max-screen($breakpoint-sm)
+                font-size: 10px
+        &__icon
+            display: inline-flex
+            width: 12.66px
+            height: auto
+            transition: $default-transition
+            .dropdown--active &
+                transform: rotate(180deg)
+            svg
+                width: 100%
+                height: auto
+                object-fit: cover
+    &--content
+        display: none
