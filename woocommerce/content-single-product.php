@@ -32,7 +32,7 @@ do_action( 'woocommerce_before_single_product' );
         <?php endif; ?>
     </div>
     <div class="singleProduct__button">
-        <div class="singleProduct__buttonLeftCol"><h2 class="sm"><?php the_title(); ?></h2><div class="wishlistIcon"><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ) ?></div></div>
+        <div class="singleProduct__buttonLeftCol"><h2 class="sm"><?php the_title(); ?></h2><div class="wishlistIcon"><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ); ?></div></div>
         <div class="singleProduct__buttonCart productAddTocart">
             <?php do_action('woocommerce_product_add_to_cart'); ?>
         </div>
@@ -122,7 +122,7 @@ do_action( 'woocommerce_before_single_product' );
     <?php endif; ?>
     <div class="productCompleteLook__list singleProductCardsList">
         <?php foreach($products as $post): setup_postdata( $post ); ?>
-            <div class="productCompleteLook__cardWrapper singleProductCard__wrapper">
+            <a href="<?php the_permalink(); ?>" class="productCompleteLook__cardWrapper singleProductCard__wrapper">
                 <div class="productCompleteLook__card singleProductCard">
                 <?php if(!empty(get_the_post_thumbnail_url(  ))):
                         $image = get_the_post_thumbnail_url(  );
@@ -133,7 +133,7 @@ do_action( 'woocommerce_before_single_product' );
                     <h5 class="productCompleteLook__cardTitle singleProductCard__title"><?php the_title(); ?></h5>
                     <h5 class="productCompleteLook__cardPrice singleProductCard__price"><?php do_action('woocommerce_product_price'); ?></h5>
                 </div>
-            </div>
+            </a>
         <?php endforeach; wp_reset_postdata(  ); ?>
     </div>
 </section>
@@ -153,7 +153,7 @@ if($the_query->have_posts()):
     <?php endif; ?>
     <div class="relatedProducts__list singleProductCardsList">
         <?php while($the_query->have_posts()): $the_query->the_post(); ?>
-            <div class="relatedProducts__cardWrapper singleProductCard__wrapper">
+            <a href="<?php the_permalink(); ?>" class="relatedProducts__cardWrapper singleProductCard__wrapper">
                 <div class="relatedProducts__card singleProductCard">
                     <?php if(!empty(get_the_post_thumbnail_url(  ))):
                         $image = get_the_post_thumbnail_url(  );
@@ -163,7 +163,7 @@ if($the_query->have_posts()):
                     <div class="relatedProducts__image singleProductCard__image"><img src="<?php echo $image; ?>" alt=""></div>
                     <h5 class="relatedProducts__title singleProductCard__title"><?php the_title(); ?></h5>
                 </div>
-            </div>
+                </a>
         <?php endwhile; ?>
     </div>
 </section>

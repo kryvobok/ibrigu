@@ -1,0 +1,130 @@
+.cartAdditionalInfo
+    padding-top: 16.5px
+    padding-left: 14px
+    padding-right: 12px
+    padding-bottom: 50px
+    &__title 
+        font-weight: 700
+        &Wrapper
+            display: flex 
+    &__icon
+        margin-right: 3px 
+        img 
+            width: 13px
+            height: 13px
+            object-fit: contain
+            object-position: center
+
+    &__row 
+        margin-bottom: 12px
+        line-height: 1.4
+        &:last-child
+            margin-bottom: 0
+.cartTotals 
+    &__wrapper 
+        background-color: $color-bg-dark-grey
+        padding: 17px 13px 23px 
+    &__row 
+        display: flex 
+        justify-content: space-between
+        line-height: 1.2
+        margin-bottom: 19px
+    &__amountRow 
+        margin-bottom: 9px
+        font-weight: 700
+    &__buttonsList 
+        display: flex 
+        flex-direction: column 
+        align-items: center
+    &__shopBtn
+        margin-top: 7px
+        padding: 10px 20px 
+        color: $color-black
+        text-transform: none
+.cartContent 
+    &__items
+        &Wrapper
+            padding-left: 14px
+            padding-right: 12px
+    &__item
+        display: flex 
+        margin-bottom: 24px
+        &:nth-last-child(2)
+            margin-bottom: 49px
+        &Image 
+            width: 47.685%
+            min-width: 47.685%
+            position: relative
+            &:before
+                content: "" 
+                display: block
+                padding-bottom: 125%
+            img 
+                position: absolute
+                left: 0
+                top: 0
+                width: 100% 
+                height: 100% 
+                object-fit: cover
+        &Content 
+            padding-left: 8px
+        body.page #main form &Quantity 
+            margin-top: 10px
+            .quantity
+                display: flex 
+            input 
+                margin-bottom: 0
+                border-top: 1px solid #000
+            a,
+            input 
+                width: 18px
+                height: 17px
+                font-size: 10px
+                color: #000
+                display: flex
+                justify-content: center
+                align-items: center
+                border-color: #000
+                padding: 0
+        &Top 
+            display: flex 
+            justify-content: space-between
+        &Price 
+            margin-left: 10px
+        &Attr 
+            display: flex 
+            &__label
+                margin-right: 0.6em
+        &Title 
+            margin-bottom: 16px
+        .removeBtn
+            text-decoration: underline
+        &Content 
+            display: flex 
+            flex-direction: column
+            width: 100%
+        &Bottom 
+            margin-top: auto
+            .wishlist_toggle
+                text-decoration: underline
+                margin-bottom: 8px
+                display: block 
+    &__wishlist__buttonsWrapper
+        &.remove_from_wishlistWrapper 
+            .delete_item
+                display: block !important
+            .add_to_wishlist
+                display: none !important
+        &.add_to_wishlistWrapper 
+            .delete_item
+                display: none !important
+            .add_to_wishlist
+                display: block !important
+    &__title 
+        line-height: 1.25
+        margin-bottom: 1px
+        padding-left: 14px
+        text-transform: uppercase
+        padding-top: 10px
+    &__coupon 
+        display: none

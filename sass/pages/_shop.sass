@@ -101,9 +101,10 @@
                         font-size: 0 !important
                         padding-top: 5px !important
                         text-align: left
-                        &::after 
-                            content: "Out of stock"
-                            font-size: 8px
+                        &:not(.product_type_variable)
+                            &::after 
+                                content: "Out of stock"
+                                font-size: 8px
                     .yith-wcwl-wishlistaddedbrowse
                         & > a 
                             display: none

@@ -233,9 +233,9 @@ if ( defined( 'YITH_WCWL' ) && ! function_exists( 'yith_wcwl_get_items_count' ) 
 	}
   
 	add_shortcode( 'yith_wcwl_items_count', 'yith_wcwl_get_items_count' );
-  }
+}
   
-  if ( defined( 'YITH_WCWL' ) && ! function_exists( 'yith_wcwl_ajax_update_count' ) ) {
+if ( defined( 'YITH_WCWL' ) && ! function_exists( 'yith_wcwl_ajax_update_count' ) ) {
 	function yith_wcwl_ajax_update_count() {
 	  wp_send_json( array(
 		'count' => yith_wcwl_count_all_products()
@@ -244,25 +244,66 @@ if ( defined( 'YITH_WCWL' ) && ! function_exists( 'yith_wcwl_get_items_count' ) 
   
 	add_action( 'wp_ajax_yith_wcwl_update_wishlist_count', 'yith_wcwl_ajax_update_count' );
 	add_action( 'wp_ajax_nopriv_yith_wcwl_update_wishlist_count', 'yith_wcwl_ajax_update_count' );
-  }
+}
   
-  if ( defined( 'YITH_WCWL' ) && ! function_exists( 'yith_wcwl_enqueue_custom_script' ) ) {
-	function yith_wcwl_enqueue_custom_script() {
-	  wp_add_inline_script(
-		'jquery-yith-wcwl',
-		"
-		  jQuery( function( $ ) {
-			$( document ).on( 'added_to_wishlist removed_from_wishlist', function() {
-			  $.get( yith_wcwl_l10n.ajax_url, {
-				action: 'yith_wcwl_update_wishlist_count'
-			  }, function( data ) {
-				$('.yith-wcwl-items-count').children('i').html( data.count );
-			  } );
-			} );
-		  } );
-		"
-	  );
+
+//Remove Attributes From Product Title On Cart Page
+function remove_variation_from_product_title( $title, $cart_item, $cart_item_key ) {
+	$_product = $cart_item['data'];
+	$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
+
+	if ( $_product->is_type( 'variation' ) ) {
+        return $_product->get_title();
 	}
-  
-	add_action( 'wp_enqueue_scripts', 'yith_wcwl_enqueue_custom_script', 20 );
-  }
+
+	return $title;
+}
+add_filter( 'woocommerce_cart_item_name', 'remove_variation_from_product_title', 10, 3 );
+
+
+
+add_action('woocommerce_before_checkout_form', 'add_login_form_to_checkout');
+
+function add_login_form_to_checkout() {
+    if (!is_user_logged_in()) {
+        wc_get_template('myaccount/form-login.php');
+    }
+}
+
+
+
+
+//checkout guestLogin
+add_action( 'wp_ajax_add_order_expense_cf', 'add_order_expense_custom_fields' );
+add_action('wp_ajax_nopriv_add_order_expense_cf', 'add_order_expense_custom_fields');
+
+function add_order_expense_custom_fields() {
+    if (isset($_POST['name'])) {
+        update_user_meta(get_current_user_id(), 'first_name', sanitize_text_field($_POST['name']));
+    }
+
+    if (isset($_POST['surname'])) {
+        update_user_meta(get_current_user_id(), 'last_name', sanitize_text_field($_POST['surname']));
+    }
+    if (isset($_POST['email'])) {
+        $account_email = sanitize_email($_POST['email']);
+        wp_update_user(array('ID' => $user_id, 'user_email' => $account_email));
+    }
+
+
+	if (isset($_POST['fiscalCode'])) {
+        update_user_meta(get_current_user_id(), 'fiscal_code', sanitize_text_field($_POST['fiscalCode']));
+    }
+
+	if (isset($_POST['phoneNumber'])) {
+        update_user_meta(get_current_user_id(), 'billing_phone', sanitize_text_field($_POST['phoneNumber']));
+    }
+    $customer = new WC_Customer( get_current_user_id() ); 
+	if($customer->first_name != "" or $customer->last_name != ""): 
+		$customer_name = $customer->last_name . " " . $customer->first_name; 
+	else: 
+		$customer_name = $customer->display_name; 
+	endif;
+    echo $customer_name . '<br>' . $_POST['surname'];
+    die;
+}

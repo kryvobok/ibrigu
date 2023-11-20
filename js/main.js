@@ -19,6 +19,8 @@ import { shopFilters } from './template-parts/blocks/shop-filters';
 import { singleProduct } from './template-parts/blocks/single-product';
 import { wishlist } from './template-parts/blocks/wishlist';
 import { loginForm } from './template-parts/blocks/login-form';
+import { cart } from './template-parts/blocks/cart';
+import { checkout } from './template-parts/blocks/checkout';
 
 header();
 footer();
@@ -35,4 +37,6 @@ categoriesList();
 singleProduct();
 wishlist();
 loginForm();
+cart();
+checkout();
 // heroSlider();
