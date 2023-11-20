@@ -9,7 +9,7 @@
                     <div class="page-heading">
                         <?php if (!empty(get_the_title())) : ?>
                             <div class="page-heading__title">
-                                <h1><?php the_title(); ?></h1>
+                                <h1 class="lg"><?php the_title(); ?></h1>
                             </div>
                         <?php endif; ?>
         
