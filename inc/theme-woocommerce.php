@@ -7,7 +7,6 @@ add_action('woocommerce_product_images', 'woocommerce_show_product_images', 20);
 
 add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_home_text' );
 function wcc_change_breadcrumb_home_text( $defaults ) {
-    // Change the breadcrumb home text from 'Home' to 'Apartment'
 	$defaults['home'] = 'Shop';
 	return $defaults;
 }
@@ -38,10 +37,11 @@ function custom_register_fields() {
     <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
         <input type="text" class="input-text" name="last_name" id="last_name" placeholder="Surname *" value="<?php if (!empty($_POST['last_name'])) echo esc_attr($_POST['last_name']); ?>" />
     </p>
-	
+	<?php if(is_account_page()): ?>
     <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
         <input type="text" class="input-text" name="billing_country" id="billing_country" placeholder="Country *" value="<?php if (!empty($_POST['billing_country'])) echo esc_attr($_POST['billing_country']); ?>" />
     </p>
+    <?php endif; ?>
 	<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
         <input type="text" class="input-text" name="fiscal_code" id="fiscal_code" placeholder="Fiscal code *" value="<?php if (!empty($_POST['fiscal_code'])) echo esc_attr($_POST['fiscal_code']); ?>" />
     </p>
@@ -61,9 +61,11 @@ function custom_registration_errors($errors, $username, $email) {
     if (isset($_POST['last_name']) && empty($_POST['last_name'])) {
         $errors->add('last_name_error', __('Please, enter your surname.', 'woocommerce'));
     }
-    if (isset($_POST['billing_country']) && empty($_POST['billing_country'])) {
-        $errors->add('billing_country_error', __('Please, enter your country.', 'woocommerce'));
-    }
+    if(is_account_page()):
+        if (isset($_POST['billing_country']) && empty($_POST['billing_country'])) {
+            $errors->add('billing_country_error', __('Please, enter your country.', 'woocommerce'));
+        }
+    endif;
 	if (isset($_POST['fiscal_code']) && empty($_POST['fiscal_code'])) {
         $errors->add('fiscal_code_error', __('Please, enter your fiscal code.', 'woocommerce'));
     }
@@ -86,10 +88,11 @@ function save_custom_registration_fields($customer_id) {
     if (isset($_POST['last_name'])) {
         update_user_meta($customer_id, 'last_name', sanitize_text_field($_POST['last_name']));
     }
-
-    if (isset($_POST['billing_country'])) {
-        update_user_meta($customer_id, 'billing_country', sanitize_text_field($_POST['billing_country']));
-    }
+    if(is_account_page()):
+        if (isset($_POST['billing_country'])) {
+            update_user_meta($customer_id, 'billing_country', sanitize_text_field($_POST['billing_country']));
+        }
+    endif;
 
 	if (isset($_POST['fiscal_code'])) {
         update_user_meta($customer_id, 'fiscal_code', sanitize_text_field($_POST['fiscal_code']));
@@ -262,13 +265,6 @@ add_filter( 'woocommerce_cart_item_name', 'remove_variation_from_product_title',
 
 
 
-add_action('woocommerce_before_checkout_form', 'add_login_form_to_checkout');
-
-function add_login_form_to_checkout() {
-    if (!is_user_logged_in()) {
-        wc_get_template('myaccount/form-login.php');
-    }
-}
 
 
 
@@ -298,12 +294,176 @@ function add_order_expense_custom_fields() {
 	if (isset($_POST['phoneNumber'])) {
         update_user_meta(get_current_user_id(), 'billing_phone', sanitize_text_field($_POST['phoneNumber']));
     }
-    $customer = new WC_Customer( get_current_user_id() ); 
-	if($customer->first_name != "" or $customer->last_name != ""): 
-		$customer_name = $customer->last_name . " " . $customer->first_name; 
-	else: 
-		$customer_name = $customer->display_name; 
-	endif;
-    echo $customer_name . '<br>' . $_POST['surname'];
     die;
+}
+
+
+
+//Change fields placeholders
+function ace_remove_checkout_fields( $fields ) {
+	unset( $fields['billing']['billing_state'] );
+	unset( $fields['shipping']['shipping_state'] );
+
+    $fields['billing']['billing_country']['type'] = 'text';
+    $fields['order']['order_comments']['type'] = 'text';
+    $fields['order']['order_comments']['maxlength'] = '250';
+    $fields['order']['order_comments']['placeholder'] = 'Write your message here';
+
+    $fields['shipping']['shipping_first_name']['placeholder'] = 'Name *';
+    $fields['shipping']['shipping_last_name']['placeholder'] = 'Surname *';
+    $fields['shipping']['shipping_address_1']['placeholder'] = 'Address 1 *';
+    $fields['shipping']['shipping_address_2']['placeholder'] = 'Address 2';
+    $fields['shipping']['shipping_country']['placeholder'] = 'Country *';
+    $fields['shipping']['shipping_city']['placeholder'] = 'City *';
+    $fields['shipping']['shipping_postcode']['placeholder'] = 'Zip Code *';
+
+    $fields['shipping']['shipping_address_1']['priority'] = 30;
+    $fields['shipping']['shipping_address_2']['priority'] = 40;
+    $fields['shipping']['shipping_postcode']['priority'] = 60;
+    $fields['shipping']['shipping_city']['priority'] = 80;
+    $fields['shipping']['shipping_country']['priority'] = 90;
+    
+    
+    $fields['shipping']['shipping_country']['type'] = 'text';
+
+
+	return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'ace_remove_checkout_fields' );
+
+
+
+
+//add pasword fields
+
+function add_password_fields_to_registration() {
+    if (is_checkout()) { ?>
+    <p class="form-row woocommerce-form-row form-row-wide">
+        <input type="password" class="input-text" name="password" id="reg_password" placeholder="<?php _e('Password *', 'woocommerce'); ?>" value="<?php if (!empty($_POST['password'])) echo esc_attr($_POST['password']); ?>" required/>
+    </p>
+    <span class="underPasswordText woocommerce-text ">8-15 characters</span>
+    <p class="form-row woocommerce-form-row form-row-wide">
+        <input type="password" class="input-text" name="confirm_password" id="reg_confirm_password" placeholder="<?php _e('Confirm password *', 'woocommerce'); ?>" value="<?php if (!empty($_POST['confirm_password'])) echo esc_attr($_POST['confirm_password']); ?>" required/>
+    </p>
+    <div class="form-row woocommerce-form-row form-row-wide form-privacy-checkbox-wrapper form-checkbox-wrapper">
+        <div class="form-privacy-checkbox form-checkbox"><input type="checkbox" name="privacy"></div>
+        <span class="woocommerce-text sm">Having read the privacy policy I authorize Ibrigu to process my personal data.</span>
+    </div>
+    <div class="errors">
+        <div class="error-msg checkbox">Please confirm that you have read the Privacy Policy</div>
+        <div class="error-msg passMatch">Passwords doesn't match</div>
+        <div class="error-msg passFill">Please enter your password</div>
+    </div>
+    <?php }
+}
+
+add_action('woocommerce_register_form_start', 'add_password_fields_to_registration');
+
+
+
+function save_password_fields($customer_id) {
+    if (!empty($_POST['password'])) {
+        wp_update_user(array('ID' => $customer_id, 'user_pass' => $_POST['password']));
+    }
+}
+
+add_action('woocommerce_created_customer', 'save_password_fields');
+
+
+//Shipping fields placeholder 
+function shipping_fields_placeholder( $fields ) {
+    $fields['billing']['billing_first_name']['placeholder'] = 'Name *';
+    $fields['billing']['billing_last_name']['placeholder'] = 'Surname *';
+    $fields['billing']['billing_postcode']['placeholder'] = 'Zip Code *';
+    $fields['billing']['billing_city']['placeholder'] = 'City *';
+    $fields['billing']['billing_country']['placeholder'] = 'Country *';
+    $fields['billing']['billing_phone']['placeholder'] = 'Cellphone *';
+    return $fields;
+}
+
+add_filter( 'woocommerce_checkout_fields', 'shipping_fields_placeholder' );
+
+//Add Province Field 
+add_filter('woocommerce_checkout_fields', 'add_province_to_checkout');
+
+function add_province_to_checkout($fields) {
+    $fields['billing']['billing_province'] = array(
+        'label'       => __('Province', 'woocommerce'),
+        'placeholder' => __('Province', 'woocommerce'),
+        'required'    => false,
+        'class'       => array('form-row-wide'),
+        'clear'       => true,
+        'type'        => 'text',
+        'priority'    => 95,
+    );
+    $fields['shipping']['shipping_province'] = array(
+        'label'       => __('Province', 'woocommerce'),
+        'placeholder' => __('Province', 'woocommerce'),
+        'required'    => false,
+        'class'       => array('form-row-wide'),
+        'clear'       => true,
+        'type'        => 'text',
+        'priority'    => 60,
+    );
+
+    $fields['shipping']['shipping_phone'] = array(
+        'label'       => __('Cellphone', 'woocommerce'),
+        'placeholder' => __('Cellphone *', 'woocommerce'),
+        'required'    => true,
+        'class'       => array('form-row-wide'),
+        'clear'       => true,
+        'type'        => 'text',
+        'priority'    => 90,
+    );
+
+
+    return $fields;
+}
+
+add_action('woocommerce_checkout_update_order_meta', 'save_province');
+
+function save_province($order_id) {
+    if (!empty($_POST['billing_province'])) {
+        update_post_meta($order_id, 'Billing Province', sanitize_text_field($_POST['billing_province']));
+    }
+    if (!empty($_POST['shipping_province'])) {
+        update_post_meta($order_id, 'Shipping Province', sanitize_text_field($_POST['shipping_province']));
+    }
+    if (!empty($_POST['shipping_phone'])) {
+        update_post_meta($order_id, 'Shipping Phone', sanitize_text_field($_POST['shipping_phone']));
+    }
+}
+
+add_action('woocommerce_admin_order_data_after_billing_address', 'display_province_in_admin');
+
+function display_province_in_admin($order) {
+    $province = get_post_meta($order->get_id(), 'Billing Province', true);
+    echo '<p><strong>Province:</strong> ' . esc_html($province) . '</p>';
+}
+
+add_action('woocommerce_admin_order_data_after_shipping_address', 'display_shipping_province_in_admin');
+
+function display_shipping_province_in_admin($order) {
+    $province = get_post_meta($order->get_id(), 'Shipping Province', true);
+    $phone = get_post_meta($order->get_id(), 'Shipping Phone', true);
+    echo '<p><strong>Province:</strong> ' . esc_html($province) . '</p>';
+    echo '<p><strong>Phone Number:</strong> ' . esc_html($phone) . '</p>';
+}
+
+
+
+//Change Comment fields placeholder 
+// add_filter('comment_form_defaults', 'change_comment_form_placeholder');
+
+// function change_comment_form_placeholder($defaults) {
+//     $defaults['comment_field'] = '<p class="comment-form-comment"><label for="comment">' . _x('Order Comments', 'noun', 'woocommerce') . '</label><textarea id="comment" name="comment" cols="45" rows="8" placeholder="Write your message here"></textarea></p>';
+//     return $defaults;
+// }
+
+
+add_filter('comment_form_defaults', 'change_comment_form_placeholder');
+
+function change_comment_form_placeholder($defaults) {
+    $defaults['comment_field'] = str_replace('placeholder="Notes about your order, e.g. special notes for delivery."', 'placeholder="Write your message here"', $defaults['comment_field']);
+    return $defaults;
 }

@@ -1,0 +1,274 @@
+.guestLogin
+    &__notice 
+        color: $color-red
+        &.hide 
+            display: none
+    &__btn 
+        &Wrapper 
+            margin-right: -28px
+            max-width: calc( 100% + 28px )
+            display: flex 
+            justify-content: center
+            margin-top: 27px
+            margin-bottom: 12px
+.checkoutContent 
+    padding-top: 20px
+    .edit 
+        text-decoration: underline
+        margin-left: auto
+        margin-right: 50%
+        display: block 
+    .cartTotals
+        &__title 
+            padding-bottom: 8.1px
+            margin-bottom: 18.3px
+            border-bottom: 1px solid $color-black
+        &__row 
+            margin-bottom: 11px
+        &__amountRow 
+            margin-bottom: 0
+    &__btn 
+        padding-left: 14px
+        padding-bottom: 14px
+        display: block
+.checkoutTabs 
+    #main &__list 
+        padding-top: 23px
+        padding-left: 14px
+        padding-right: 14px
+        &Item 
+            padding-bottom: 32px
+            transition: .3s 
+            &.checkoutShipping 
+                transition: none
+            &.active 
+                padding-bottom: 20px
+                .checkoutTabs__listItem__title
+                    font-weight: 700
+                    color: $color-black
+            &__title 
+                color: $color-grey
+            &.active &__title 
+                color: $color-black 
+                font-weight: 700
+            &__sublist 
+                padding-left: 10px
+                &Content 
+                    display: none
+            &.checkoutUserInfoTab
+                .checkoutTabs__listItem__title 
+                    padding-bottom: 19px
+                .formResult 
+                    display: none
+                    &__top 
+                        font-weight: 700
+                        color: $color-black
+                        display: flex 
+                        .edit 
+                           font-weight: 400
+                           margin-auto: 13px
+                           display: block 
+                           margin-right: 50%
+                    &__content 
+                        margin-top: 2px 
+                .checkoutTabs__listItem__sublist
+                    padding-right: 38px
+                    #login
+                        .lost_password 
+                            padding-right: 0
+                        .loginFormButtons 
+                            margin-top: 30px
+                            margin-right: -28px
+                            width: calc( 100% + 28px )
+                            button.woocommerceAccountForm__buttonSubmit
+                                width: auto
+                                margin: auto
+                                padding: 10px 14px 8px
+                    .register
+                        .form-privacy-checkbox-wrapper 
+                            margin-top: -2px
+                        .registerFormButtons
+                            width: calc( 100% + 28px )
+                            button 
+                                width: auto
+                                margin: auto
+                                display: block
+                                margin-top: 25px
+                        .underPasswordText 
+                            margin-left: -10px
+                            padding-bottom: 11px
+                            line-height: 1
+                    .swapForm 
+                        margin-left: -10px
+                        padding-top: 11.8px
+                        padding-bottom: 21px
+                        span
+                            text-decoration: underline
+                    form 
+                        padding-left: 0
+                        padding-right: 0
+                        margin: 0
+                    &Title 
+                        padding-bottom: 32px
+                        font-weight: 700
+                        transition: .3s
+                    &:last-child
+                        .checkoutTabs__listItem__sublistTitle 
+                            padding-bottom: 0
+                    &.active 
+                        .checkoutTabs__listItem__sublistTitle 
+                            padding-bottom: 15px 
+                            padding-top: 6px
+.checkoutShipping
+    #main &.opened 
+        .checkoutTabs__listItem__title
+            font-weight: 700
+            color: $color-black
+        #customer_details
+            display: block
+    #main & div#customer_details 
+        p#order_comments_field 
+            padding-right: 53px
+    &__continue 
+        margin-top: 14px
+        margin-left: -10px
+        max-width: calc( 100% + 10px )
+        display: flex 
+        justify-content: center
+        margin-bottom: -3px
+    &__error 
+        display: none
+        color: $color-red
+        &.show
+            display: block
+    &__result
+        display: none
+        margin-bottom: 35px
+        &Title
+            display: flex 
+            font-weight: 700
+            .edit 
+                font-weight: 400
+        &Content
+            margin-top: 4px
+            margin-bottom: 15px
+    &__resultBilling
+        display: none
+        &.show 
+            display: block 
+    #customer_details 
+        margin-top: 5.3px
+        div.giftComment 
+            div.form-checkbox    
+                margin-bottom: 1px
+                input 
+                    margin-bottom: 0
+                    &::after 
+                        bottom: 56%
+        .form-row.empty 
+            input 
+                border-color: $color-red 
+                color: $color-red
+                &::placeholder
+                    color: $color-red
+    div#ship-to-different-address 
+        line-height: 1
+        label.form-checkbox-wrapper
+            margin-bottom: 14px
+            div.form-checkbox
+                margin-bottom: 1px
+    .checkoutTabs__listItem__sublistContent
+        h3 
+            display: none
+        #ship-to-different-address
+            display: block
+            label 
+                font-size: 1em 
+                hight: auto
+        .woocommerce-billing-fields 
+            padding-right: 38px
+        .create-account
+            display: none
+    .additional-fields 
+        display: flex 
+        flex-direction: column-reverse
+    .col-12
+        padding: 0
+    .form-row 
+        label 
+            height: 0
+            font-size: 0
+    .giftComment 
+        line-height: 1
+        display: flex
+        align-items: center
+        span 
+            font-weight: 700
+            margin-right: 0.4em
+    .charactersLimit,
+    #order_comments_field
+        display: none
+        margin-bottom: 28px
+    .shipping_address
+        #shipping_company_field
+            display: none
+.woocommerce-billing-fields__field-wrapper
+    #billing_company_field,
+    #billing_email_field
+        display: none
+// .checkout
+//     &Shipping,
+//     &Payment 
+//         &.hide 
+//             display: none
+.woocommerce-checkout 
+    .woocommerce-form-login-toggle,
+    .woocommerce-form-coupon-toggle
+        display: none
+.loginedCustomerData
+    &__title 
+        margin-top: 0px
+    &__subtitle 
+        display: flex 
+        padding-left: 9px
+        margin-bottom: 9px
+        line-height: 1.17
+    &__text 
+        padding-left: 48.5px
+        margin-bottom: 4px
+        line-height: 1.1
+        &:last-child
+            margin-bottom: 6px
+    &__logout
+        text-decoration: underline
+        margin-left: auto
+        display: block
+.createAccount 
+    margin-left: -10px
+    span
+        text-decoration: underline
+.checkoutMessage
+    padding-right: 26px
+    margin-left: -10px
+    line-height: 1.5
+.woocommerce-checkout 
+    #payment 
+        background-color: transparent
+        .wc_payment_methods 
+            padding: 0
+        .woocommerce-info
+            margin: 0
+.paymentBtnWrapper 
+    display: flex 
+    margin-left: -10px
+    max-width: calc( 100% + 10px )
+    justify-content: center
+.woocommerce-page 
+    #payment 
+        #place_order 
+            width: auto
+            margin-bottom: 17px
+            margin-top: 19px
+        ul.payment_methods
+            border: 0
+            padding: 0
