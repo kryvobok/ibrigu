@@ -2,6 +2,12 @@
     &__list
     &__item
         position: relative
+        &:first-child
+            .productCategory
+                &__item
+                    &-wrap
+                        padding-bottom: 100svh
+
         &:after
             content: ''
             position: absolute
@@ -17,7 +23,7 @@
             width: 100%
             height: 0
             overflow: hidden
-            padding-bottom: 100vh
+            padding-bottom: calc(100% * (666 / 393))
         &-img
             position: absolute
             width: 100%
@@ -34,4 +40,4 @@
             span
                 color: #fff
                 font-size: 21px
-                line-height: 48px
+                line-height: 1
