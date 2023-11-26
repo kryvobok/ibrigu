@@ -26,21 +26,21 @@ defined( 'ABSPATH' ) || exit;
 		$tax = WC()->cart->get_total_tax( ) == 0 ? 'Included' : WC()->cart->get_total_tax( ) . ' ' . get_woocommerce_currency_symbol();
 		?>
 		<div class="cartTotals__subtotalRow cartTotals__row">
-			<div class="cartTotals__subtotalLabel">Subtotal</div>
+			<div class="cartTotals__subtotalLabel"><?php _e('Subtotal', 'woocommerce_custom_text'); ?></div>
 			<div class="cartTotals__subtotalNumber"><?php wc_cart_totals_subtotal_html(); ?></div>
 		</div>
 		<div class="cartTotals__taxRow cartTotals__row">
-			<div class="cartTotals__taxLabel">Tax and duty</div>
+			<div class="cartTotals__taxLabel"><?php _e('Tax and duty', 'woocommerce_custom_text'); ?></div>
 			<div class="cartTotals__taxNumber"><?php echo $tax; ?></div>
 		</div>
 		<div class="cartTotals__shippingRow cartTotals__row">
-			<div class="cartTotals__shippingLabel">Shipping</div>
+			<div class="cartTotals__shippingLabel"><?php _e('Shipping', 'woocommerce_custom_text'); ?></div>
 			<div class="cartTotals__shippingNumber"><?php echo WC()->cart->get_shipping_total() . ' ' . get_woocommerce_currency_symbol(); ?></div>
 		</div>
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
 		<h4 class="cartTotals__amountRow cartTotals__row lg">
-			<div class="cartTotals__amountLabel">Total</div>
+			<div class="cartTotals__amountLabel"><?php _e('Total', 'woocommerce_custom_text'); ?></div>
 			<div class="cartTotals__amountNumber"><?php wc_cart_totals_order_total_html(); ?></div>
 		</h4>
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
@@ -48,10 +48,10 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="cartTotals__buttonsList">
 		<a class="cartTotals__checkoutBtn btn button--black button--fz--md button--size--md" href="<?php echo get_home_url() ?>/checkout">
-			CHECKOUT
+			<?php _e('CHECKOUT', 'woocommerce_custom_text'); ?>
 		</a>
 		<a class="cartTotals__shopBtn btn button--white button--fz--xs button--size--md" href="<?php echo get_home_url() ?>/shop">
-			Continue shopping
+			<?php _e('Continue shopping', 'woocommerce_custom_text'); ?>
 		</a>
 	</div>
 

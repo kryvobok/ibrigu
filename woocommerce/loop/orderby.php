@@ -8,42 +8,42 @@
         'hide_empty' => false,
     ));
 ?>
-<h4 class="catalog__filter">Filters</h4>
+<h4 class="catalog__filter"><?php _e('Filters', 'woocommerce_custom_text'); ?></h4>
 <div class="catalog__filtersMenu">
     <div class="catalog__filtersClose"></div>
-    <h4 class="catalog__filtersMenu__title">Filters</h4>
+    <h4 class="catalog__filtersMenu__title"><?php _e('Filters', 'woocommerce_custom_text'); ?></h4>
     <div class="catalog__filtersList">
         <div class="catalog__filtersList__attribute sort">
-            <h4 class="catalog__filtersList__attributeLabel">Sort by</h4>
+            <h4 class="catalog__filtersList__attributeLabel"><?php _e('Sort by', 'woocommerce_custom_text'); ?></h4>
             <div class="catalog__filtersList__attributeSublist">
-                <h4 class="catalog__filtersList__attributeLabel">Sort by</h4>
+                <h4 class="catalog__filtersList__attributeLabel"><?php _e('Sort by', 'woocommerce_custom_text'); ?></h4>
                 <div class="catalog__filtersList__attributeList">
                     <div class="catalog__filtersList__attributeColumn">
                         <div class="catalog__filtersList__attributeItem">
                             <div class="catalog__filtersList__attributeItem__checkbox"></div>
-                            <h4 class="catalog__filtersList__attributeItem__name lg" data-slug="price-desc">Descending Price</h4>
+                            <h4 class="catalog__filtersList__attributeItem__name lg" data-slug="price-desc"><?php _e('Descending Price', 'woocommerce_custom_text'); ?></h4>
                         </div>
                         <div class="catalog__filtersList__attributeItem">
                             <div class="catalog__filtersList__attributeItem__checkbox"></div>
-                            <h4 class="catalog__filtersList__attributeItem__name lg" data-slug="price">Ascending Price</h4>
+                            <h4 class="catalog__filtersList__attributeItem__name lg" data-slug="price"><?php _e('Ascending Price', 'woocommerce_custom_text'); ?></h4>
                         </div>
                         <div class="catalog__filtersList__attributeItem">
                             <div class="catalog__filtersList__attributeItem__checkbox"></div>
-                            <h4 class="catalog__filtersList__attributeItem__name lg" data-slug="availability">Availability</h4>
+                            <h4 class="catalog__filtersList__attributeItem__name lg" data-slug="availability"><?php _e('Availability', 'woocommerce_custom_text'); ?></h4>
                         </div>
                         <div class="catalog__filtersList__attributeItem">
                             <div class="catalog__filtersList__attributeItem__checkbox"></div>
-                            <h4 class="catalog__filtersList__attributeItem__name lg" data-slug="date">Most recent</h4>
+                            <h4 class="catalog__filtersList__attributeItem__name lg" data-slug="date"><?php _e('Most recent', 'woocommerce_custom_text'); ?></h4>
                         </div>
                     </div>
                 </div>
-                <h4 class="catalog__filtersList__attributeItem__apply button sm">APPLICA</h4>
+                <h4 class="catalog__filtersList__attributeItem__apply button sm"><?php _e('APPLICA', 'woocommerce_custom_text'); ?></h4>
             </div>
         </div>
         <div class="catalog__filtersList__attribute colors">
-            <h4 class="catalog__filtersList__attributeLabel">Colors</h4>
+            <h4 class="catalog__filtersList__attributeLabel"><?php _e('Colors', 'woocommerce_custom_text'); ?></h4>
             <div class="catalog__filtersList__attributeSublist">
-                <h4 class="catalog__filtersList__attributeLabel">Colors</h4>
+                <h4 class="catalog__filtersList__attributeLabel"><?php _e('Colors', 'woocommerce_custom_text'); ?></h4>
                 <div class="catalog__filtersList__attributeList">
                     <div class="catalog__filtersList__attributeColumn">
                         <?php $i = 1; foreach($product_colors as $color): ?>
@@ -61,13 +61,13 @@
                         <?php $i++; endforeach; ?>
                     </div>
                 </div>
-                <h4 class="catalog__filtersList__attributeItem__apply button sm">APPLICA</h4>
+                <h4 class="catalog__filtersList__attributeItem__apply button sm"><?php _e('APPLICA', 'woocommerce_custom_text'); ?></h4>
             </div>
         </div>
         <div class="catalog__filtersList__attribute size">
-            <h4 class="catalog__filtersList__attributeLabel">Size</h4>
+            <h4 class="catalog__filtersList__attributeLabel"><?php _e('Size', 'woocommerce_custom_text'); ?></h4>
             <div class="catalog__filtersList__attributeSublist">
-                <h4 class="catalog__filtersList__attributeLabel">Size</h4>
+                <h4 class="catalog__filtersList__attributeLabel"><?php _e('Size', 'woocommerce_custom_text'); ?></h4>
                 <div class="catalog__filtersList__attributeList">
                     <div class="catalog__filtersList__attributeColumn">
                         <?php $i = 1; foreach($product_sizes as $size): ?>
@@ -78,7 +78,7 @@
                         <?php $i++; endforeach; ?>
                         </div>
                     </div>
-                <h4 class="catalog__filtersList__attributeItem__apply button sm">APPLY</h4>
+                <h4 class="catalog__filtersList__attributeItem__apply button sm"><?php _e('APPLY', 'woocommerce_custom_text'); ?></h4>
             </div>
         </div>
     </div>

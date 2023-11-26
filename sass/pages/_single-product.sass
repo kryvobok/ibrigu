@@ -7,6 +7,13 @@ body.woocommerce.woocommerce-page
         border-radius: 0
         opacity: 1
         max-width: 112px
+        position: static
+        bottom: 0
+        right: 0
+        min-height: 110px
+        &.absolute
+            position: absolute
+            bottom: auto
         .price 
             font-weight: 700
             padding-bottom: 10px
@@ -43,7 +50,164 @@ body.woocommerce.woocommerce-page
             display: block 
 .singleProduct
     margin-bottom: 31px
+    &__attributesPicker
+        max-width: calc(100vw - 112px)
+        display: flex 
+        flex-wrap: wrap
+        margin-left: -12px
+        padding-top: 24px
+        &__item 
+            min-width: 50%
+            flex: 1
+            &Title 
+                padding-top: 14px
+                padding-left: 12px
+                padding-right: 40px
+                width: 100%
+                border-bottom: 1px solid #000
+                position: relative
+                min-height: 110px
+                border-right: 1px solid $color-black
+                position: relative
+                &:nth-child(1),
+                &:nth-child(2)
+                    border-top: 1px solid $color-black
+                &::before 
+                    content: ""
+                    position: absolute
+                    right: 28px
+                    top: 16px 
+                    height: 13px 
+                    width: 7px 
+                    background-image: url('../assets/images/ibrogu-right-arrow.svg')
+                    background-size: contain
+                    background-repeat: no-repeat
+                    background-position: center
+            &Popup
+                background: $color-bg-white
+                z-index: -1 
+                position: fixed 
+                width: 100% 
+                height: 100% 
+                left: 0 
+                top: 0 
+                top: 100%
+                transition: .3s 
+                opacity: 0
+                padding: 110px 16px 
+                &__close 
+                    position: absolute
+                    right: 17px
+                    top: 78px
+                    background-image: url(../assets/images/closePopup.svg)
+                    background-size: contain
+                    background-position: 50%
+                    background-repeat: no-repeat
+                    width: 21px
+                    height: 21px
+                &__title 
+                    position: relative
+                    padding-bottom: 7px
+                    margin-bottom: 10px
+                    font-weight: 700
+                    &::after 
+                        content: ""
+                        bottom: 0
+                        width: calc( 100% + 32px )
+                        left: -16px
+                        height: 1px 
+                        position: absolute
+                        background-color: $color-black
+                &.opened 
+                    top: 0
+                    z-index: 999999
+                    opacity: 1
+                &__list 
+                    padding-left: 1px
+                    padding-right: 24px
+                    display: flex
+                    margin-bottom: 12px
+                    &Item 
+                        width: 33%
+                        border: 1px solid $color-black
+                        font-size: 14px
+                        line-height: 1
+                        position: relative
+                        margin-left: -1px
+                        &.active 
+                            background-color: $color-black 
+                        &:nth-child(3n)
+                            margin-left: 0
+                        &::before 
+                            content: ""
+                            display: block 
+                            padding-bottom: 100%
+                        &__title 
+                            position: absolute
+                            left: 7px
+                            bottom: 5px
+                        &.active &__title 
+                            color: $color-bg-white
+                &__guide 
+                    margin-bottom: 25px
+                    &Label 
+                        position: relative
+                        display: inline-block
+                        line-height: 1
+                        padding-bottom: 3px
+                        &::after 
+                            content: ""
+                            position: absolute
+                            left: 0
+                            bottom: 0
+                            right: 0
+                            height: 1px 
+                            background-color: $color-black
+                    &Popup 
+                        position: absolute
+                        top: 99px
+                        left: 47px
+                        right: 46px
+                        background: #fff
+                        transition: .3s 
+                        z-index: 2
+                        opacity: 0
+                        transform: translateY(50px)
+                        visibility: hidden
+                        padding: 12px 
+                        &__title 
+                            font-weight: 700
+                        table 
+                            width: 100% 
+                            margin-top: 24px
+                            table-layout: fixed
+                            td 
+                                text-align: center
+                            tr:nth-child(2n + 1)
+                                background-color: rgba( 0, 0, 0, 0.3 )
+                                color: #fff
+                    &.openedPopup &Popup 
+                        opacity: 1
+                        visibility: visible
+                        transform: none
+                    &Bg 
+                        position: absolute
+                        left: 0
+                        top: 0
+                        width: 100% 
+                        height: 100%
+                        background-color: $color-black
+                        transition: .3s 
+                        z-index: 1
+                        opacity: 0
+                        visibility: hidden
+                    &.openedPopup &Bg 
+                        opacity: .36
+                        visibility: visible
     &__imagesList
+        border-bottom: 1px solid $color-black
+        .slick-track div.slick-slide
+            height: calc( 100vh - 223px)
         &__item 
             position: relative
             &.slick-slide
@@ -79,16 +243,20 @@ body.woocommerce.woocommerce-page
                         background-color: $color-black
     &__button
         display: flex 
-        margin-bottom: 24px
+        &Cart 
+            form .quantity,
+            form .single_variation 
+                display: none !important
+            &.variable button.button.single_add_to_cart_button
+                position: fixed 
         &LeftCol
             padding-top: 21px
             padding-left: 12px
             padding-right: 40px
             width: 100%
             max-width: calc( 100% - 112px )
-            border-top: 1px solid $color-black
-            border-bottom: 1px solid $color-black
             position: relative
+            min-height: 110px
             .wishlistIcon 
                 position: absolute
                 top: 25px
@@ -124,6 +292,7 @@ body.woocommerce.woocommerce-page
                     object-fit: contain
                     object-position: left center
     &__description 
+        margin-top: 24px
         max-height: 3.5em
         overflow: hidden
         line-height: 1.75
@@ -278,3 +447,16 @@ body.woocommerce.woocommerce-page
                 button 
                     border-color: $color-black
                     background-color: $color-black
+.single-product .woocommerce-notices-wrapper
+    position: absolute
+    z-index: 1
+    .scroller
+        position: absolute
+        left: 14px 
+        width: calc( 100% - 28px )
+        top: 0
+        height: 2px         
+        background-color: $color-black
+        z-index: 1
+    .woocommerce-message 
+        border: 0

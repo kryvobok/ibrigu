@@ -141,11 +141,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<div class="cartContent__itemBottom">
 								<div class="woocommerce-text cartContent__wishlist__buttonsWrapper<?php echo $class; ?>">
 									<a href="?add_to_wishlist=<?php echo $product_id; ?>" class="add_to_wishlist woocommerce-text single_add_to_wishlist wishlist_toggle" data-product-id="<?php echo $product_id; ?>" data-product-type="variable" data-original-product-id="<?php echo $product_id; ?>" data-title="Add to wishlist" rel="nofollow">
-										Add to my selection
+										<?php _e('Add to my selection', 'woocommerce_custom_text'); ?>
 									</a>
 								
 									<a href="?remove_from_wishlist=<?php echo $product_id; ?>" class="delete_item woocommerce-text wishlist_toggle" data-item-id="<?php echo $wishlist_item_id; ?>" data-product-id="<?php echo $product_id; ?>" data-original-product-id="<?php echo $product_id; ?>" data-title="Remove from list" rel="nofollow">
-										Remove from my selection
+										<?php _e('Remove from my selection', 'woocommerce_custom_text'); ?>
 									</a>
 								</div>
 								<div class="cartContent__itemRemove woocommerce-text">
@@ -153,7 +153,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 										echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 											'woocommerce_cart_item_remove_link',
 											sprintf(
-												'<a href="%s" class="removeBtn" aria-label="%s" data-product_id="%s" data-product_sku="%s">Cansel</a>',
+												'<a href="%s" class="removeBtn" aria-label="%s" data-product_id="%s" data-product_sku="%s">' . _e('Cancel', 'woocommerce_custom_text') . '</a>',
 												esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 												/* translators: %s is the product name */
 												esc_attr( sprintf( __( 'Remove %s from cart', 'woocommerce' ), wp_strip_all_tags( $product_name ) ) ),

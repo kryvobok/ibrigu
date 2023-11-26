@@ -40,10 +40,10 @@ endif;
 		<h4 class="myAccount__userName sm"><?php echo 'Welcome ' . $customer_name . '!'; ?></h4>
 		<div class="wishlist__menu account__menu">
 			<h5 class="account__menuItem current">
-				My information
+				<?php _e('My information', 'woocommerce_custom_text'); ?>
 			</h5>
 			<h5 class="account__menuItem ">
-				<a href="<?php echo get_home_url() . '/wishlist'; ?>">My wishlist</a>
+				<a href="<?php echo get_home_url() . '/wishlist'; ?>"><?php _e('My wishlist', 'woocommerce_custom_text'); ?></a>
 			</h5>
 		</div>
 	</div>

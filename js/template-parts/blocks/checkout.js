@@ -37,16 +37,12 @@ function checkout(){
     });
 
     $('.checkoutShipping__continue').click(function(){
-        let checkFieldsCValid = '';
-
+        let checkFieldsCValid = true;
         $('#customer_details .woocommerce-billing-fields .validate-required').each(function(){
-            console.log($(this).find('input').val().trim());
             if(!$(this).hasClass('woocommerce-validated') && !$(this).hasClass('filled') || $(this).find('input').val().trim() == ''){
                 checkFieldsCValid = false;
                 $(this).addClass('empty');
-            }
-            else{
-                checkFieldsCValid = true;
+                return;
             }
         });
 
@@ -58,7 +54,7 @@ function checkout(){
                 }
             });
         } 
-        if(checkFieldsCValid != false){
+        if(checkFieldsCValid == true){
             let wrapper = $('#customer_details');
             $('.checkoutShipping').slideUp();
             $('.checkoutPayment .checkoutTabs__listItem__sublist').slideDown();
@@ -80,7 +76,6 @@ function checkout(){
                 address1: wrapper.find('#shipping_address_1').val(),
                 address2: wrapper.find('#shipping_address_2').val(),
             };
-            console.log(billingUserData['phone'] + '124');
             const result = `<div class="checkoutShipping__resultContent__item name">Sig. ${billingUserData['name']} ${billingUserData['surname']}</div>
             <div class="checkoutShipping__resultContent__item email">${billingUserData['email']}</div>
             <div class="checkoutShipping__resultContent__item address1">Via ${billingUserData['address1']}</div>
@@ -103,11 +98,6 @@ function checkout(){
             $('.checkoutShipping__result').slideDown();
             $('.checkoutPayment .checkoutTabs__listItem__sublistContent').slideDown();
         }
-    });
-
-    $(document).ready(function(){
-        $('#billing_address_1').attr('placeholder', 'Address 1');
-        $('#billing_address_2').attr('placeholder', 'Address 2');
     });
 
     $('.guestLogin').on('submit', function(e){

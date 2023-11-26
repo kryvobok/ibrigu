@@ -28,7 +28,7 @@ global $product;
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
 
-	<button type="submit" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><h2 class="price md"><?php do_action('woocommerce_product_price'); ?></h2><h2 class="label sm">ADD TO BASKET</h2></button>
+	<button type="submit" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><h2 class="price md"><?php do_action('woocommerce_product_price'); ?></h2><h2 class="label sm"><?php _e('ADD TO BASKET', 'woocommerce_custom_text'); ?></h2></button>
 
 	<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 
