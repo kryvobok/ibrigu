@@ -22,6 +22,7 @@ import { loginForm } from './template-parts/blocks/login-form';
 import { cart } from './template-parts/blocks/cart';
 import { checkout } from './template-parts/blocks/checkout';
 import { dropdown } from './template-parts/blocks/dropdown';
+import { form } from './template-parts/blocks/form';
 
 header();
 footer();
@@ -41,4 +42,5 @@ loginForm();
 cart();
 checkout();
 dropdown();
+form();
 // heroSlider();

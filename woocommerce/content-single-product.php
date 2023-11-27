@@ -33,18 +33,89 @@ do_action( 'woocommerce_before_single_product' );
     </div>
     <div class="singleProduct__button">
         <div class="singleProduct__buttonLeftCol"><h2 class="sm"><?php the_title(); ?></h2><div class="wishlistIcon"><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ); ?></div></div>
-        <div class="singleProduct__buttonCart productAddTocart">
+        <div class="singleProduct__buttonCart productAddTocart<?php if(is_a( $product, 'WC_Product_Variable' )){echo ' variable';} ?>">
             <?php do_action('woocommerce_product_add_to_cart'); ?>
         </div>
     </div>
     <div class="singleProduct__description__wrapper">
+        <?php 
+        $attributes = $product->get_attributes();
+        if(is_a( $product, 'WC_Product_Variable' )):
+        ?>
+        <div class="singleProduct__attributesPicker">
+            <?php foreach($attributes as $attribute): 
+                $attributelabel = wc_attribute_label( $attribute['name'] );
+                $results = woocommerce_get_product_terms($product->id, $attribute['name']);
+                if(count($results) > 1):
+                ?>
+                    <div class="singleProduct__attributesPicker__item" data-attribute="<?php echo $attribute['name']; ?>">
+                        <h2 class="singleProduct__attributesPicker__itemTitle sm"><?php echo $attributelabel; ?></h2>
+                        <div class="singleProduct__attributesPicker__itemPopup">
+                            <div class="singleProduct__attributesPicker__itemPopup__close"></div>
+                            <h4 class="singleProduct__attributesPicker__itemPopup__title"><?php _e('Select ', 'woocommerce_custom_text'); ?><?php echo $attributelabel; ?></h4>
+                            <div class="singleProduct__attributesPicker__itemPopup__list">
+                                <?php foreach($results as $result): ?>
+                                    <div class="singleProduct__attributesPicker__itemPopup__listItem">
+                                        <h4 class="singleProduct__attributesPicker__itemPopup__listItem__title lg" data-item="<?php echo $result->slug; ?>"><?php echo $result->name; ?></h4>
+                                    </div>
+                                <?php endforeach;?>
+                            </div>
+                            <div class="singleProduct__attributesPicker__itemPopup__content">
+                                <?php if($attribute['name'] == 'pa_size'): ?>
+                                    <?php 
+                                        $popup_title = get_field('size_guide_title', 'options');
+                                        $size_choosing_text = get_field('size_choosing_text', 'options');
+                                    ?>
+                                    <div class="singleProduct__attributesPicker__itemPopup__guide">
+                                        <?php if($popup_title): ?>
+                                            <div class="singleProduct__attributesPicker__itemPopup__guideLabel popup-toggle"><?php echo $popup_title; ?></div>
+                                        <?php endif; ?>
+                                        <?php if($popup_title || have_rows('size_table_row')): ?>
+                                            <div class="singleProduct__attributesPicker__itemPopup__guidePopup">
+                                                <?php if($popup_title): ?>
+                                                    <h4 class="singleProduct__attributesPicker__itemPopup__guidePopup__title"><?php echo $popup_title; ?></h4>
+                                                <?php endif; ?>
+                                                <?php if(have_rows('size_table_row', 'options')): ?>
+                                                    <div class="singleProduct__attributesPicker__itemPopup__guidePopup__content">
+                                                        <table>
+                                                            <?php while(have_rows('size_table_row', 'options')): the_row(); ?>
+                                                                <?php if(have_rows('items')): ?>
+                                                                    <tr>
+                                                                        <?php while(have_rows('items')): the_row(); ?>
+                                                                            <?php 
+                                                                                $item_label = get_sub_field('item_label'); 
+                                                                            ?>
+                                                                                <td><?php echo $item_label; ?></td>
+                                                                        <?php endwhile; ?>
+                                                                    </tr>
+                                                                <?php endif; ?>
+                                                            <?php endwhile; ?>
+                                                        </table>
+                                                    </div>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="singleProduct__attributesPicker__itemPopup__guideBg popup-toggle"></div>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if($size_choosing_text): ?>
+                                    <div class="singleProduct__attributesPicker__itemPopup__text woocommerce-text lh-sm">
+                                        <?php echo $size_choosing_text; ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
         <div class="singleProduct__description">
             <div class="attributesItem__list">
                 <?php 
-                $attributes = $product->get_attributes();
                 foreach($attributes as $attribute):
                     $attributelabel = wc_attribute_label( $attribute['name'] );
-                    $results = woocommerce_get_product_terms($product->id, $attribute['name'], 'names');?>
+                    $results = woocommerce_get_product_terms($product->id, $attribute['name'], 'names'); ?>
                     <div class="attributesItem">
                         <div class="attributesItem__label"><?php echo $attributelabel . ': '; ?></div>
                         <div class="attributesItem__options">
@@ -64,8 +135,8 @@ do_action( 'woocommerce_before_single_product' );
             <div class="woocommerce-text"><?php the_content(); ?></div>
         </div>
         <div class="showContent">
-            <div class="more showContentBtn">See more +</div>
-            <div class="less showContentBtn">See less -</div>
+            <div class="more showContentBtn"><?php _e('See more +', 'woocommerce_custom_text'); ?></div>
+            <div class="less showContentBtn"><?php _e('See less -', 'woocommerce_custom_text'); ?></div>
         </div>
     </div>
     

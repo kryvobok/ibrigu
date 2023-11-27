@@ -30,7 +30,7 @@ do_action( 'woocommerce_before_main_content' );
 
 ?>
 <?php if(!is_product_category()): ?>
-    <h1 class="catalog__category lg">SHOP</h1>
+    <h1 class="catalog__category lg"><?php _e('SHOP', 'woocommerce_custom_text'); ?></h1>
 <?php else: ?>
     <h1 class="catalog__category lg"><?php single_term_title(); ?></h1>
 <?php endif; ?>

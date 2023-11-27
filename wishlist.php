@@ -10,13 +10,13 @@ $slider_title = get_field('empty_wishlist_related_products_title', 'options');
 ?>
 <section class="wishlist">
     <div class="wishlist__top">
-        <h4 class="wishlist__userName myAccount__userName sm"><?php echo 'Welcome ' . $customer_name . '!'; ?></h4>
+        <h4 class="wishlist__userName myAccount__userName sm"><?php _e('Welcome', 'woocommerce_custom_text'); echo $customer_name . '!'; ?></h4>
         <div class="wishlist__menu account__menu">
             <h5 class="account__menuItem">
-                <a href="<?php echo get_home_url() . '/my-account'; ?>">My information</a>
+                <a href="<?php echo get_home_url() . '/my-account'; ?>"><?php _e('My information', 'woocommerce_custom_text'); ?></a>
             </h5>
             <h5 class="account__menuItem current">
-                My wishlist
+                <?php _e('My wishlist', 'woocommerce_custom_text'); ?>
             </h5>
         </div>
         <h1 class="wishlist__title myAccount__title sm"><?php the_title(); ?></h1>
@@ -92,7 +92,7 @@ $slider_title = get_field('empty_wishlist_related_products_title', 'options');
                                 endif; ?>
                                 <div class="relatedProducts__image singleProductCard__image"><img src="<?php echo $image; ?>" alt=""></div>
                                 <h5 class="relatedProducts__title singleProductCard__title"><?php the_title(); ?></h5>
-                                <a href="<?php the_permalink() ?>" class="relatedProducts__link singleProductCard__link"><h5>See more</h5></a>
+                                <a href="<?php the_permalink() ?>" class="relatedProducts__link singleProductCard__link"><h5><?php _e('See more', 'woocommerce_custom_text'); ?></h5></a>
                             </div>
                         </div>
                     <?php endwhile; ?>
