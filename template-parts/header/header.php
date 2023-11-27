@@ -13,10 +13,38 @@
             <nav class="header__nav">
                 <div class="main-nav">
                     <?php wp_nav_menu( array('menu_id'=>'main-nav','container_class' => '','theme_location' => 'main-menu') ); ?>
+
+                    <div class="header__lang lang--mobile">
+                        <?php
+                            if (function_exists('icl_get_languages')) {
+                                $languages = icl_get_languages('skip_missing=0');
+                                $loopCounter = 0;
+                                if(true || 1 < count($languages)){ ?>
+                                    <ul class="header__lang__list">
+                                        <?php
+                                            foreach($languages as $l){
+                                                $label = $l['language_code']=='it'?'ITA':'ENG';
+                                                ?>
+                                                <?php if($loopCounter!=0): ?>
+                                                    <li class="header__lang__item-sep">/</li>
+                                                <?php endif; ?>
+                                                <li class="header__lang__item">
+                                                    <a href="<?php echo $l['url']; ?>" class="header__lang__item__link<?php if($l['active']) echo ' active'; ?> <?php echo $l['language_code']; ?>"><?php echo $label; ?></a>
+                                                </li>
+                                                <?php
+                                                $loopCounter++;
+                                            }
+                                        ?>
+                                    </ul>
+                                    <?php
+                                }
+                            }
+                        ?>
+                    </div>
                 </div>
             </nav>
 
-            <div class="header__lang">
+            <div class="header__lang lang--desktop">
                 <?php
                     if (function_exists('icl_get_languages')) {
                         $languages = icl_get_languages('skip_missing=0');
