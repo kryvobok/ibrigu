@@ -2,6 +2,11 @@
     &__list
     &__item
         position: relative
+        &:hover
+            .productCategory
+                &__item
+                    &-img
+                        transform: scale(1.05)
         &:first-child
             .productCategory
                 &__item
@@ -29,12 +34,17 @@
             width: 100%
             height: 100%
             object-fit: cover
+            transition: $default-transition
         &-btn
             position: absolute
             left: 0
             bottom: 60px
+            display: flex
+            align-items: center
+            justify-content: space-between
             width: 100%
             padding: 0 25px
+            line-height: 1
             text-transform: uppercase
             z-index: 10
             span
