@@ -29,10 +29,11 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
+<div class="container woocommerce-container">
 <?php if(!is_product_category()): ?>
     <h1 class="catalog__category lg"><?php _e('SHOP', 'woocommerce_custom_text'); ?></h1>
 <?php else: ?>
-    <h1 class="catalog__category lg"><?php single_term_title(); ?></h1>
+    <h1 class="catalog__category lg woocommerce-title"><?php single_term_title(); ?></h1>
 <?php endif; ?>
 <?php 
 if(!is_product_category()){
@@ -46,16 +47,16 @@ else{
 if ( $terms && ! is_wp_error( $terms ) ) : //only displayed if the product has at least one category ?>
 <div class="catalog__categoriesList__wrapper">
 	<div class="catalog__categoriesList__prev catalog__categoriesList__arrow disabled"></div>
-	<h4  class="catalog__categoriesList">
+	<div class="catalog__categoriesList">
 		<div class="catalog__categoriesList__slider">
 			<?php $i = 1; foreach ( $terms as $term ) { ?>
-				<div class="catalog__categoriesList__itemWrapper<?php if($i <= 3){echo ' active';}; if($i == 4){echo ' next-slide';} ?>">
-					<a href="<?php echo get_term_link( $term->slug, 'product_cat' ); ?>"><h4 class="catalog__categoriesList__item" data-category="<?php echo $term->slug; ?>"><?php echo $term->name; ?></h4></a>
+				<div class="catalog__categoriesList__itemWrapper">
+					<a href="<?php echo get_term_link( $term->slug, 'product_cat' ); ?>"><h4 class="catalog__categoriesList__item fw-r" data-category="<?php echo $term->slug; ?>"><?php echo $term->name; ?></h4></a>
 				</div>
 			<?php $i++; } ?>
 		</div>
-	</h4>
-	<div class="catalog__categoriesList__next catalog__categoriesList__arrow"></div>
+	</div>
+	<div class="catalog__categoriesList__next catalog__categoriesList__arrow disabled"></div>
 </div>
 <?php endif; ?>
 <?php
@@ -117,3 +118,5 @@ do_action( 'woocommerce_after_main_content' );
 // do_action( 'woocommerce_sidebar' );
 
 get_footer( 'shop' );
+?>
+</div>

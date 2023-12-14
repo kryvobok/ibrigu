@@ -10,6 +10,13 @@
 	&--full
 		+min-screen($breakpoint-xxl)
 			max-width: 100%
+	&.woocommerce-container 
+		max-width: 1592px
+		.archive.woocommerce & 
+			+max-screen($breakpoint-lg)
+				width: 85%
+			+max-screen($breakpoint-md)
+				width: 100%
 
 .row 
 	&--x

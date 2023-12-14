@@ -37,6 +37,12 @@ h1, .h1
 		font-size: 20px
 		&.lg 
 			font-size: 22px
+	&.woocommerce-title 
+		font-size: 27px
+		+max-screen($breakpoint-sm)
+			font-size: 20px
+			&.lg 
+				font-size: 22px
 .contentBlock
 	display: flex
 	align-items: center
@@ -85,18 +91,24 @@ h3
 		&.lg 
 			font-size: 16px
 h4
+	font-size: 14px
+	font-weight: 400
+	&.sm 
+		font-size: 14px
+	&.desktop-md 
+		font-size: 15px
 	+max-screen($breakpoint-md)
 		font-size: 13px
-		font-weight: 400
 		&.sm 
 			font-size: 12px
 		&.lg 
 			font-size: 14px
 			line-height: 1
 h5, .h5
+	font-weight: 400
+	font-size: 15px
 	+max-screen($breakpoint-sm)
 		font-size: 10px
-		//font-weight: 400
 		a,
 		p
 			font-size: inherit 
@@ -108,47 +120,53 @@ p
 		font-size: 16px
 	+max-screen($breakpoint-sm)
 		font-size: 10px
+.fw-r 
+	font-weight: 400
 .heading
 	p
 		&:first-child
 			padding-bottom: 50px
 .woocommerce-text
-	font-size: 10px
-	p 
-		padding-bottom: 18px
-	& > *
+	font-size: 14px
+	+max-screen($breakpoint-lg)
+		font-size: 12px	
+	+max-screen($breakpoint-md)
 		font-size: 10px
-	&.lg,
-	&.lg > * 
-		font-size: 12px
-	&.md,
-	&.md > *
-		font-size: 11px
-	&.sm,
-	&.sm > * 
-		font-size: 9px
-	&.xs,
-	&.xs > *
-		font-size: 6px
-	&.lh-sm 
-		line-height: 1.1
 		p 
-			padding-bottom: 10px
-			&:last-child
-				padding-bottom: 0
-	&.italic 
-		font-style italic 
-	ul 
-		padding-left: 18px
-		padding-top: 3px
-		padding-bottom: 4px
-		li
-			position: relative
-			&::before
-				content: ""
-				position: absolute
-				left: -6px 
-				width: 3px 
-				height: 3px 
-				background-color: $color-black
-				top: 7px 
+			padding-bottom: 18px
+		& > *
+			font-size: 10px
+		&.lg,
+		&.lg > * 
+			font-size: 12px
+		&.md,
+		&.md > *
+			font-size: 11px
+		&.sm,
+		&.sm > * 
+			font-size: 9px
+		&.xs,
+		&.xs > *
+			font-size: 6px
+		&.lh-sm 
+			line-height: 1.1
+			p 
+				padding-bottom: 10px
+				&:last-child
+					padding-bottom: 0
+		&.italic 
+			font-style italic 
+		ul 
+			padding-left: 18px
+			padding-top: 3px
+			padding-bottom: 4px
+			li
+				position: relative
+				&::before
+					content: ""
+					position: absolute
+					left: -6px 
+					width: 3px 
+					height: 3px 
+					background-color: $color-black
+					top: 7px 

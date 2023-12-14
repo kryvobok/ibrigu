@@ -9,67 +9,112 @@
     .container 
         padding: 0 15px 
     &__category
+        margin-bottom: 78px
+        line-height: 1.5
         text-align: center
-        line-height: 1
-        margin-bottom: 16px
+        line-height: 1.15
+        +max-screen(1440px)
+            margin-bottom: 64px
+        +max-screen(1200px)
+            margin-bottom: 54px
+        +max-screen($breakpoint-md)
+            line-height: 1
+            margin-bottom: 16px
     &__categories
         &List 
-            height: 3.847em
+            height: 2.1em 
             position: relative
             overflow: hidden 
             margin: auto 
             transition: .3s 
-            &__slider
-                display: flex 
-                margin: 0 -3.5px
+            margin-bottom: 65px
+            +max-screen(1440px)
+                margin-bottom: 54px
+            +max-screen(1200px)
+                margin-bottom: 48px
+            +max-screen($breakpoint-md)
+                height: 3em
                 margin-bottom: 20px
+            &__slider
+                margin: 0 -8px 
+                left: 8px
+                display: flex 
                 justify-content: center
                 position: absolute
-                left: 3.5px
                 top: 0
                 transition: .3s
+                +max-screen($breakpoint-md)
+                    margin: 0 -3.5px
+                    left: 3.5px
             &__wrapper 
                 width: fit-content
                 margin: auto
                 position: relative
             &__item 
-                padding: 0 7.4px 
-                height: 2.308em
+                padding: 13px 22px
+                line-height: 1
                 background-color: $color-bg-grey
                 display: flex
                 align-items: center
+                border: 1px solid $color-bg-grey
+                transition: .3s 
+                &:hover 
+                    border: 1px solid $color-black
+                    background-color: transparent
+                +max-screen($breakpoint-md)
+                    padding: 0 7.4px 
+                    height: 2.308em
+                    border: 0
+                    &:hover 
+                        border: 0
+                        background-color: $color-bg-grey
                 &Wrapper 
                     transition: .3s
-                    padding: 0 3.5px
-                    // opacity: 0
+                    padding: 0 8px
+                    +max-screen($breakpoint-md)
+                        padding: 0 3.5px
                     &.slick-active,
                     &.slick-current 
                         opacity: 1
             &__arrow
-                position: absolute
                 top: 50% 
-                width: 9px 
-                height: 18px
+                position: absolute
+                width: 11px 
+                height: 22px
                 background-image: url('../assets/images/categoriesArrow.svg')
-                top: 5px 
                 transition: .3s 
                 background-repeat: no-repeat
                 background-size: contain
                 background-position: center
+                cursor: pointer
+                +max-screen($breakpoint-md)
+                    top: 5px 
+                    width: 9px 
+                    height: 18px
                 &.disabled 
                     pointer-events: none
                     opacity: 0
                     visibility: hidden 
             &__next 
-                right: -18px
+                transform: translateY(-50%)
+                right: -36px
+                +max-screen($breakpoint-md)
+                    transform: none
+                    right: -18px
             &__prev 
-                left: -18px
-                transform: rotate(-180deg)
+                transform:  translateY(-50%) rotate(-180deg)
+                left: -36px
+                +max-screen($breakpoint-md)
+                    left: -18px
+                    transform: rotate(-180deg)
     &__filter 
         position: relative
-        margin-bottom: 29px
-        margin-left: 12.5px
-        margin-right: 12.5px
+        display: none
+        +max-screen($breakpoint-md)
+            display: block
+            margin-bottom: 29px
+            margin-left: 12.5px
+            margin-right: 12.5px
         &::after 
             content: ""
             position: absolute
@@ -79,53 +124,97 @@
             background-color: $color-black
             height: 1px 
     &__list 
-        margin: 0 -7.5px 
-        margin-bottom: -24px
-        width: calc( 100% + 15px )
-        padding-left: 15px
-        padding-right: 13px
-        padding-bottom: 50px
+        margin: 0 -63px 
+        width: calc( 100% + 126px )
+        padding-bottom: 35px
+        +max-screen(1440px)
+            margin: 0 -32px 
+            width: calc( 100% + 64px )
+            padding-bottom: 28px
+        +max-screen(1200px)
+            margin: 0 -24px 
+            width: calc( 100% + 48px )
+            padding-bottom: 24px
+        +max-screen($breakpoint-lg)
+            margin: 0 -48px 
+            width: calc( 100% + 96px )
+        +max-screen($breakpoint-md)
+            padding-bottom: 50px
+            padding-left: 15px
+            padding-right: 13px
+            margin: 0 -7.5px 
+            margin-bottom: -24px
+            width: calc( 100% + 15px )
         &Empty 
             padding-bottom: 32px
             padding-left: 20px
         &Item 
+            &__body 
+                position: relative
+                padding-right: 20px
+                +max-screen($breakpoint-md)
+                    padding-right: 0
             &__wrapper 
-                padding: 0 7.5px 
-                margin-bottom: 24px
+                padding: 0 63px
+                margin-bottom: 80px
+                +max-screen(1440px)
+                    padding: 0 32px 
+                    margin-bottom: 64px
+                +max-screen(1200px)
+                    padding: 0 24px 
+                    margin-bottom: 48px
+                +max-screen($breakpoint-lg)
+                    padding: 0 48px 
+                    margin-bottom: 56px
+                +max-screen($breakpoint-md)
+                    padding: 0 7.5px 
+                    margin-bottom: 24px
                 .catalog__listItem__wishlist
                     display: flex 
                     flex-direction: column-reverse
+                    position: absolute
+                    top: 0
+                    right: 0
+                    +max-screen($breakpoint-md)
+                        position: static
                     .button 
                         background: transparent !important
                         padding-left: 0 !important
                         font-size: 0 !important
                         padding-top: 5px !important
                         text-align: left
-                        &:not(.product_type_variable)
-                            &::after 
-                                content: "Out of stock"
-                                font-size: 8px
                     .yith-wcwl-wishlistaddedbrowse
                         & > a 
                             display: none
                     .feedback,
                     .delete_item
                         font-size: 0
+                        display: block 
+                        line-height: 0
                         i
-                            font-size: 8px
-                            margin-top: 5px
+                            margin: 0
+                            font-size: 16px
+                            +max-screen($breakpoint-md)
+                                font-size: 8px
+                                margin-right: 10px
+                                margin-top: 5px
                     .yith-wcwl-add-button
                         a > i
                             display: block !important
+                            
                         a > * 
                             display: none !important
             &__image 
                 position: relative
-                margin-bottom: 12.5px
+                margin-bottom: 22px
+                +max-screen($breakpoint-md)
+                    margin-bottom: 12.5px
                 &::before
                     content: ""
                     display: block
-                    padding-bottom: 120%  
+                    padding-bottom: 130%
+                    +max-screen($breakpoint-md)
+                        padding-bottom: 120%  
                 img 
                     width: 100% 
                     position: absolute
@@ -135,8 +224,14 @@
                     object-fit: cover 
                     object-position: center
                     height: 100%
+            &__title,
             &__price 
-                margin-top: 5px
+                line-height: 1.2
+
+            &__price 
+                margin-top: 7px
+                +max-screen($breakpoint-md)
+                    margin-top: 5px
             &__wishlist 
                 .add_to_cart_button.ajax_add_to_cart.button
                     display: none
@@ -146,123 +241,257 @@
                     display: block
                     line-height: 1
                     font-size: 0
-                    margin-top: 5px
+                    margin-top: 0
+                    +max-screen($breakpoint-md)
+                        margin-top: 5px
                 .yith-wcwl-add-button
                     i
-                        width: 10px
-                        height: 10px
-                        font-size: 8px
+                        font-size: 16px
+                        width: 16px 
+                        height: 16px
+                        margin-right: 0
+                        +max-screen($breakpoint-md)
+                            width: 10px
+                            height: 10px
+                            margin-right: 10px
+                            font-size: 8px
                     span
                         display: none
     &__filters
         &Menu 
-            position: fixed 
-            transition: .3s 
-            top: 0
-            width: 100%
-            height: 100% 
-            right: 100%
-            background-color: $color-bg-white
-            padding-top: 110px
-            padding-left: 15px
-            padding-right: 9px
-            z-index: 999999
+            display: flex 
+            border-bottom: 1px solid $color-black
+            margin-bottom: 100px
+            +max-screen(1440px)
+                margin-bottom: 80px
+            +max-screen(1200px)
+                margin-bottom: 64px
+            +max-screen($breakpoint-md)
+                position: fixed 
+                transition: .3s 
+                top: 0
+                width: 100%
+                height: 100% 
+                right: 100%
+                background-color: $color-bg-white
+                padding-top: 110px
+                padding-left: 15px
+                padding-right: 9px
+                z-index: 999999
+                display: block
+                border: 0
+                margin-bottom: 0
             &.opened 
                 right: 0
             &__title 
                 font-weight: 700
                 position: relative
                 line-height: 1.15
+                width: 30% 
+                +max-screen($breakpoint-md)
+                    width: 100%
                 &::after 
-                    content: ""
-                    position: absolute
-                    left: 0
-                    bottom: -4px
-                    right: 0
-                    background-color: $color-black
-                    height: 1px 
+                    +max-screen($breakpoint-md)
+                        content: ""
+                        position: absolute
+                        left: 0
+                        bottom: -4px
+                        right: 0
+                        background-color: $color-black
+                        height: 1px 
         &Close 
-            position: absolute
-            top: 78px 
-            right: 16.7px
-            width: 21px
-            height: 21px 
-            background-image: url('../assets/images/close-icon.svg')
-            background-size: contain
-            background-repeat: no-repeat
+            +max-screen($breakpoint-md)
+                position: absolute
+                top: 78px 
+                right: 16.7px
+                width: 21px
+                height: 21px 
+                background-image: url('../assets/images/close-icon.svg')
+                background-size: contain
+                background-repeat: no-repeat
+
         &List 
-            margin-top: 46px
+            display: flex 
+            width: 70%
+            +max-screen($breakpoint-md)
+                margin-top: 46px
+                width: 100%
+                display: block
             &__attribute 
                 &List 
                     display: flex 
                 &Column 
-                    margin-left: 10px
-                    min-width: 110px
+                    margin-left: 0
+                    min-width: 37%
+                    margin-right: 38px
+                    +max-screen($breakpoint-md)
+                        margin-left: 10px
+                        min-width: 110px
                 &Label 
-                    padding-top: 16px
-                    padding-bottom: 13.5px
+                    padding-bottom: 35px
                     position: relative
                     line-height: 1.1
+                    font-weight: 700
+                    cursor: pointer
+                    +max-screen($breakpoint-md)
+                        padding-top: 16px
+                        font-weight: 400
+                        padding-bottom: 13.5px
                     &::before 
-                        content: ""
-                        background-image: url('../assets/images/filterArrow.svg')
-                        position: absolute
-                        top: 50%
-                        right: 8px
-                        width: 8px
-                        height: 15px
-                        background-size: contain
-                        background-position: center
-                        background-repeat: no-repeat
-                        transform: translateY(-50%)
-                        transition: .3s
+                        +max-screen($breakpoint-md)
+                            content: ""
+                            background-image: url('../assets/images/filterArrow.svg')
+                            position: absolute
+                            top: 50%
+                            right: 8px
+                            width: 8px
+                            height: 15px
+                            background-size: contain
+                            background-position: center
+                            background-repeat: no-repeat
+                            transform: translateY(-50%)
+                            transition: .3s
                     &::after 
-                        content: ""
-                        position: absolute
-                        left: 0
-                        bottom: 0px
-                        width: 100% 
-                        height: 1px 
-                        background-color: $color-black
+                        +max-screen($breakpoint-md)
+                            content: ""
+                            position: absolute
+                            left: 0
+                            bottom: 0px
+                            width: 100% 
+                            height: 1px 
+                            background-color: $color-black
                 &Sublist
-                    display: none
-                    position: absolute
-                    left: 15px
-                    right: 9px 
-                    top: 148px 
-                    background-color: $color-bg-white
-                    z-index: 1
-                    bottom: 0
+                    +min-screen(770px)
+                        display: block !important
+                        position: fixed
+                        left: -480px
+                        top: 0
+                        bottom: 0
+                        height: 100% !important
+                        width: 480px
+                        z-index: 9999999
+                        background: #fff
+                        padding-top: 164px !important
+                        padding-left: 88px
+                        padding-right: 82px
+                        transition: .3s
+                        +max-screen(1440px)
+                            padding-top: 96px !important
+                            padding-left: 72px
+                        +max-screen(1200px)
+                            padding-top: 72px !important
+                            padding-left: 56px
+                    +max-screen($breakpoint-md)
+                        display: none
+                        position: absolute
+                        left: 15px
+                        right: 9px 
+                        top: 148px 
+                        background-color: $color-bg-white
+                        z-index: 1
+                        bottom: 0
                     .catalog__filtersList__attributeLabel
-                        margin-bottom: 15px
+                        +min-screen(770px)
+                            text-transform: uppercase
+                            font-weight: 700
+                            font-size: 18px
+                            padding-bottom: 57px
+                            pointer-events: none
+                            +max-screen(1440px)
+                                padding-bottom: 42px
+                        +max-screen($breakpoint-md)
+                            margin-bottom: 15px
+                    .opened & 
+                        +min-screen(770px)
+                            left: 0
+                    &__close 
+                        +min-screen(770px)
+                            width: 16px
+                            height: 16px
+                            background-image: url('../assets/images/closePopup.svg')
+                            background-position: center
+                            background-repeat: no-repeat
+                            background-size: contain
+                            position: absolute
+                            top: 166px 
+                            right: 80px
+                            cursor: pointer
+                            +max-screen(1440px)
+                                top: 96px 
+                            +max-screen(1200px)
+                                top: 72px
+
+                    .opened &__overlay 
+                        +min-screen(770px)
+                            position: fixed
+                            width: 100%
+                            height: 100%
+                            background: #000000
+                            opacity: 0.4
+                            left: 0
+                            top: 0
+                            z-index: 9999998
                 &Item 
                     display: flex 
                     align-items: center
-                    margin-bottom: 14px
+                    margin-bottom: 27px
+                    cursor: pointer
+                    +max-screen($breakpoint-md)
+                        margin-bottom: 14px
+                    &__name 
+                        line-height: 1.2
                     &__box 
-                        width: 12px
-                        height: 12px 
-                        margin-right: 6px 
+                        width: 20px 
+                        height: 20px 
+                        margin-right: 14px
+                        +min-screen(770px)
+                            &.white 
+                                border: 1px solid $color-black
+                                width: 19px 
+                                height: 19px 
+                        +max-screen($breakpoint-md)
+                            width: 12px
+                            height: 12px 
+                            margin-right: 6px 
                     &__checkbox 
-                        width: 12px 
-                        height: 12px 
-                        margin-right: 6px
+                        margin-right: 14px
                         border: 1px solid $color-black
+                        width: 20px 
+                        height: 20px
                         position: relative
+                        +max-screen($breakpoint-md)
+                            width: 12px 
+                            height: 12px 
+                            margin-right: 6px
                     &__apply 
+                        padding-top: 22px
+                        padding-bottom: 19px
+                        left: 89px 
+                        right: 80px 
+                        bottom: 160px 
                         position: absolute
-                        top: 443px
-                        left: 50% 
-                        transform: translateX(-50%)
-                        background-color: $color-black
-                        padding: 9.5px 43px
-                        border: 0
+                        cursor: pointer
+                        line-height: 1.2
+                        +max-screen(1440px)
+                            left: 72px
+                            bottom: 48px
+                        +max-screen(1200px)
+                            left: 56px 
+                            bottom: 32px 
+                        +max-screen($breakpoint-md)
+                            top: 443px
+                            left: 50% 
+                            transform: translateX(-50%)
+                            padding: 9.5px 43px
+                            bottom: auto 
+                            right: auto 
+                            line-height: 1
                     &.active 
                         .catalog__filtersList__attributeItem__checkbox::before
                             content: ""
                             position: absolute
-                            width: 8px
-                            height: 8px 
+                            width: 12px 
+                            height: 12px 
                             top: 50%
                             left: 50% 
                             transform: translate(-50%, -50%)
@@ -270,13 +499,33 @@
                             background-size: contain
                             background-position: center
                             background-repeat: no-repeat
+                            +max-screen($breakpoint-md)
+                                width: 8px
+                                height: 8px 
                 &.opened 
                     .catalog__filtersList__attributeLabel::before 
                         transform: translateY(-50%) rotate(90deg)
                         top: 50%
                 &.colors 
+                    order: 1
+                    width: 25%
                     .catalog__filtersList__attributeItem.active h4
                         font-weight: 700
+                &.sort 
+                    width: 26%
+                &.size
+                    width: 25%
+                +max-screen(1200px)
+                    &.colors,
+                    &.sort,
+                    &.size
+                        width: 33.3%
+                +max-screen($breakpoint-md)
+                    &.colors,
+                    &.sort,
+                    &.size
+                        order: 0
+                        width: 100%
 .woocommerce 
     .back_to_top
         display: none !important
