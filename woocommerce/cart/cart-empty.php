@@ -23,16 +23,9 @@ defined( 'ABSPATH' ) || exit;
 do_action( 'woocommerce_cart_is_empty' );
 
 if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
-<?php $image = get_field('empty_cart_image', 'options'); ?>
 	<div class="emptyCart">
         <div class="emptyCart__container">
-            <div class="emptyCart__title woocommerce-text"><?php _e('Cart', 'woocommerce_custom_text'); ?> (0)</div>
-            <div class="emptyCart__subtitle woocommerce-text"><?php _e('Your cart is empty.', 'woocommerce_custom_text'); ?></div>
-            <?php if($image): ?>
-                <div class="emptyCart__image"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
-            <?php endif; ?>
-            <a href="<?php echo get_home_url(  ) ?>/shop" class="emptyCart__button btn button--fz--md button--black button--size--md"><?php _e('SHOP NOW', 'woocommerce_custom_text'); ?></a>
-            <a href="<?php echo get_home_url(  ) ?>/shop" class="emptyCart__closeIcon "></a>
+            <?php get_template_part('template-parts/block/empty-cart-content'); ?>
         </div>
     </div>
 <?php endif; ?>

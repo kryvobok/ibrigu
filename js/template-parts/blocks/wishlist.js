@@ -4,8 +4,11 @@ function wishlist(){
     $(window).on('load', function(){
         updateContent();
         $('.wishlist__itemRemove').click(function(){
-            $(this).closest('.wishlist__itemWrapper').remove();
-            updateContent();
+            const item = $(this);
+            $(document).on('ajaxComplete', function(){
+                item.closest('.wishlist__itemWrapper').remove();
+                updateContent();
+            });
         });
     });
 }

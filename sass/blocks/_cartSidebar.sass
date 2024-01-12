@@ -1,0 +1,317 @@
+.cartSidebar
+    position: fixed 
+    top: 0
+    left: -488px
+    bottom: 0
+    width: 488px 
+    z-index: 9999999
+    overflow-y: scroll  
+    scrollbar-width: auto
+    scrollbar-color: rgba(0, 0, 0, 0.4) transparent
+    transition: .3s 
+    background-color: $color-bg-dark-grey
+    &.cart-empty
+        background-color: $color-white
+    +max-screen(1200px)
+        width: 408px 
+        left: -408px 
+    +max-screen($breakpoint-lg)
+        width: 368px
+        left: -368px
+    &.cart-opened 
+        left: 0
+    &::-webkit-scrollbar 
+        width: 8px
+    &::-webkit-scrollbar-track 
+        background: $color-white
+    &::-webkit-scrollbar-thumb 
+        background-color: rgba(0, 0, 0, 0.4)
+        border-radius: 10px
+        border: 1px solid transparent
+    &__overlay
+        background-color: $color-black 
+        position: fixed
+        display: block
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0 
+        z-index: 9999998
+        opacity: 0
+        visibility: hidden
+        transition: .3s
+        .cart-opened + &
+            opacity: 0.4
+            visibility: visible
+    &__content 
+        padding: 127px 40px 0 35px 
+        z-index: 9999999
+        +max-screen(1440px)
+            padding: 100px 32px 0 28px
+        +max-screen(1200px)
+            padding: 80px 28px 0 24px
+        +max-screen($breakpoint-lg)
+            padding: 64px 24px 0 20px
+    &__close 
+        background-image: url('../assets/images/empty_cart_close.svg')
+        background-size: contain
+        background-repeat: no-repeat
+        width: 16px
+        height: 16px
+        position: absolute
+        top: 129.2px
+        right: 40.3px
+        cursor: pointer
+        z-index: 1
+        +max-screen(1440px)
+            top: 102px
+            right: 32px
+        +max-screen(1200px)
+            top: 80px
+            right: 28px
+        +max-screen($breakpoint-lg)
+            top: 64px
+            width: 14px 
+            height: 14px 
+            right: 24px 
+    .emptyCart
+        &__image 
+            margin: 0
+        &__closeIcon
+            display: none
+        &__button 
+            width: 100%
+            margin-top: 23px
+            min-width: 100%
+        &__title 
+            line-height: 1
+            margin-bottom: 51px
+            text-transform: uppercase
+            font-weight: 700
+            +max-screen(1440px)
+                margin-bottom: 42px
+            +max-screen(1200px)
+                margin-bottom: 32px
+            +max-screen($breakpoint-lg)
+                margin-bottom: 24px
+        &__subtitle
+            margin-bottom: 23px
+            line-height: 1
+            text-align: left
+    .cartContent 
+        &__wrapper 
+            position: relative
+            &::before 
+                content: ""
+                position: absolute
+                left: -35px
+                right: -40px 
+                top: -127px
+                bottom: -46px
+                background-color: $color-white
+                +max-screen(1440px)
+                    right: -32px
+                    top: -100px
+                    left: -28px
+                    bottom: -36px
+                +max-screen(1200px)
+                    top: -80px 
+                    right: -28px
+                    left: -24px
+                    bottom: -32px
+        &__title 
+            padding: 0
+            margin-bottom: 48px 
+            font-weight: 700
+            line-height: 1
+            z-index: 1
+            position: relative
+            +max-screen(1440px)
+                margin-bottom: 42px
+            +max-screen(1200px)
+                margin-bottom: 36px
+            +max-screen($breakpoint-lg)
+                margin-bottom: 28px
+        &__items 
+            &Wrapper 
+                padding: 0 
+                z-index: 1
+                position: relative
+                max-width: 100%
+        &__item 
+            flex-wrap: wrap 
+            margin-bottom: 32px
+            +max-screen(1200px)
+                margin-bottom: 28px
+            +max-screen($breakpoint-lg)
+                margin-bottom: 24px
+            &:nth-last-child(2)
+                margin-bottom: 46px
+                +max-screen(1440px)
+                    margin-bottom: 36px
+                +max-screen(1200px)
+                    margin-bottom: 32px
+                +max-screen($breakpoint-lg)
+                    margin-bottom: 28px
+            &Image 
+                &__wrapper 
+                    width: calc( 37% + 28px )
+                    min-width: calc( 37% + 28px )
+                    padding-right: 28px
+                    +max-screen(1440px)
+                        width: calc( 37% + 20px )
+                        min-width: calc( 37% + 20px )
+                        padding-right: 20px
+                    +max-screen(1200px)
+                        width: calc( 37% + 12px )
+                        min-width: calc( 37% + 12px )
+                        padding-right: 12px
+                    +max-screen($breakpoint-lg)
+                        width: calc( 37% + 4px )
+                        min-width: calc( 37% + 4px )
+                        padding-right: 4px
+            &Top 
+                margin-top: 3px
+                line-height: 1
+                margin-bottom: 26px
+            &Title 
+                margin-bottom: 0
+            &Price 
+                font-weight: 700
+            &Bottom 
+                display: none   
+                &__buttons 
+                    width: 100% 
+                    display: flex 
+                    margin-top: 40px
+                    +max-screen(1440px)
+                        margin-top: 32px
+                    +max-screen(1200px)
+                        margin-top: 24px
+                    +max-screen($breakpoint-lg)
+                        margin-top: 16px
+                    .cartContent__wishlist__buttonsWrapper 
+                        line-height: 1.35 
+                        padding-right: 22.5px
+                        text-decoration: underline
+                        font-weight: 700
+                    .cartContent__itemRemove 
+                        line-height: 1
+            &Remove 
+                line-height: 1
+                font-weight: 700
+                text-decoration: underline
+            &Content 
+                width: calc( 63% - 28px )
+                +max-screen(1440px)
+                    width: calc( 63% - 20px )
+                +max-screen(1200px)
+                    width: calc( 63% - 12px )
+                +max-screen($breakpoint-lg)
+                    width: calc( 63% - 4px )
+            &Quantity
+                margin-top: 32px
+                +max-screen(1440px)
+                    margin-top: 24px
+                +max-screen(1200px)
+                    margin-top: 18px
+                +max-screen($breakpoint-lg)
+                    margin-top: 12px
+                .quantity
+                    display: flex
+                .wac-btn-sub,
+                .wac-btn-inc,
+                .qty
+                    width: 31.5px 
+                    height: 29.75px
+                    border-color: $color-black
+                    display: flex 
+                    justify-content: center
+                    align-items: center
+                    padding-top: 6px 
+                    color: $color-black
+                .qty
+                    border: 1px solid $color-black 
+                    border-left: 0
+                    border-right: 0
+                    padding-top: 0
+            &Attrs_list 
+                line-height: 1.45
+    .cartTotals
+        &__wrapper 
+            width: calc( 100% + 75px )
+            margin-left: -35px
+            padding: 39px 40px 39px 35px 
+            +max-screen(1440px)
+                width: calc( 100% + 60px )
+                margin-left: -28px
+                padding: 32px 32px 32px 28px 
+            +max-screen(1200px)
+                width: calc( 100% + 52px )
+                margin-left: -24px
+                padding: 28px 28px 28px 24px 
+            +max-screen($breakpoint-lg)
+                width: calc( 100% + 44px )
+                margin-left: -20px
+                padding: 24px 24px 24px 20px 
+        &__buttonsList
+            width: 100%
+        &__shopBtn
+            +max-screen(1440px)
+                margin-top: 14px
+            +max-screen(1200px)
+                margin-top: 10px
+            +max-screen($breakpoint-lg)
+                margin-top: 6px
+            &:hover 
+                background-color: $color-white
+                color: $color-black
+                border-color: $color-black
+        &__row 
+            margin-bottom: 11px
+            line-height: 1.1
+        &__shippingRow 
+            margin-bottom: 27px
+        &__amountRow 
+            margin-bottom: 42px 
+            +max-screen(1440px)
+                margin-bottom: 32px
+            +max-screen(1200px)
+                margin-bottom: 28px
+            +max-screen($breakpoint-lg)
+                margin-bottom: 24px
+    .woocommerce & .cartTotals__list 
+        width: 100%
+    .cartAdditionalInfo 
+        padding: 0
+        padding-left: 54px
+        padding-right: 59px
+        padding-bottom: 108px 
+        background-color: $color-bg-dark-grey
+        width: calc( 100% + 75px )
+        margin-left: -35px
+        +max-screen(1440px)
+            width: calc( 100% + 60px )
+            margin-left: -28px
+            padding-left: 28px
+            padding-right: 32px
+            padding-bottom: 64px 
+        +max-screen(1200px)
+            width: calc( 100% + 52px )
+            margin-left: -24px
+            padding-left: 25px
+            padding-right: 28px
+            padding-bottom: 56px
+        +max-screen($breakpoint-lg)
+            width: calc( 100% + 44px )
+            margin-left: -20px
+            padding-left: 20px
+            padding-right: 24px
+            padding-bottom: 48px
+        &__row 
+            text-align: center
+            margin-bottom: 24px
+            &:last-child
+                margin-bottom: 0
+        &__titleWrapper
+            justify-content: center

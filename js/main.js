@@ -23,6 +23,7 @@ import { cart } from './template-parts/blocks/cart';
 import { checkout } from './template-parts/blocks/checkout';
 import { dropdown } from './template-parts/blocks/dropdown';
 import { form } from './template-parts/blocks/form';
+import { sideCart } from './template-parts/blocks/sideCart';
 
 header();
 footer();
@@ -43,4 +44,5 @@ cart();
 checkout();
 dropdown();
 form();
+sideCart();
 // heroSlider();

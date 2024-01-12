@@ -20,6 +20,9 @@
         line-height: 1.4
         &:last-child
             margin-bottom: 0
+    &__text 
+        p 
+            padding-bottom: 0
 .cartTotals 
     &__wrapper 
         background-color: $color-bg-dark-grey
@@ -28,37 +31,98 @@
         display: flex 
         justify-content: space-between
         line-height: 1.2
-        margin-bottom: 19px
+        margin-bottom: 25px
+        +max-screen(1200px)
+            margin-bottom: 20px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 16px
+        +max-screen($breakpoint-md)
+            margin-bottom: 19px
     &__amountRow 
-        margin-bottom: 9px
         font-weight: 700
+        margin-bottom: 0
+        +max-screen($breakpoint-md)
+            margin-bottom: 9px
     &__buttonsList 
         display: flex 
         flex-direction: column 
         align-items: center
-        width: fit-content 
         margin: auto 
+        margin-top: 63px
+        width: 100%
+        +max-screen(1440px)
+            margin-top: 52px
+        +max-screen(1200px)
+            margin-top: 42px
+        +max-screen($breakpoint-lg)
+            margin-top: 36px
+        +max-screen($breakpoint-md)
+            margin-top: 0
+            width: fit-content 
         .btn 
             width: 100%
     &__shopBtn
-        margin-top: 7px
-        padding: 10px 20px 
         color: $color-black
         text-transform: none
+        margin-top: 18px
+        +max-screen($breakpoint-md)
+            margin-top: 7px
+            padding: 10px 20px 
 .cartContent 
+    &__wrapper 
+        max-width: 1592px 
+        margin: auto 
     &__items
         &Wrapper
             padding-left: 14px
             padding-right: 12px
+            max-width: calc( 67% + 26px )
+            +max-screen($breakpoint-lg)
+                max-width: 100% 
+                padding-left: 50px
+                padding-right: 50px
+            +max-screen($breakpoint-md)
+                max-width: 100%
+                padding-left: 14px
+                padding-right: 12px
     &__item
         display: flex 
-        margin-bottom: 24px
+        margin-bottom: 56px
+        +max-screen(1440px)
+            margin-bottom: 42px
+        +max-screen(1200px)
+            margin-bottom: 36px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 32px
+        +max-screen($breakpoint-md)
+            margin-bottom: 24px
         &:nth-last-child(2)
-            margin-bottom: 49px
+            margin-bottom: 72px
+            +max-screen(1440px)
+                margin-bottom: 56px
+            +max-screen(1200px)
+                margin-bottom: 48px
+            +max-screen($breakpoint-lg)
+                margin-bottom: 42px
+            +max-screen($breakpoint-md)
+                margin-bottom: 49px
         &Image 
-            width: 47.685%
-            min-width: 47.685%
             position: relative
+            &__wrapper
+                width: 18%
+                max-width: 18%
+                +max-screen(1600px)
+                    width: 20%
+                    max-width: 20%
+                +max-screen(1440px)
+                    max-width: 24%
+                    width: 24%
+                +max-screen(1200px)
+                    max-width: 25%
+                    width: 25%
+                +max-screen($breakpoint-md)
+                    width: 47.685%
+                    min-width: 47.685%
             &:before
                 content: "" 
                 display: block
@@ -70,8 +134,6 @@
                 width: 100% 
                 height: 100% 
                 object-fit: cover
-        &Content 
-            padding-left: 8px
         body.page #main form &Quantity 
             margin-top: 10px
             .quantity
@@ -95,25 +157,53 @@
             justify-content: space-between
         &Price 
             margin-left: 10px
+            +max-screen($breakpoint-lg)
+                font-weight: 700
+                line-height: 1.2
         &Attr 
             display: flex 
             &__label
                 margin-right: 0.6em
+            &__label,
+            &__options
+                +max-screen($breakpoint-md)
+                    line-height: 1.11
         &Title 
-            margin-bottom: 16px
+            +max-screen($breakpoint-md)
+                margin-bottom: 16px
+                line-height: 1.2
         .removeBtn
             text-decoration: underline
         &Content 
             display: flex 
             flex-direction: column
-            width: 100%
+            width: 71%
+            margin-left: auto
+            +max-screen($breakpoint-lg)
+                width: 68%
+            +max-screen($breakpoint-md)
+                padding-left: 8px
+                width: 100%
         &Bottom 
             margin-top: auto
             .wishlist_toggle
                 text-decoration: underline
-                margin-bottom: 8px
                 display: block 
+                font-weight: 700
+                +max-screen($breakpoint-md) 
+                    margin-bottom: 8px
+            &__buttons 
+                display: none
+        &Remove 
+            font-weight: 700
+            text-decoration: underline
+            cursor: pointer
+            +max-screen($breakpoint-md)
+                line-height: 1.2
     &__wishlist__buttonsWrapper
+        a 
+            +max-screen($breakpoint-md)
+                line-height: 1.2
         &.remove_from_wishlistWrapper 
             .delete_item
                 display: block !important
@@ -125,10 +215,242 @@
             .add_to_wishlist
                 display: block !important
     &__title 
-        line-height: 1.25
-        margin-bottom: 1px
-        padding-left: 14px
         text-transform: uppercase
-        padding-top: 10px
+        margin-bottom: 105px
+        +max-screen(1440px)
+            margin-bottom: 80px
+        +max-screen(1200px)
+            margin-bottom: 64px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 56px
+        +max-screen($breakpoint-md)
+            line-height: 1.25
+            margin-bottom: 1px
+            padding-left: 14px
+            padding-top: 10px
     &__coupon 
         display: none
+.woocommerce .cart-collaterals .cart_totals
+    width: 100%
+.woocommerce-cart
+    +min-screen(770px)
+        #footer 
+            display: none
+        &:not(.empty-cart)
+            .woocommerce,
+            #header  
+                &::before 
+                    content: ""
+                    position: absolute
+                    right: 0
+                    top: 0
+                    width: 25.25%
+                    height: 100% 
+                    background-color: $color-bg-dark-grey
+                    +max-screen(1440px)
+                        width: 29.25%
+                    +max-screen($breakpoint-lg)
+                        content: none
+            .woocommerce 
+                position: relative
+                padding-top: 68px
+                padding-bottom: 84px
+                +max-screen(1200px)
+                    padding-top: 48px
+                    padding-bottom: 64px
+                +max-screen($breakpoint-lg)
+                    padding-bottom: 0
+            #main .cartContent__itemQuantity
+                position: absolute
+                right: 0
+                bottom: 0
+                a.wac-btn-sub,
+                a.wac-btn-inc,
+                input.qty
+                    width: 49.3px 
+                    height: 46.6px
+                    display: flex 
+                    justify-content: center
+                    align-items: center
+                    +max-screen(1440px)
+                        width: 42px
+                        height: 39px 
+                    +max-screen(1200px)
+                        width: 36px
+                        height: 33px 
+                    +max-screen($breakpoint-lg)
+                        width: 32px 
+                        height: 29px 
+                a.wac-btn-sub,
+                a.wac-btn-inc
+                    font-size: 19px
+                    +max-screen(1440px)
+                        font-size: 16px
+                    +max-screen($breakpoint-lg)
+                        font-size: 14px
+                input.qty
+                    font-size: 16px
+                    +max-screen(1440px)
+                        font-size: 15px
+                    +max-screen($breakpoint-lg)
+                        font-size: 13px
+            .cart__bottom 
+                display: flex
+                max-width: calc( 67% + 26px )
+                padding-left: 14px
+                padding-right: 12px
+                +max-screen($breakpoint-lg)
+                    max-width: 100% 
+                    padding-left: 50px
+                    padding-right: 50px
+                    flex-direction: column 
+                    background-color: $color-bg-dark-grey
+                &Wrapper 
+                    position: relative
+                &Container 
+                    max-width: 1592px 
+                    margin: auto 
+                    padding: 0
+                .cart-collaterals
+                    max-width: 71%
+                    margin-left: auto
+                    +max-screen($breakpoint-lg)
+                        max-width: 100%
+                .cartTotals 
+                    &__wrapper 
+                        display: flex
+                        flex-direction: column
+                        background: transparent
+                        border-top: 1px solid #000
+                        margin-left: auto
+                        +max-screen($breakpoint-lg)
+                            border: 0
+                .cartAdditionalInfo 
+                    padding: 0
+                    padding-top: 83px
+                    width: 19.25%
+                    right: 48px 
+                    position: absolute
+                    top: 0
+                    +max-screen(1600px)
+                        width: 21.25%
+                        padding-top: 64px
+                        right: 28px
+                    +max-screen(1440px)
+                        width: 25.25%
+                        right: 18px 
+                    +max-screen(1200px)
+                        padding-top: 52px
+                    +max-screen($breakpoint-lg)
+                        position: static
+                        width: 100% 
+                        padding-top: 42px
+                        padding-bottom: 56px
+                    &::before 
+                        content: ""
+                        position: absolute
+                        left: 0
+                        top: 0
+                        right: 21px 
+                        height: 1px 
+                        background-color: $color-black
+                        +max-screen(1600px)
+                            right: 12px 
+                        +max-screen(1440px)
+                            right: 6px
+                        +max-screen($breakpoint-lg)
+                            content: none
+                    &__row 
+                        margin-bottom: 44px
+                        +max-screen($breakpoint-lg)
+                            margin-bottom: 24px
+                        &:last-child
+                            margin-bottom: 0
+        .cartContent 
+            &__title 
+                text-align: center
+            &__item 
+                &Title,
+                &Price 
+                    font-size: 20px
+                    line-height: 1.1
+                    +max-screen(1440px)
+                        font-size: 16px
+                    +max-screen(1200px)
+                        font-size: 16px
+                &Title
+                    font-weight: 700
+                &Top 
+                    margin-bottom: 62.5px
+                    +max-screen(1440px)
+                        margin-bottom: 52px
+                    +max-screen(1200px)
+                        margin-bottom: 42.5px
+                &Attr 
+                    &__options,
+                    &__label
+                        font-size: 15px
+                        line-height: 1.557
+                        +max-screen(1200px)
+                            font-size: 12px
+                &Bottom
+                    margin-top: 70px
+                    display: flex 
+                    line-height: 1
+                    align-items: flex-end
+                    +max-screen(1440px)
+                        margin-top: 56px
+                    +max-screen($breakpoint-lg)
+                        margin-top: 48px
+                    .cartContent__wishlist__buttonsWrapper
+                        line-height: 1.286
+                        margin-top: 2px
+                &Body 
+                    margin-bottom: auto
+                &Remove 
+                    line-height: 1.08
+                    font-size: 15px
+                    margin-left: 20px
+                    +max-screen(1200px)
+                        font-size: 13px
+                        
+                &Image 
+                    &::before 
+                        padding-bottom: 128%
+                &Content 
+                    position: relative
+        .cartTotals 
+            &__wrapper 
+                padding: 0
+                padding-top: 52.5px
+                +max-screen(1200px)
+                    padding-top: 42.5px
+                +max-screen($breakpoint-lg)
+                    padding-top: 28px
+.woocommerce-cart:not(.empty-cart),
+.woocommerce-checkout
+    +min-screen(770px)
+        .cartAdditionalInfo 
+            &__title
+                &Wrapper
+                    justify-content: center 
+            &__title,
+            &__text,
+            &__text *
+                font-size: 15px
+                text-align: center
+                line-height: 1.68
+                +max-screen(1200px)
+                    font-size: 12px
+            &__icon 
+                margin-right: 8px
+                display: flex 
+                align-items: center
+                +max-screen(1200px)
+                    margin-right: 6px
+                img 
+                    width: 17px
+                    height: 17px
+                    +max-screen(1200px)
+                        width: 15px 
+                        height: 15px 

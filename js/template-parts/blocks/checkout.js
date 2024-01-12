@@ -1,9 +1,9 @@
 import $ from 'jquery';
 
 function checkout(){
-    $('.guestLogin__tab .edit').click(function(){
-        $('.guestLogin__tab .formResult').slideUp();
-        $('.guestLogin__wrapper').slideDown();
+    $('.formResult .edit').click(function(){
+        $('.formResult').slideUp();
+        $('.checkoutUserInfoTab__forms').slideDown();
     });
     $(document).ready(function(){
         $('#customer_details .woocommerce-billing-fields .validate-required').each(function(){
@@ -228,5 +228,32 @@ function checkout(){
         $(this).closest('.guestLogin__tab').slideUp().removeClass('active');
         $(this).closest('.checkoutTabs__listItem').find('.new-account').addClass('active').slideDown();
     });
+
+
+    //Desktop checkout grid 
+    $(document).ready(function(){
+        const totalHeight = $('.cartTotals__wrapper .cartTotals__title').outerHeight() + $('.cartTotals__wrapper .cartTotals__list').outerHeight() + $('.cartAdditionalInfo').outerHeight() + $('.cartTotals__wrapper').outerHeight() - $('.cartTotals__wrapper').height() + $('.cartTotals__productsList').outerHeight();
+        $('.checkoutContent__wrapper').css('min-height', totalHeight);
+    });
+    $(document).ready(function(){
+        message();
+    })
+    $(document).on('ajaxComplete', function(){
+        message();
+    })
+}
+
+function message() {
+    if($('body').hasClass('woocommerce-checkout') && $('.woocommerce-error').length > 0){
+        $('<div class="scroller"></div>').prependTo('.woocommerce-error');
+        setTimeout(() => {
+            $('.woocommerce-error').addClass('show');
+            $('.scroller').animate({
+                right: '100%',
+            }, 10000, function() {
+                $('.woocommerce-error').remove();
+            });
+        }, 300);
+    }
 }
 export {checkout}

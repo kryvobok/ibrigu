@@ -25,21 +25,21 @@ defined( 'ABSPATH' ) || exit;
 		<?php 
 		$tax = WC()->cart->get_total_tax( ) == 0 ? 'Included' : WC()->cart->get_total_tax( ) . ' ' . get_woocommerce_currency_symbol();
 		?>
-		<div class="cartTotals__subtotalRow cartTotals__row">
+		<h5 class="cartTotals__subtotalRow cartTotals__row desktop-md">
 			<div class="cartTotals__subtotalLabel"><?php _e('Subtotal', 'woocommerce_custom_text'); ?></div>
 			<div class="cartTotals__subtotalNumber"><?php wc_cart_totals_subtotal_html(); ?></div>
-		</div>
-		<div class="cartTotals__taxRow cartTotals__row">
+		</>
+		<h5 class="cartTotals__taxRow cartTotals__row desktop-md">
 			<div class="cartTotals__taxLabel"><?php _e('Tax and duty', 'woocommerce_custom_text'); ?></div>
 			<div class="cartTotals__taxNumber"><?php echo $tax; ?></div>
-		</div>
-		<div class="cartTotals__shippingRow cartTotals__row">
+		</>
+		<h5 class="cartTotals__shippingRow cartTotals__row desktop-md">
 			<div class="cartTotals__shippingLabel"><?php _e('Shipping', 'woocommerce_custom_text'); ?></div>
 			<div class="cartTotals__shippingNumber"><?php echo WC()->cart->get_shipping_total() . ' ' . get_woocommerce_currency_symbol(); ?></div>
-		</div>
+		</>
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
-		<h4 class="cartTotals__amountRow cartTotals__row lg">
+		<h4 class="cartTotals__amountRow cartTotals__row lg desktop-lg">
 			<div class="cartTotals__amountLabel"><?php _e('Total', 'woocommerce_custom_text'); ?></div>
 			<div class="cartTotals__amountNumber"><?php wc_cart_totals_order_total_html(); ?></div>
 		</h4>
@@ -50,7 +50,7 @@ defined( 'ABSPATH' ) || exit;
 		<a class="cartTotals__checkoutBtn btn button--black button--fz--md button--size--md" href="<?php echo get_home_url() ?>/checkout">
 			<?php _e('CHECKOUT', 'woocommerce_custom_text'); ?>
 		</a>
-		<a class="cartTotals__shopBtn btn button--white button--fz--xs button--size--md" href="<?php echo get_home_url() ?>/shop">
+		<a class="cartTotals__shopBtn btn button--white button--white--border button--fz--xs button--size--md" href="<?php echo get_home_url() ?>/shop">
 			<?php _e('Continue shopping', 'woocommerce_custom_text'); ?>
 		</a>
 	</div>

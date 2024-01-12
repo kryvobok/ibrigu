@@ -3,12 +3,19 @@ import $ from 'jquery';
 function singleProduct(){
     $(document).ready(function(){
         const btnHeight = $('.single_add_to_cart_button').outerHeight(),
-              sliderHeight = $(window).height() - btnHeight - $('header').outerHeight() - $('.woocommerce-breadcrumb').outerHeight() - 10;
+              sliderHeight = $(window).height() - btnHeight - $('header').outerHeight() - $('.woocommerce-breadcrumb').outerHeight() - 10,
+              w = $(window).width();
         $('.singleProduct__buttonLeftCol, .singleProduct__attributesPicker__itemTitle').css('height', btnHeight);
         $('.singleProduct__imagesList .singleProduct__imagesList__item').css('height', sliderHeight);
         if($('body').hasClass('single-product')){
             $(window).scrollTop(0);
-            let descHeight = $('.singleProduct__description .woocommerce-text').outerHeight() + $('.singleProduct__description .attributesItem__list').outerHeight();
+            let descHeight;
+            if(w > 769){
+                descHeight = $('.desktop .singleProduct__description .singleProduct__descriptionText').outerHeight() + $('.desktop .singleProduct__description .attributesItem__list').outerHeight();
+            }
+            else{
+                descHeight = $('.mobile .singleProduct__description .singleProduct__descriptionText').outerHeight() + $('.mobile .singleProduct__description .attributesItem__list').outerHeight();
+            }
             $('.showContentBtn').click(function(){
                 $('.singleProduct__description__wrapper').toggleClass('opened');
                 if($(this).hasClass('more')){
@@ -25,12 +32,49 @@ function singleProduct(){
                 $(this).parent().removeClass('opened');
             });
         }
-        $('.relatedProducts__list').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            dots: true,
-        });
+        if($('body').hasClass('woocommerce-wishlist')){
+            let sliderOptions = {
+                slidesToScroll: 1,
+                slidesToShow: 3,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: false,
+                            dots: true,
+                        },
+                    },
+                ],
+            };
+            $('.relatedProducts__list').slick(sliderOptions);
+        } else{
+            let sliderOptions = {
+                slidesToScroll: 1,
+                slidesToShow: 4,
+                arrows: false,
+                dots: true,
+                infinite: false,
+                responsive: [
+                    {
+                        breakpoint: 993,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        },
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        },
+                    },
+                ],
+            };
+            $('.relatedProducts__list').slick(sliderOptions);
+        };
         $('.singleProduct__imagesList').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -47,6 +91,23 @@ function singleProduct(){
                 $('.single_add_to_cart_button').css('top', attrsTop);
             }
         }
+        $('.singleProduct__mainSlider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            dots: true,
+            asNavFor: '.singleProduct__sideSlider'
+        });
+        $('.singleProduct__sideSlider').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '.singleProduct__mainSlider',
+            focusOnSelect: true,
+            vertical: true,
+            verticalSwiping: true,
+            arrows: false,
+        });
     });
     $(window).scroll(function(){
         if($('.productAddTocart').hasClass('variable')){
@@ -62,13 +123,18 @@ function singleProduct(){
         }
     });
     $('.singleProduct__attributesPicker__itemTitle').click(function(){
-        $(this).parent().find('.singleProduct__attributesPicker__itemPopup').addClass('opened');
+        if(!$(this).parent().find('.singleProduct__attributesPicker__itemPopup').hasClass('opened')){
+            $('.singleProduct__attributesPicker__itemPopup').removeClass('opened');
+            $(this).parent().find('.singleProduct__attributesPicker__itemPopup').toggleClass('opened');
+        }else{
+            $('.singleProduct__attributesPicker__itemPopup').removeClass('opened');
+        }
     });
     $('.singleProduct__attributesPicker__itemPopup__close').click(function(){
         $(this).parent().removeClass('opened');
     });
     $('.singleProduct__attributesPicker__itemPopup__guide .popup-toggle').click(function(){
-        $(this).closest('.singleProduct__attributesPicker__itemPopup__guide').toggleClass('openedPopup');
+        $('.singleProduct__attributesPicker__itemPopup__guide').toggleClass('openedPopup');
     });
     $(document).ready(function(){
         if($('.variations_form').length >= 1 && $('body').hasClass('single-product')){
@@ -86,17 +152,15 @@ function singleProduct(){
               attr = element.closest('.singleProduct__attributesPicker__item').attr('data-attribute');
         element.parent().find('.singleProduct__attributesPicker__itemPopup__listItem').removeClass('active');
         element.addClass('active');
-
-        $(`#${attr} option[value="${elementAttr}"]`).attr('selected', 'selected');
-        $(`#${attr}`).change();
+        $(`#${attr} option[value="${elementAttr}"]`).attr('selected', 'selected').change();
     });
     if($('body').hasClass('single-product') && $('.woocommerce-notices-wrapper > div').length > 0){
         $('<div class="scroller"></div>').prependTo('.woocommerce-notices-wrapper');
-        $('.scroller').animate({
-            width: 0,
-        }, 10000, function() {
-            $('.woocommerce-notices-wrapper > div').remove();
-        });
+        // $('.scroller').animate({
+        //     width: 0,
+        // }, 10000, function() {
+        //     $('.woocommerce-notices-wrapper > div').remove();
+        // });
     }
 }
 

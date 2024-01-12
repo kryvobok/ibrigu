@@ -2,32 +2,102 @@
     padding-top: 24px
 .account__menu
     display: flex 
-    padding-left: 12px
-    margin: 0 -13px 
-    margin-bottom: 19px
+    margin: 0 -25px 
+    margin-bottom: 105px
+    +max-screen(1440px)
+        margin-bottom: 82px
+    +max-screen(1200px)
+        margin-bottom: 64px
+    +max-screen($breakpoint-lg)
+        margin: 0 -18px
+    +max-screen($breakpoint-md)
+        margin: 0 -13px 
+        margin-bottom: 19px
+        margin-left: -21px
+        padding-left: 0
+    .hasItems & 
+        margin-bottom: 56px
+        +max-screen(1440px)
+            margin-bottom: 48px
+        +max-screen(1200px)
+            margin-bottom: 42px
     &Item 
-        margin: 0 13px 
+        margin: 0 25px 
+        line-height: 1
+        +max-screen($breakpoint-lg)
+            margin: 0 18px
+        +max-screen($breakpoint-md)
+            margin: 0 13px 
         &.current 
             font-weight: 700
             text-decoration: underline
+            +max-screen(1200px)
+                +min-screen(770px)
+                    font-size: 16px
 .wishlist 
-    padding-bottom: 12px
+    padding-top: 68px
+    padding-bottom: 77px
+    &__menu 
+        +max-screen($breakpoint-md)
+            margin-left: -13px
+            padding-left: 12px
+    &.hasItems 
+        padding-bottom: 110px
+        +max-screen(1440px)
+            padding-bottom: 96px
+        +max-screen(1200px)
+            padding-bottom: 72px
+    +max-screen(1200px)
+        padding-top: 48px
+        padding-bottom: 56px
+    +max-screen($breakpoint-md)
+        padding-top: 0
+        padding-bottom: 12px
+    &__container 
+        max-width: 1380px 
+    &__pageTitle
+        margin-bottom: 50px
+        text-align: center
+        text-transform: uppercase
+        line-height: 1.2
+        +max-screen(1440px)
+            margin-bottom: 42px
+        +max-screen(1200px)
+            margin-bottom: 36px
+        +max-screen($breakpoint-md)
+            display: none
     &__title 
-        margin-bottom: 28px
+        display: none
+        +max-screen($breakpoint-md)
+            margin-bottom: 28px
+            display: block 
+    &__userName
+        +min-screen(770px)
+            margin-bottom: 80px
+            line-height: 1.4
+            +max-screen(1440px)
+                margin-bottom: 64px
+            +max-screen(1200px)
+                margin-bottom: 42px
     &__empty 
         &Text
             font-weight: 700
-            max-width: 180px 
             text-align: center
-            margin: auto 
             margin-bottom: 15px
-            line-height: 1.55
-            margin-top: 32px
+            line-height: 1
+            +max-screen($breakpoint-md)
+                max-width: 180px 
+                margin: auto 
+                margin-bottom: 15px
+                line-height: 1.55
+                margin-top: 32px
     &.hasItems
         .wishlist__empty 
             visibility: hidden 
             opacity: 0
             height: 0
+            &Text 
+                margin: 0
     &.empty 
         .wishlist__empty 
             visibility: visible 
@@ -36,51 +106,150 @@
         .wishlist__itemsList 
             display: none
     &__itemsList 
+        margin: 0 -29px
         margin-bottom: -53px
+        +max-screen(1440px)
+            margin: 0 -16px 
+            margin-bottom: -36px
+        +max-screen(1200px)
+            margin: 0 -12px 
+            margin-bottom: -28px
+        +max-screen($breakpoint-lg)
+            margin: auto
+            margin-bottom: -64px
+            max-width: calc( 90% + 64px )
+        +max-screen($breakpoint-md)
+            margin: 0 -32px 
+            max-width: calc( 100% + 64px )
     &__item
         margin-bottom: 53px
+        +max-screen(1440px)
+            margin-bottom: 36px
+        +max-screen(1200px)
+            margin-bottom: 28px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 64px
+        +max-screen($breakpoint-md)
+            margin-bottom: 53px
+        &Wrapper 
+            padding: 0 29px 
+            +max-screen(1440px)
+                padding: 0 16px 
+            +max-screen(1200px)
+                padding: 0 12px 
+            +max-screen($breakpoint-lg)
+                padding: 0 32px 
+            +max-screen($breakpoint-md)
+                &:last-child
+                    .wishlist__item 
+                        margin-bottom: 0
         &Price 
             p 
-                padding-bottom: 11px
+                padding-bottom: 15px
+                line-height: 1
+                font-weight: 700
+                +max-screen(1200px)
+                    font-size: 11px
+                +max-screen($breakpoint-md)
+                    padding-bottom: 11px
         &Title 
-            padding-left: 14px
-            margin-bottom: 7px
-            padding-right: 13px
+            display: none
+            &.desktop 
+                display: block 
+                line-height: 1.2
+                margin-bottom: 15px
+                +max-screen(1200px)
+                    font-size: 12px
+            +max-screen($breakpoint-md)
+                padding-left: 14px
+                margin-bottom: 7px
+                padding-right: 13px
+                display: block 
+                &.desktop  
+                    display: none
         &Image 
-            width: 37.5% 
-            margin: auto 
-            min-width: 140px 
-            margin-bottom: 32px
-        &Bottom 
+            position: relative
+            margin-bottom: 28px
+            +max-screen(1200px)
+                margin-bottom: 18px
+            +max-screen($breakpoint-md)
+                width: 40.25% 
+                margin: auto 
+                min-width: 140px 
+                margin-bottom: 32px
+            &::before 
+                content: ""
+                display: block 
+                padding-bottom: 130%
+                +max-screen($breakpoint-md)
+                    padding-bottom: 155%
+            img 
+                position: absolute
+                left: 0
+                top: 0
+                width: 100% 
+                height: 100% 
+                object-fit: cover
+        body.woocommerce.woocommerce-page &Bottom 
             display: flex
-            padding-left: 14px
-            padding-right: 13px
-            align-items: flex-end
+            +max-screen($breakpoint-md)
+                align-items: flex-end
+            .single_add_to_cart_button.button
+                min-height: 1px 
+            h2 
+                padding-bottom: 0
+            +max-screen($breakpoint-md)
+                padding-left: 14px
+                padding-right: 13px
         &Attributes 
             width: calc( 100% - 71px )
             &__item
-                display: flex 
+                display: none
+                +max-screen($breakpoint-md)
+                    display: flex 
                 &Label 
                     margin-right: 0.6em
         &Button  
+            .price 
+                font-size: 14px
+                +max-screen(1200px)
+                    font-size: 12px
             body.woocommerce.woocommerce-page &
-                button.single_add_to_cart_button.button 
-                    width: 71px 
-                    padding: 9.5px 
-                    padding-bottom: 16.5px
+                .single_add_to_cart_button.button 
+                    padding: 17px 22px 26px 14px 
+                    +max-screen(1440px)
+                        padding: 14px 16px 18px 12px 
+                        width: min-content
+                    +max-screen($breakpoint-md)
+                        width: 71px 
+                        padding: 9.5px 
+                        padding-bottom: 16.5px
                     .price 
                         padding-bottom: 8px
+                        font-weight: 700
+                        color: $color-white 
+                        +max-screen($breakpoint-md)
+                            font-weight: 400
                         p 
                             padding-bottom: 0
                     .label 
                         line-height: 1
                     h2 
-                        font-size: 10px
+                        font-size: 13px
+                        color: $color-white
+                        +max-screen(1200px)
+                            font-size: 10px
+                        +max-screen($breakpoint-md)
+                            font-size: 10px
             .out-of-stock
-                font-size: 10px
                 text-align: right
-                padding-bottom: 0
+                font-size: 14px
+                line-height: 1.2
+                +max-screen($breakpoint-md)
+                    font-size: 10px
+                    padding-bottom: 0
         &Remove 
+            line-height: 1
             .yith-wcwl-add-to-wishlist
                 margin-top: 3px
             .delete_item
@@ -88,9 +257,11 @@
                 position: relative
                 &::before 
                     content: "Cancel"
-                    font-size: 10px
                     font-weight: 700
                     padding-bottom: 3px
+                    font-size: 12px
+                    +max-screen(1200px)
+                        font-size: 10px
                 &::after
                     content: ""
                     position: absolute
@@ -104,14 +275,38 @@
 
     &__relatedProducts
         padding-bottom: 40px
-        padding-left: 27px
-        padding-right: 22px
+        +max-screen($breakpoint-md)
+            padding-left: 27px
+            padding-right: 22px
         .slick-dots
             margin-top: 20px
         &Title 
             text-align: center
-            margin-bottom: 15px
+            margin-bottom: 110px
+            line-height: 1
+            +max-screen(1440px)
+                margin-bottom: 86px
+            +max-screen(1200px)
+                margin-bottom: 72px
+            +max-screen($breakpoint-md)
+                margin-bottom: 15px 
+                line-height: 1.2
         .relatedProducts
+            &__list 
+                max-width: 1220px
+                padding-right: 20px
+                padding-left: 0
+                +max-screen($breakpoint-md)
+                    padding-right: 0
+                .slick-list 
+                    +min-screen(770px)
+                        margin: 0 -82.5px 
+                        +max-screen(1440px)
+                            margin: 0 -56px
+                        +max-screen(1200px) 
+                            margin: 0 -42px 
+                        +max-screen($breakpoint-lg)
+                            margin: 0 -24px 
             &__link 
                 text-align: center 
                 width: fit-content
@@ -128,4 +323,29 @@
                     bottom: -0.5px 
                     height: 1px 
                     background-color: $color-black
-
+            &__cardWrapper 
+                +min-screen(770px)
+                    padding: 0 82.5px 
+                    +max-screen(1440px)
+                        padding: 0 56px
+                    +max-screen(1200px)
+                        padding: 0 42px
+                    +max-screen($breakpoint-lg)
+                        padding: 0 24px 
+                +max-screen($breakpoint-md)
+                    padding: 0 16px 
+            &__image 
+                +min-screen(770px)
+                    margin-bottom: 28px
+                    &::before 
+                        padding-bottom: 130%
+            &__title 
+                +min-screen(770px)
+                    line-height: 1.15
+                    margin-bottom: 10px
+            &__link 
+                +min-screen(770px)
+                    line-height: 1.2
+                    margin-top: 0
+                    &::before 
+                        bottom: 2.5px

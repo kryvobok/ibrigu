@@ -121,6 +121,8 @@
 			top: 50%
 			transform: translate(-50%,-50%)
 	&__cart
+		position: relative
+		z-index: 1
 		.home &
 			order: 3
 .main-nav
@@ -257,7 +259,7 @@
 				svg
 					path
 						fill: #000 !important
-						transition: all 0.35s linear !important
+						transition: all 0.35s linear !important	
 
 .header--unscrolled
 	&.header

@@ -35,24 +35,27 @@ else:
 endif;
 ?>
 <section class="myAccount">
-	<div class="myAccount__top">
-		<h1 class="myAccount__title sm"><?php the_title(); ?></h1>
-		<h4 class="myAccount__userName sm"><?php echo 'Welcome ' . $customer_name . '!'; ?></h4>
-		<div class="wishlist__menu account__menu">
-			<h5 class="account__menuItem current">
-				<?php _e('My information', 'woocommerce_custom_text'); ?>
-			</h5>
-			<h5 class="account__menuItem ">
-				<a href="<?php echo get_home_url() . '/wishlist'; ?>"><?php _e('My wishlist', 'woocommerce_custom_text'); ?></a>
-			</h5>
+	<div class="container woocommerce-container-mb">
+		<div class="myAccount__top">
+			<h1 class="myAccount__title sm woocommerce-title"><?php the_title(); ?></h1>
+			<h4 class="myAccount__userName sm"><?php echo 'Welcome ' . $customer_name . '!'; ?></h4>
+		</div>
+		<div class="myAccount__forms">
+			<div class="myAccount__editData editAccount__formWrapper">
+				<div class="account__menu myAccount__menu">
+					<h5 class="account__menuItem current desktop-lg">
+						<?php _e('My information', 'woocommerce_custom_text'); ?>
+					</h5>
+					<h5 class="account__menuItem desktop-lg">
+						<a href="<?php echo get_home_url() . '/wishlist'; ?>"><?php _e('My wishlist', 'woocommerce_custom_text'); ?></a>
+					</h5>
+				</div>
+				<?php do_action('woocommerce_edit_account'); ?>
+			</div>
+			<div class="myAccount__changePasswordForm__wrapper editAccount__formWrapper">
+				<?php do_action('woocommerce_account_change_password'); ?>
+			</div>
 		</div>
 	</div>
-	<div class="myAccount__editData editAccount__formWrapper">
-		<?php do_action('woocommerce_edit_account'); ?>
-	</div>
-	<div class="myAccount__changePasswordForm__wrapper editAccount__formWrapper">
-		<?php do_action('woocommerce_account_change_password'); ?>
-	</div>
-
 </section>
 

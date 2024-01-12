@@ -33,6 +33,10 @@
             color: #fff
             .button__text
                 color: #fff
+    &--white--border:hover 
+        background-color: $color-white
+        color: $color-black
+        border-color: $color-black
     &--black 
         background-color: $color-black
         color: $color-white
@@ -47,18 +51,75 @@
         &:hover 
             background-color: transparent
     &--fz--md
-        font-size: 11px
+        font-size: 14px
+        +max-screen(1200px)
+            font-size: 13px
+        +max-screen($breakpoint-lg)
+            font-size: 12px
+        +max-screen($breakpoint-md)
+            font-size: 11px
     &--fz--sm
-        font-size: 9px
+        font-size: 14px
+        +max-screen(1200px)
+            font-size: 13px
+        +max-screen($breakpoint-lg)
+            font-size: 11px
+        +max-screen($breakpoint-md)
+            font-size: 9px
     &--fz--xs 
-        font-size: 8px
+        font-size: 14px
+        +max-screen(1200px)
+            font-size: 13px
+        +max-screen($breakpoint-lg)
+            font-size: 11px
+        +max-screen($breakpoint-md)
+            font-size: 8px
     &--size--md 
-        min-width: 133px
-        padding-top: 9px
-        padding-bottom: 9px
+        min-width: 290px
+        padding-top: 22px
+        padding-bottom: 19.5px
+        padding-left: 46px
+        padding-right: 46px
+        line-height: 1.28
+        +min-screen(770px)
+            width: fit-content
+        +max-screen(1440px)
+            min-width: 250px 
+            padding: 19px 46px 16.5px
+        +max-screen(1200px)
+            min-width: 200px
+            padding: 16px 46px 14.5px
+        +max-screen($breakpoint-lg)
+            min-width: 164px
+            padding: 13px 32px 11.5px
+        +max-screen($breakpoint-md)
+            min-width: 133px
+            padding-top: 9px
+            padding-bottom: 9px
+        &--desktop
+            +min-screen(770px)
+                min-width: 290px
+                padding-top: 22px
+                padding-bottom: 19.5px
+                padding-left: 46px
+                padding-right: 46px
+                line-height: 1.28
+                +max-screen(1440px)
+                    min-width: 250px 
+                    padding: 19px 46px 16.5px
+                +max-screen(1200px)
+                    min-width: 200px
+                    padding: 16px 46px 14.5px
+                +max-screen($breakpoint-lg)
+                    min-width: 164px
+                    padding: 13px 32px 11.5px
     &--underline 
         text-decoration: underline
-        font-size: 10px
+        font-size: 14px
+        +max-screen($breakpoint-lg)
+            font-size: 12px
+        +max-screen($breakpoint-md)
+            font-size: 10px
 .buttonsBlock
     &__inner
         margin-left: -5px
@@ -75,5 +136,37 @@
     background-color: $color-black 
     border-radius: 0
     color: $color-white
-    font-size: 10px
     padding: 8px 16px
+    font-size: 10px
+    +min-screen(770px)
+        font-size: 16px
+        padding: 16px 32px 
+        +max-screen($breakpoint-lg)
+            font-size: 14px
+            padding: 12px 24px 
+.woocommerce
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt.disabled,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt.disabled:hover,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt:disabled,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt:disabled:hover,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt:disabled[disabled],
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt:disabled[disabled]:hover,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt.disabled,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt.disabled:hover,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt:disabled,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt:disabled:hover,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt:disabled[disabled],
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt:disabled[disabled]:hover,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt.disabled,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt.disabled:hover,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt:disabled,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt:disabled:hover,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt:disabled[disabled],
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt:disabled[disabled]:hover,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt.disabled,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt.disabled:hover,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt:disabled,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt:disabled:hover,
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt:disabled[disabled],
+    &:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt:disabled[disabled]:hover,
+        background-color: rgba( 0, 0, 0, 0.6)

@@ -39,6 +39,8 @@ h1, .h1
 			font-size: 22px
 	&.woocommerce-title 
 		font-size: 27px
+		+max-screen($breakpoint-lg)
+			font-size: 24px
 		+max-screen($breakpoint-sm)
 			font-size: 20px
 			&.lg 
@@ -71,6 +73,8 @@ h2
 	font-size: 20px
 	line-height: 1
 	padding-bottom: 50px
+	&.desktop-md 
+		font-size: 22px
 	+max-screen($breakpoint-md)
 		font-size: 22px
 		padding-bottom: 0
@@ -87,6 +91,9 @@ h3
 	font-size: 20px
 	line-height: 1
 	padding-bottom: 25px
+	&.desktop-md 
+		+min-screen(770px)
+			font-size: 18px
 	+max-screen($breakpoint-lg)
 		&.lg 
 			font-size: 16px
@@ -95,8 +102,21 @@ h4
 	font-weight: 400
 	&.sm 
 		font-size: 14px
-	&.desktop-md 
-		font-size: 15px
+	+min-screen(770px)
+		&.desktop-md 
+			font-size: 15px
+			+max-screen($breakpoint-lg)
+				font-size: 13px
+		&.desktop-lg 
+			font-size: 18px
+			+max-screen($breakpoint-lg)
+				font-size: 16px
+		&.desktop-xl
+			font-size: 20px
+			+max-screen(1200px)
+				font-size: 18px
+			+max-screen($breakpoint-lg)
+				font-size: 16px
 	+max-screen($breakpoint-md)
 		font-size: 13px
 		&.sm 
@@ -107,7 +127,22 @@ h4
 h5, .h5
 	font-weight: 400
 	font-size: 15px
-	+max-screen($breakpoint-sm)
+	+min-screen(770px)
+		&.desktop-xs 
+			font-size: 12px
+		&.desktop-sm 
+			font-size: 13px
+			+max-screen($breakpoint-lg)
+				font-size: 11px
+		&.desktop-md 
+			font-size: 15px
+			+max-screen(1200px)
+				font-size: 12px
+		&.desktop-lg 
+			font-size: 18px
+			+max-screen(1200px)
+				font-size: 16px
+	+max-screen($breakpoint-md)
 		font-size: 10px
 		a,
 		p
@@ -128,7 +163,22 @@ p
 			padding-bottom: 50px
 .woocommerce-text
 	font-size: 14px
-	+max-screen($breakpoint-lg)
+	+min-screen(770px)
+		&.desktop-xs,
+		&.desktop-xs *
+			font-size: 10px
+		&.desktop-sm,
+		&.desktop-sm *
+			font-size: 12px
+		&.desktop-md,
+		&.desktop-md *
+			font-size: 13px
+		&.desktop-lg,
+		&.desktop-lg *
+			font-size: 18px
+			+max-screen($breakpoint-lg)
+				font-size: 16px
+	+max-screen(1200px)
 		font-size: 12px	
 	+max-screen($breakpoint-md)
 		font-size: 10px

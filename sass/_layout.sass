@@ -12,6 +12,9 @@
 			max-width: 100%
 	&.woocommerce-container 
 		max-width: 1592px
+		&-mb
+			+max-screen($breakpoint-md)
+				padding: 0
 		.archive.woocommerce & 
 			+max-screen($breakpoint-lg)
 				width: 85%

@@ -1,61 +1,144 @@
 .myAccount
-    padding-top: 14px
+    padding-top: 68px
+    padding-bottom: 103px
+    +max-screen(1200px)
+        padding-top: 48px
+        padding-bottom: 84px
+    +max-screen($breakpoint-lg)
+        padding-bottom: 64px
+    +max-screen($breakpoint-md)
+        padding-top: 14px
+        padding-bottom: 0
+    .container
+        max-width: 1508px 
     &__userName 
         text-align: center 
         font-weight: 700
         margin-bottom: 17px
+        +min-screen(770px)
+            display: none
+    &__forms 
+        +min-screen(770px)
+            display: flex 
+            padding-left: 65px
+            justify-content: space-between
+            & > div 
+                width: 43.5%
+                +max-screen(1200px)
+                    width: 46%
+            +max-screen(1440px)
+                padding-left: 48px
+            +max-screen(1200px)
+                padding-left: 32px
+            +max-screen($breakpoint-lg)
+                padding-left: 0
     &__title 
+        margin-bottom: 160px
         text-align: center
-        margin-bottom: 5px
-        line-height: 1.25
+        line-height: 1
         text-transform: uppercase
+        +max-screen(1440px)
+            margin-bottom: 132px
+        +max-screen(1200px)
+            margin-bottom: 96px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 72px
+        +max-screen($breakpoint-md)
+            margin-bottom: 5px
+            line-height: 1.25
+    &__menu.account__menu
+        +min-screen(770px)
+            margin-bottom: 30px
+            +max-screen($breakpoint-lg)
+                margin-bottom: 20px
     .editAccount__form
         &Wrapper
             padding-left: 20px
             padding-right: 53px
+            +min-screen(770px)
+                padding: 0
             .submitBtn__wrapper
-                width: calc( 100% + 33px )
+                +max-screen($breakpoint-md)
+                    width: calc( 100% + 33px )
             form
                 & > p 
                     input#billing_phone
                         margin-bottom: 0
                 button.button.woocommerce-Button
-                    border-radius: 0
-                    margin-left: auto
-                    margin-right: auto
+                    margin: auto
+                    margin-top: 58px
                     display: block 
-                    padding: 8.5px 20px 
-                    margin-top: 30px
+                    border-radius: 0
+                    +max-screen(1200px)
+                        margin-top: 42px
+                    +max-screen($breakpoint-lg)
+                        margin-top: 36px
+                    +max-screen($breakpoint-md)
+                        margin-left: auto
+                        margin-right: auto
+                        display: block 
+                        padding: 8.5px 20px 
+                        margin-top: 30px
                 .country 
                     input#billing_country
-                        margin-bottom: 16.3px !important
+                        margin-bottom: 30px !important
+                        +max-screen(1200px)
+                            margin-bottom: 24px !important
+                        +max-screen($breakpoint-lg)
+                            margin-bottom: 20px !important
+                        +max-screen($breakpoint-md)
+                            margin-bottom: 16.3px !important
             #editAccountData 
                 .woocommerce-form-row
                     input 
-                        margin-bottom: 16.3px 
+                        +max-screen($breakpoint-md)
+                            margin-bottom: 16.3px 
                     &:nth-last-child(2)
                         input 
                             margin-bottom: 0
             #chnagePassword 
                 .woocommerce-form-row
                     input 
-                        margin-bottom: 14.3px 
+                        +max-screen($breakpoint-md)
+                            margin-bottom: 14.3px 
+                button.button.woocommerce-Button
+                    +min-screen(770px)
+                        margin-top: 65px 
+                        +max-screen(1200px)
+                            margin-top: 52px
+                        +max-screen($breakpoint-lg)
+                            margin-top: 42px
                 
         &__title
             font-weight: 700
     &__editData
         &__title 
             margin-bottom: 16.3px
+            +min-screen(770px)
+                display: none
     &__changePasswordForm 
         margin-top: 57px
         margin-bottom: 60px
+        +min-screen(770px)
+            padding: 0
+            margin: 0
         &__title
-            margin-bottom: 14px
+            margin-bottom: 30px
+            line-height: 1
+            +max-screen($breakpoint-lg)
+                margin-bottom: 20px
+            +max-screen($breakpoint-md)
+                margin-bottom: 14px
         form 
             .woocommerce-form-row 
                 input 
                     margin-bottom: 14px
-            .chnage-password-text
+            .change-password-text
                 margin-left: -6px
                 margin-top: 11px
                 padding-bottom: 0
+                +min-screen(770px)
+                    display: none
+.woocommerce-account .woocommerce-MyAccount-content 
+    width: 100% 
+    float: none

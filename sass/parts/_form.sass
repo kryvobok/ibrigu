@@ -325,7 +325,13 @@ body.page #main
 				p.email 
 					order: -1
 				input 
-					margin-bottom: 16px
+					+max-screen($breakpoint-md)
+						margin-bottom: 16px
+	.woocommerce-shipping-fields__field-wrapper,
+	.woocommerce-billing-fields__field-wrapper
+		.woocommerce-input-wrapper 
+			+min-screen(770px)
+				display: flex 
 	.woocommerce-billing-fields__field-wrapper 
 		display: flex 
 		flex-wrap: wrap
@@ -339,9 +345,17 @@ body.page #main
 	.giftComment
 		display: flex 
 	.charactersLimit 
-		margin-top: -5px
-		margin-bottom: 10px
+		margin-top: 36px
+		margin-bottom: 16px
 		line-height: 1
+		+max-screen(1440px)
+			margin-top: 32px
+		+max-screen(1200px)
+			margin-top: 24px
+			margin-bottom: 12px
+		+max-screen($breakpoint-md)
+			margin-top: 20px
+			margin-bottom: 10px	
 		.count 
 			margin-right: 0.4em
 	form
@@ -351,7 +365,11 @@ body.page #main
 				display: flex
 				align-items: flex-end
 				border: 1.5px solid #000
-				padding: 8px 9px
+				padding: 18px 
+				+max-screen($breakpoint-lg)
+					padding: 12px 
+				+max-screen($breakpoint-md)
+					padding: 8px 9px
 				input 
 					border: 0
 					margin: 0
@@ -360,13 +378,23 @@ body.page #main
 			padding: 0
 			margin: 0
 			&#order_comments_field 
-				margin-bottom: 28px
+				margin-bottom: 55px
+				+max-screen(1440px)
+					margin-bottom: 42px
+				+max-screen(1200px)
+					margin-bottom: 32px
+				+max-screen($breakpoint-lg)
+					margin-bottom: 24px
+				+max-screen($breakpoint-md)
+					margin-bottom: 28px
 		.form-checkbox
 			margin-bottom: 3px
 			position: relative
 			width: 9px
 			height: 9px
-			margin-right: 6px
+			margin-right: 8px
+			+max-screen($breakpoint-md)
+				margin-right: 6px
 			input 
 				opacity: 0
 				visibility: hidden
@@ -393,6 +421,9 @@ body.page #main
 				bottom: 50%
 				visibility: hidden
 				transform: translateY(50%)
+				+min-screen(770px)
+					width: 5px 
+					border-radius: 1px 
 			&-wrapper
 				display: flex 
 				margin-bottom: 25px
@@ -414,17 +445,32 @@ body.page #main
                 display: block
 		.woocommerce-form-row
 			padding: 0
+			line-height: 1
+			display: flex 
+			span 
+				width: 100% 
 		input
-			font-size: 12px
+			font-size: 15px
 			width: 100%
 			background-color: transparent
 			border: 0
 			border-bottom: 1px solid $color-black
-			padding-left: 1px
-			padding-bottom: 3px
 			padding-right: 12px
+			padding-bottom: 14.5px
 			margin-bottom: 30px
 			color: $color-black
+			+max-screen(1200px)
+				margin-bottom: 24px
+				padding-bottom: 12px
+			+max-screen($breakpoint-lg)
+				font-size: 13px
+				margin-bottom: 20px
+				padding-bottom: 10px
+			+max-screen($breakpoint-md)
+				font-size: 12px
+				padding-left: 1px
+				padding-bottom: 3px
+				margin-bottom: 30px
 			&::placeholder,
 			&:focus
 				color: $color-black
@@ -446,7 +492,8 @@ body.page #main
 			input 
 				margin-bottom: 16px
 		.shipping_address 
-			padding-right: 38px
+			+max-screen($breakpoint-md)
+				padding-right: 38px
 			.form-row 
 				width: 100%
 			#shipping_postcode_field 

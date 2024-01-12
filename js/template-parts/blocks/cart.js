@@ -3,7 +3,6 @@ import $ from 'jquery';
 function cart() {
     $('.wishlist_toggle').click(function(){
         let wrapper = $(this).parent();
-        console.log('213');
         wrapper.toggleClass('add_to_wishlistWrapper');
         wrapper.toggleClass('remove_from_wishlistWrapper');
         // if(wrapper.hasClass('remove_from_wishlistWrapper')){
@@ -18,6 +17,26 @@ function cart() {
         //     })
         // }
     });
+    $(document).ready(function(){
+        cartRemove();
+    });
+    $(document).on('ajaxComplete', function(){
+        cartRemove();
+        if($('.emptyCart').length > 0){
+            $('body').addClass('empty-cart');
+        }
+    })
+}
+
+function cartRemove(){
+    $('.cartContent__itemRemove').click(function(){
+        let item = $(this).closest('.cartContent__item');
+        item.addClass('hide');
+        item.find('.qty').val(0);
+        item.find('.qty').trigger( "submit" );
+        $('.cartContent__coupon button[name="update_cart"]').click();
+        item.find('.qty').focus().submit();
+    })
 }
 
 export {cart};

@@ -28,8 +28,26 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
+		do_action( 'woocommerce_before_main_content' ); ?>
+		<section class="singleProduct__breadcrumbsWrapper">
+			<div class="container singleProduct-container">
+				<?php 
+					$cat = get_the_terms( $product->ID, 'product_cat' );
+				?>
+				<div class="singleProduct__breadcrumbsTitle">
+					<?php 
+					foreach ($cat as $categoria) {
+						if($categoria->parent == 0){
+							echo $categoria->name;
+						}
+					}
+					?>
+				</div>
+				<div class="singleProduct__breadcrumbs">
+					<?php woocommerce_breadcrumb(); ?>
+				</div>
+			</div>
+        </section>
 
 		<?php while ( have_posts() ) : ?>
 			<?php the_post(); ?>
