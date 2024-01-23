@@ -1,0 +1,23 @@
+.imageBlock
+    display: flex
+    +max-screen($breakpoint-md)
+        display: block
+    &__container
+        max-width: 100%
+    &__imageWrapper
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        +max-screen($breakpoint-md)
+            display: none
+        &.image--size
+            &--full
+                width: 100%
+            &--half
+                background: $color-white
+                width: 50%
+        &__mobile
+            +min-screen($breakpoint-md)
+                display: none
+
