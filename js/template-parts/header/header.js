@@ -9,6 +9,8 @@ function header(){
         if(headerToggle) {
             $('body').addClass('header-unactive').removeClass('header-active');
             headerToggle = !headerToggle;
+            $('header .sub-menu').slideUp();
+            $('.menu-item-has-children').removeClass('menu-active');
         } else {
             $('body').addClass('header-active').removeClass('header-unactive');
             headerToggle = !headerToggle;
@@ -23,11 +25,7 @@ function header(){
 
         menuItem.toggleClass('menu-active');
 
-        if (menuItem.hasClass('menu-active')) {
-            subMenu.css('height', subMenu[0].scrollHeight + 'px');
-        } else {
-            subMenu.css('height', 0)
-        }
+        subMenu.stop().slideToggle();
     })
 
     // add class to header on scrolling

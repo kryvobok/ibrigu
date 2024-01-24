@@ -55,6 +55,9 @@
 				justify-content: center
 				padding-top: 40px
 				margin: 0 auto
+				margin-top: auto
+		&__item-sep 
+			padding: 0 6px 
 		.home &
 			order: 2
 		&__list
@@ -132,6 +135,8 @@
 	+max-screen($breakpoint-md)
 		min-height: 0
 		height: 0
+		display: flex 
+		flex-direction: column 
 	.header-active &
 		max-height: 300px
 		transition: all 0.42s ease-out 0s
@@ -143,15 +148,19 @@
 			padding: 40px 15px
 #main-nav
 	.sub-menu
-		height: 0
+		display: none
 		overflow: hidden
-		transition: $default-transition
+		+max-screen($breakpoint-md)
+			padding: 6px 0
+			border-bottom: 1px solid $color-black
 		.menu-item
 			padding: 3px 0
 			border-bottom: 0
 			+max-screen($breakpoint-lg)
-				padding: 0
-				padding-top: 9px
+				padding: 6px 0
+				line-height: 1.14
+				&:last-child
+					padding-bottom: 6px
 	.menu-item__icon
 		display: none
 	.menu-item
@@ -173,8 +182,16 @@
 			font-size: 19px
 			padding: 9px
 			text-align: center
+			&.menu-item-has-children 
+				padding: 0
+				border-bottom: 0
+				.menu-item__parent
+					padding: 9px 
+					border-bottom: 1px solid $color-black
 		&:last-of-type
 			padding-bottom: 0
+			+max-screen($breakpoint-md)
+				padding-bottom: 9px
 		&>a
 			
 		&.current-menu-item
