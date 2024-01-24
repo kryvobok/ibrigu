@@ -53,19 +53,24 @@ body.woocommerce-page
 		background-color: $color-bg-white-light
 body:not(.woocommerce-page)
 	.page-heading
-		padding-top: calc(36px + (30px * 2) + 10px)
+		padding-top: calc(115px + 94px)
 		+max-screen($breakpoint-lg)
-			padding-top: calc(35px + (30px * 2) + 10px)
+			padding-top: calc(120px + 40px)
 		+max-screen($breakpoint-md)
 			padding-top: calc(30px + (20px * 2) + 10px)
 		&__title
 			text-align: center
+			padding-bottom: 57px
+			+max-screen($breakpoint-lg)
+				padding-bottom: 21px
+			h1
+				font-size: 27px
+				+max-screen($breakpoint-md)
+					font-size: 22px
 		&__content
-			padding-top: 21px
-			padding-bottom: 24px
-			line-height: 1
-			h5
-				font-weight: 700
+			padding-bottom: 35px
+			+max-screen($breakpoint-md)
+				padding-bottom: 19px
 .woocommerce-page
 	.page-heading
 		&__title
